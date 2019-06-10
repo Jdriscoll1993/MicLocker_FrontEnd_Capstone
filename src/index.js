@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+import MicLocker from './components/MicLocker';
+import * as firebase from 'firebase/app'
+import 'semantic-ui-css/semantic.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+var firebaseConfig = {
+  apiKey: "AIzaSyCzMqPpjqYEm6pyRst4voo-8Gma6IqnxjM",
+  authDomain: "fecapstone-01.firebaseapp.com",
+  databaseURL: "https://fecapstone-01.firebaseio.com",
+  projectId: "fecapstone-01",
+  storageBucket: "fecapstone-01.appspot.com",
+  messagingSenderId: "361828284008",
+  appId: "1:361828284008:web:b95746566c9fae78"
+};
+//Initialize Firebase
+firebase.initializeApp(firebaseConfig)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Router>
+    <MicLocker />
+  </Router>,
+  document.getElementById('root')
+);
