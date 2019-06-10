@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
-import Home from './login-page/Profile';
+import Profile from '../components/user-page/Profile'
 import { getUserFromLocalStorage, logout } from '../authentication/userManager';
-import Friends from './layout/Friends';
+import Friends from '../components/social-page/Friends'
 
 class ApplicationViews extends Component {
   state = {
@@ -41,7 +41,7 @@ class ApplicationViews extends Component {
             path="/home"
             render={props => {
               return this.state.user ? (
-                <Home {...props} user={this.state.user} onLogout={logout} />
+                <Profile {...props} user={this.state.user} onLogout={logout} />
               ) : (
                 <Redirect to="/login" />
               );

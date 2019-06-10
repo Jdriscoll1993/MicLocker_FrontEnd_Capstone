@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import Head from '../layout/Header';
 import Footer from '../layout/Footer';
 import NavBar from '../layout/NavBar';
@@ -15,7 +15,6 @@ export default class Home extends Component {
       <Container className="profile--container">
         <Head />
         <NavBar />
-        <Button onClick={() => this.logout()} content="Log Out" color="green" />
         <Footer />
       </Container>
     );
