@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Dropdown } from 'semantic-ui-react';
-import { Link, Route } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class NavDropDown extends Component {
+class NavDropDown extends Component {
   logout = () => {
     this.props.onLogout();
     this.props.history.push('/login');
@@ -43,3 +43,5 @@ export default class NavDropDown extends Component {
     );
   }
 }
+
+export default withRouter(NavDropDown)

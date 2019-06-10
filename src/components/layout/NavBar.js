@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavDropDown from './NavDropDrown'
+import { logout } from '../../authentication/userManager'
 export class NavBar extends Component {
   
   render() {
@@ -14,7 +15,7 @@ export class NavBar extends Component {
                 Connect
               </Link>
             </li>
-            <li className="nav-item"> <NavDropDown/></li>
+            <li className="nav-item"> <NavDropDown onLogout={logout}/></li>
           </ul>
          
           
