@@ -9,7 +9,6 @@ function Footer() {
       </div>
     );
   }
-
   const footerStyle = {
     background: 'rgb(140, 100, 70)',
     color: '#fff',

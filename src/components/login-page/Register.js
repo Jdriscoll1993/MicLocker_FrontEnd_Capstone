@@ -15,17 +15,12 @@ export default class Register extends Component {
   state = {
     email: '',
     username: '',
-    password: '',
-    userStatus: '',
-    buying: '',
-    selling: '',
-    about: '',
-    socialURL: ''
+    password: ''
   };
 
   submit = () => {
     register(this.state).then(newUser => {
-      this.props.onRegister(newUser);
+      this.props.onRegister(newUser)
       this.props.history.push('/');
     });
   };
@@ -62,36 +57,8 @@ export default class Register extends Component {
                     placeholder="Password"
                     onChange={e => this.setState({ password: e.target.value })}
                   />
-                  <Form.Field
-                    control="input"
-                    type="text"
-                    label="User Status"
-                    placeholder="User Status"
-                    onChange={e => this.setState({ userStatus: e.target.value })}
-                  />
-                  <Form.Field
-                    control="input"
-                    type="text"
-                    label="Buying"
-                    placeholder="What are you in the market for?"
-                    onChange={e => this.setState({ buying: e.target.value })}
-                  />
-                  <Form.Field
-                    control="input"
-                    type="text"
-                    label="Selling"
-                    placeholder="What are you selling?"
-                    onChange={e => this.setState({ selling: e.target.value })}
-                  />
-                  <Form.Field
-                    control="input"
-                    type="text-area"
-                    label="Bio"
-                    placeholder="About Me"
-                    onChange={e => this.setState({ userStatus: e.target.value })}
-                  />                                                    
                   <Form.Field control="input" type="hidden" />
-                  <Button fluid content="Register" color="purple" />
+                  <Button fluid content="Register" color="green" />
                 </Form>
                 <Message className="auth--message">
                   Already registered? <Link to="/login">Log In</Link>

@@ -1,33 +1,20 @@
 import React, { Component } from 'react';
 import './MicLocker.css';
-import ApplicationViews from '../components/ApplicationViews';
-import Home from '../components/login-page/Home';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+// import HomeHeader from '../components/layout/HomeHeader'
+// import Footer from '../components/layout/HomeFooter'
+// import NavBar from '../components/layout/NavBar'
+import ApplicationViews from '../components/ApplicationViews'
 
-import { getUserFromLocalStorage, logout } from '../authentication/userManager';
-
-export class MicLocker extends Component {
-
-  state = {
-    user: getUserFromLocalStorage()
-  };
+class MicLocker extends Component {
   render() {
-    return (
-      <Router>
-        <Route
-          exact
-          path="/"
-          render={props => {
-            return this.state.user ? (
-              <Home {...props} user={this.state.user} onLogout={logout} />
-            ) : (
-              <Redirect to="/login" />
-            );
-          }}
-        />
-        <ApplicationViews />
-      </Router>
-    );
+      return (
+          <React.Fragment>
+              {/* <HomeHeader /> */}
+              {/* <NavBar /> */}
+              <ApplicationViews />
+              {/* <Footer /> */}
+          </React.Fragment>
+      )
   }
 }
 export default MicLocker;
