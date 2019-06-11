@@ -4,7 +4,7 @@ export class WishList extends Component {
   render() {
     return (
       <div>
-        Wish List List
+        {/* Wish List List */}
       </div>
     )
   }

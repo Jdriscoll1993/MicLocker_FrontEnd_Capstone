@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Dropdown } from 'semantic-ui-react';
+import { Button, Dropdown, Modal, Image, Header } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
-
 class NavDropDown extends Component {
-  logout = () => {
-    this.props.onLogout();
-    this.props.history.push('/login');
-  };
-
   render() {
     return (
       <Dropdown text="Username">
@@ -24,16 +18,30 @@ class NavDropDown extends Component {
           <Dropdown.Item>
             <ul className="nav nav-pills">
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Account Settings
-                </Link>
+                <Modal trigger={<Button>Account Settings</Button>}>
+                  <Modal.Header>Select a Photo</Modal.Header>
+                  <Modal.Content image>
+                    <Image
+                      wrapped
+                      size="medium"
+                      src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+                    />
+                    <Modal.Description>
+                      <Header>Default Profile Image</Header>
+                      <p>
+                        We've found the following gravatar image associated with
+                        your e-mail address.
+                      </p>
+                      <p>Is it okay to use this photo?</p>
+                    </Modal.Description>
+                  </Modal.Content>
+                </Modal>
               </li>
             </ul>
           </Dropdown.Item>
-
           <Dropdown.Item>
             <Button
-              onClick={() => this.logout()}
+              onClick={() => this.props.onLogout()}
               content="Log Out"
               color="green"
             />
@@ -44,4 +52,4 @@ class NavDropDown extends Component {
   }
 }
 
-export default withRouter(NavDropDown)
+export default withRouter(NavDropDown);

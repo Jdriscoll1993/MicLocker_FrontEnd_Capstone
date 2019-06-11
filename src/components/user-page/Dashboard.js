@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Header, Image } from 'semantic-ui-react'
 
-export class Dashboard extends Component {
-  render() {
-    return (
-      <>
-      <div>
-        Dashboard
-      </div>
-      </>
-    )
-  }
-}
+const Dashboard = () => (
+  <Header as='h1'>
+    <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' /> Username
+  </Header>
+)
 
 export default Dashboard
+

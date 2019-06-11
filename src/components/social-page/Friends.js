@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
-import Head from '../layout/Header';
+import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import NavBar from '../layout/NavBar';
 import FriendList from './friends/FriendList'
@@ -12,8 +12,8 @@ export default class Friends extends Component {
   render() {
     return (
       <Container className="profile--container">
-        <Head />
-        <NavBar />
+        <Header />
+        <NavBar onLogout={this.props.onLogout}/>
         <UserSearch/>
         <FriendList/>
         <UserList/>

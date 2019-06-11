@@ -4,7 +4,7 @@ export class MyGearList extends Component {
   render() {
     return (
       <div>
-        Gear List
+        {/* Gear List */}
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Head() {
+function Header() {
   return (
     <header style={headerStyle}>
       <h1>Mic Locker</h1>
@@ -17,4 +17,4 @@ const headerStyle = {
   marginBottom: '30px'
 }
 
-export default Head;
+export default Header;
