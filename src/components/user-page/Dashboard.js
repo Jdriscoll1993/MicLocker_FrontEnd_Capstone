@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Image, Header } from 'semantic-ui-react';
+import { Modal, Image, Button } from 'semantic-ui-react';
 function Dashboard() {
   return (
     <>
@@ -7,35 +7,53 @@ function Dashboard() {
         style={{
           background: '#ccc',
           paddingLeft: '20px',
-          paddingRight: '20px'
+          paddingRight: '20px',
+          paddingBottom: '25px'
         }}
       >
-        <h1 style={{ textAlign: 'center' }}>Dashboard</h1>
-
-        <Image
-          circular
-          style={{ display: 'flex', marginBottom: '15px' }}
-          wrapped
-          size="medium"
-          src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
-        />
+        <Button
+          style={{
+            marginTop: '20px',
+            float: 'right',
+            background: '#355',
+            color: '#fff'
+          }}
+        >
+          Add Friend
+        </Button>
+        {/* <h1 style={{ textAlign: 'center' }}>Dashboard</h1> */}
+        <h2 style={{ paddingTop: '20px', paddingLeft: '105px' }}>
+          Joey Driscoll
+        </h2>
         <div
           style={{
             display: 'flex',
-            justifyContent: 'row',
+            justifyContent: 'space-around',
             color: '#333',
             marginBottom: '50px'
           }}
         >
+          <Image
+            circular
+            style={{ float: 'left', paddingTop: '15px', paddingRight: '35px' }}
+            wrapped
+            size="medium"
+            src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
+          />
           <Modal.Description>
-            <h2>Joey Driscoll</h2>
-            <h5>Status: Focal Twin6 Be 3-way Monitors FTW</h5>
+            <div
+              style={{ background: '#3887', marginTop: '75px', padding: '45px' }}
+            >
+              <h3>Status: Focal Twin6 Be 3-way Monitors FTW</h3>
 
-            <h6>
-              Im in the market for nothing because im broke'd. Accepting all
-              free buys.
-            </h6>
-            <h6>Selling everything in my studio because im broke'd</h6>
+              <h4>
+                Buying: Im in the market for nothing because im broke'd.
+                Accepting all free buys.
+              </h4>
+              <h4>
+                Selling: Selling everything in my studio because im broke'd
+              </h4>
+            </div>
           </Modal.Description>
         </div>
       </div>

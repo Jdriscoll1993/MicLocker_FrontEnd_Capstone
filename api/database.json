@@ -17,6 +17,12 @@
       "username": "jenna",
       "password": null,
       "id": "H7qaVaJLIxhJ02C1u6v3D0YNmHJ2"
+    },
+    {
+      "email": "paul@mail.com",
+      "username": "paul",
+      "password": null,
+      "id": "KuNrcrjT1mVXZRLUgYHbt8ehdD83"
     }
   ],
   "experiences": [
@@ -24,7 +30,7 @@
       "id": 2,
       "summary": "shit throw alley",
       "instruments": "trash can lids",
-      "memory": "fun timess"
+      "memory": "fun times"
     },
     {
       "summary": "",
