@@ -22,7 +22,13 @@ function Dashboard() {
           Add Friend
         </Button>
         {/* <h1 style={{ textAlign: 'center' }}>Dashboard</h1> */}
-        <h2 style={{ paddingTop: '20px', paddingLeft: '105px' }}>
+        <h2
+          style={{
+            paddingTop: '60px',
+            paddingBottom: '10px',
+            paddingLeft: '26px'
+          }}
+        >
           Joey Driscoll
         </h2>
         <div
@@ -35,14 +41,17 @@ function Dashboard() {
         >
           <Image
             circular
-            style={{ float: 'left', paddingTop: '15px', paddingRight: '35px' }}
+            style={{ float: 'left', paddingRight: '20px' }}
             wrapped
             size="medium"
             src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
           />
           <Modal.Description>
             <div
-              style={{ background: '#3887', marginTop: '75px', padding: '45px' }}
+              style={{
+                background: '#3887',
+                padding: '20px'
+              }}
             >
               <h3>Status: Focal Twin6 Be 3-way Monitors FTW</h3>
 
