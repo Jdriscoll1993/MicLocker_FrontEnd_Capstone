@@ -30,19 +30,18 @@
       "id": 2,
       "summary": "shit throw alley",
       "instruments": "trash can lids",
-      "memory": "fun times"
-    },
+      "memory": "fun times!!"
+    }
+  ],
+  "gearItems": [
     {
-      "summary": "",
-      "instruments": "",
-      "memory": "",
-      "id": 3
-    },
-    {
-      "summary": "",
-      "instruments": "",
-      "memory": "",
-      "id": 4
+      "id": 1,
+      "manufacturer": "Universal Audio",
+      "model": "Apollo 8p",
+      "category": "Studio Recording",
+      "subCategory": "Audio Interface",
+      "forSale": "false",
+      "url": "https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/5a29e3f3e2c4839f7f1f0463/1512694771650/?format=1500w"
     }
   ]
 }
