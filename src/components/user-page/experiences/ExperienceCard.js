@@ -6,8 +6,7 @@ export class ExperienceCard extends Component {
     saveDisabled: false
   };
 
-  handleClick = e => {
-    console.log('click', e, this.props.experience.id);
+  handleClick = () => {
     this.setState({
       saveDisabled: true
     });
@@ -18,8 +17,7 @@ export class ExperienceCard extends Component {
     return {
       background: '#f4f4f4',
       padding: '10px',
-      border: '1px #ccc dotted',
-      color: this.props.experience.isFun ? 'blue' : 'black'
+      border: '1px #ccc dotted'
     };
   };
 
@@ -28,12 +26,6 @@ export class ExperienceCard extends Component {
     const { summary, instruments, memory } = this.props.experience;
     return (
       <div style={this.getStyle()}>
-        {/* Favorite{' '} */}
-        {/* <input
-            type="checkbox"
-            // only have to pass id and summary because of destructuring
-            onChange={this.props.checkComplete.bind(this, id)}
-          />{' '} */}
         <h3 style={{ color: 'goldenrod' }}>Description:</h3>
         <h5>{summary}</h5>
         <h3 style={{ color: 'goldenrod' }}> Instruments</h3>

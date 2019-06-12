@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ExperienceManager from '../../../modules/ExperienceManager'
 import { withRouter} from 'react-router-dom'
+import ExperienceManager from '../../../modules/ExperienceManager'
 
 export class ExperienceEditForm extends Component {
   state = {
@@ -9,15 +9,24 @@ export class ExperienceEditForm extends Component {
     memory: ''
   };
 
+  componentDidMount() {
+    ExperienceManager.get(this.props.match.params.experienceId).then(experience => {
+      this.setState({
+        summary: experience.summary,
+        instruments: experience.instruments,
+        memory: experience.memory
+      });
+    });
+  }
+  
   handleFieldChange = exp => {
     const stateToChange = {};
     stateToChange[exp.target.id] = exp.target.value;
     this.setState(stateToChange);
   };
 
-  updateExperience = evt => {
-    evt.preventDefault();
-
+  updateExperience = exp => {
+    exp.preventDefault();
     const editedExperience = {
       id: this.props.match.params.experienceId,
       summary: this.state.summary,
@@ -30,18 +39,11 @@ export class ExperienceEditForm extends Component {
     );
   };
 
-  componentDidMount() {
-    ExperienceManager.get(this.props.match.params.experienceId).then(experience => {
-      this.setState({
-        summary: experience.summary,
-        instruments: experience.instruments,
-        memory: experience.memory
-      });
-    });
-  }
+
   render() {
     return (
       <React.Fragment>
+        {/* Experience Edit Form */}
         <form className="experienceForm">
           <div className="form-group">
             <label htmlFor="experience-summary">Experience Summary</label>

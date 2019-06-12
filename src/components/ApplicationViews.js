@@ -5,10 +5,12 @@ import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
 import Profile from '../components/user-page/Profile';
 import Friends from '../components/social-page/Friends';
+
 import ExperienceEditForm from '../components/user-page/experiences/ExperienceEditForm';
-import AddExperience from '../components/user-page/experiences/AddExperience'
+import AddExperience from '../components/user-page/experiences/AddExperience';
 
-
+import MyGearEditForm from '../components/user-page/my-gear/MyGearEditForm'
+import AddGear from '../components/user-page/my-gear/AddGear';
 
 class ApplicationViews extends Component {
   render() {
@@ -53,7 +55,7 @@ class ApplicationViews extends Component {
                 return <Friends onLogout={this.props.onLogout} />;
               }}
             />
-                      <Route
+            <Route
               exact
               path="/new-experience"
               render={props => {
@@ -75,6 +77,31 @@ class ApplicationViews extends Component {
                     {...props}
                     experiences={this.props.experiences}
                     updateExperience={this.updateExperience}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/new-gear"
+              render={props => {
+                return (
+                  <AddGear
+                    {...props}
+                    gearItems={this.props.gearItem}
+                    gearItem={this.gearItem}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/gearItems/edit/:gearItemId"
+              render={props => {
+                return (
+                  <MyGearEditForm
+                    {...props}
+                    gearItems={this.props.gearItems}
+                    updateGearItem={this.updateGearItem}
                   />
                 );
               }}

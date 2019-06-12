@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { withRouter} from 'react-router-dom'
-import GearManager from '../../../modules/GearManager'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-export class MyGearEditForm extends Component {
+export class AddGear extends Component {
   state = {
     manufacturer: '',
     model: '',
@@ -12,29 +11,16 @@ export class MyGearEditForm extends Component {
     url: ''
   };
 
-  componentDidMount() {
-    GearManager.get(this.props.match.params.gearItemId).then(gearItem => {
-      this.setState({
-        manufacturer: gearItem.manufacturer,
-        model: gearItem.model,
-        category: gearItem.category,
-        subCategory: gearItem.subCategory,
-        forSale: gearItem.forSale,
-        url: gearItem.url
-      });
-    });
-  }
-
   handleFieldChange = gear => {
     const stateToChange = {};
     stateToChange[gear.target.id] = gear.target.value;
     this.setState(stateToChange);
   };
 
-  updateGearItem = gear => {
+  saveNewGearItem = gear => {
     gear.preventDefault();
-    const editedGearItem = {
-      id: this.props.match.params.gearItemId,
+
+    const gearItem = {
       manufacturer: this.state.manufacturer,
       model: this.state.model,
       category: this.state.category,
@@ -42,10 +28,10 @@ export class MyGearEditForm extends Component {
       forSale: this.state.forSale,
       url: this.state.url
     };
-    console.log('edited gear item', editedGearItem);
-    GearManager.putMyGear(editedGearItem).then(() =>
-      this.props.history.push('/home')
-    );
+
+    this.props
+      .addGearItem(gearItem)
+      .then(() => this.props.history.push('/home'));
   };
 
   render() {
@@ -109,12 +95,12 @@ export class MyGearEditForm extends Component {
           value={this.state.url}
           onChange={this.handleFieldChange}
         />        
-        <button className="button" onClick={this.updateGearItem}>
+        <button className="button" onClick={this.saveNewGearItem}>
           Submit
         </button>
       </form>
-    )
+    );
   }
 }
 
-export default withRouter(MyGearEditForm);
+export default withRouter(AddGear);

@@ -11,8 +11,11 @@ import Dashboard from '../user-page/Dashboard';
 
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
-import AddExperience from '../../components/user-page/experiences/AddExperience';
 
+import GearManager from '../../modules/GearManager';
+import MyGearList from '../user-page/my-gear/MyGearList';
+
+// import AddExperience from '../../components/user-page/experiences/AddExperience';
 // import Bio from './Bio/Bio';
 // import MyGear from './my-gear/MyGearList';
 // import WishList from './wish-list/GearWishListList';
@@ -20,22 +23,35 @@ import AddExperience from '../../components/user-page/experiences/AddExperience'
 class Profile extends Component {
   //to access state: this.state.experiences
   state = {
-    experiences: []
+    experiences: [],
+    gearItems: []
   };
 
-  // logout function
+  // LOGOUT
   logout = () => {
     this.props.onLogout();
     this.props.history.push('/login');
   };
-  // get all experiences and set new state
+
+
+  // GET get all data and set new state
   componentDidMount() {
-    ExperienceManager.getAll().then(allExperiences => {
-      this.setState({
-        experiences: allExperiences
-      });
-    });
+    const newState = {};
+    ExperienceManager.getAll()
+      .then(experiences => {
+        newState.experiences = experiences;
+      })
+      .then(() =>
+        GearManager.getAll()
+          .then(gearItems => {
+            newState.gearItems = gearItems;
+          })
+          .then(() => this.setState(newState))
+      );
   }
+
+    // EXPERIENCES
+
   // POST - post a new experience, get all the experiences set new state, and direct the users to /home
   addExperience = experience =>
     ExperienceManager.postExperience(experience)
@@ -60,6 +76,34 @@ class Profile extends Component {
       });
   };
 
+    // MY GEAR
+
+
+  // POST - post a new experience, get all the experiences set new state, and direct the users to /home
+  addGearItem = gearItem =>
+    GearManager.postMyGear(gearItem)
+      .then(() => GearManager.getAll('gearItems'))
+      .then(gearItems =>
+        this.setState({
+          gearItems: gearItems
+        })
+      )
+      .then(() => this.props.history.push('/home'));
+  // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
+  deleteGearItem = id => {
+    const newState = {};
+    GearManager.deleteGearItem(id)
+      .then(GearManager.getAll)
+      .then(gearItems => {
+        newState.gearItems = gearItems;
+      })
+      .then(() => {
+        this.setState(newState);
+        this.props.history.push('/home');
+      });
+  };
+
+
   render() {
     return (
       <>
@@ -69,16 +113,29 @@ class Profile extends Component {
           <NavBar onLogout={this.props.onLogout} />
           <Dashboard />
           <h1 style={{ textAlign: 'center' }}>Experiences</h1>
-          <AddExperience addExperience={this.addExperience} />
           <Route
             exact
             path="/home"
             render={props => {
               return (
                 <ExperienceList
-                {...props}
+                  {...props}
                   experiences={this.state.experiences}
                   deleteExperience={this.deleteExperience}
+                />
+              );
+            }}
+          />
+          <h1 style={{ textAlign: 'center' }}>My Gear</h1>
+          <Route
+            exact
+            path="/home"
+            render={props => {
+              return (
+                <MyGearList
+                  {...props}
+                  gearItems={this.state.gearItems}
+                  deleteGearItem={this.deleteGearItem}
                 />
               );
             }}
@@ -141,3 +198,7 @@ export default withRouter(Profile);
 //       })
 //     )
 //     .then(() => this.props.history.push('/experiences'));
+
+{
+  /* <AddExperience addExperience={this.addExperience} /> */
+}
