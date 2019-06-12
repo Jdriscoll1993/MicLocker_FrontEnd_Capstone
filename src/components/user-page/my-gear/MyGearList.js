@@ -16,7 +16,7 @@ export class MyGearList extends Component {
   render() {
     return (
       <div>
-        <button style={{ float: 'right' }}>
+        <button style={{ float: 'right'}}>
           <Link to="/new-gear">+</Link>
         </button>
         <section>
@@ -37,14 +37,3 @@ export class MyGearList extends Component {
 }
 
 export default MyGearList;
-
-// {this.state.gearItems.map(gearItem => {
-//   return (
-//     <MyGearCard
-//       {...this.props}
-//       key={gearItem.id}
-//       gearItem={gearItem}
-//       delItem={this.props.delItem}
-//     />
-//   );
-// })}

@@ -4,10 +4,8 @@ import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
 
-// import Header from '../layout/Header';
 import NavBar from '../layout/NavBar';
 import Dashboard from '../user-page/Dashboard';
-// import Footer from '../layout/Footer';
 
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
@@ -15,16 +13,15 @@ import ExperienceList from '../user-page/experiences/ExperienceList';
 import GearManager from '../../modules/GearManager';
 import MyGearList from '../user-page/my-gear/MyGearList';
 
-// import AddExperience from '../../components/user-page/experiences/AddExperience';
-// import Bio from './Bio/Bio';
-// import MyGear from './my-gear/MyGearList';
-// import WishList from './wish-list/GearWishListList';
+import WishListManager from '../../modules/WishListManager';
+import GearWishListList from '../user-page/wish-list/GearWishListList';
 
 class Profile extends Component {
   //to access state: this.state.experiences
   state = {
     experiences: [],
-    gearItems: []
+    gearItems: [],
+    wishItems: []
   };
 
   // LOGOUT
@@ -32,7 +29,6 @@ class Profile extends Component {
     this.props.onLogout();
     this.props.history.push('/login');
   };
-
 
   // GET get all data and set new state
   componentDidMount() {
@@ -46,11 +42,17 @@ class Profile extends Component {
           .then(gearItems => {
             newState.gearItems = gearItems;
           })
-          .then(() => this.setState(newState))
+          .then(() =>
+            WishListManager.getAll()
+              .then(wishItems => {
+                newState.wishItems = wishItems;
+              })
+              .then(() => this.setState(newState))
+          )
       );
   }
 
-    // EXPERIENCES
+  // EXPERIENCES
 
   // POST - post a new experience, get all the experiences set new state, and direct the users to /home
   addExperience = experience =>
@@ -76,8 +78,7 @@ class Profile extends Component {
       });
   };
 
-    // MY GEAR
-
+  // MY GEAR
 
   // POST - post a new experience, get all the experiences set new state, and direct the users to /home
   addGearItem = gearItem =>
@@ -103,6 +104,31 @@ class Profile extends Component {
       });
   };
 
+  // WISH LIST
+
+  // POST - post a new experience, get all the experiences set new state, and direct the users to /home
+  addGearItem = wishItem =>
+    GearManager.postWishList(wishItem)
+      .then(() => WishListManager.getAll('wishItems'))
+      .then(wishItems =>
+        this.setState({
+          wishItems: wishItems
+        })
+      )
+      .then(() => this.props.history.push('/home'));
+  // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
+  deleteWishList = id => {
+    const newState = {};
+    WishListManager.deleteWishList(id)
+      .then(WishListManager.getAll)
+      .then(wishItems => {
+        newState.wishItems = wishItems;
+      })
+      .then(() => {
+        this.setState(newState);
+        this.props.history.push('/home');
+      });
+  };
 
   render() {
     return (
@@ -136,6 +162,20 @@ class Profile extends Component {
                   {...props}
                   gearItems={this.state.gearItems}
                   deleteGearItem={this.deleteGearItem}
+                />
+              );
+            }}
+          />
+          <h1 style={{ textAlign: 'center' }}>Wish List</h1>
+          <Route
+            exact
+            path="/home"
+            render={props => {
+              return (
+                <GearWishListList
+                  {...props}
+                  wishItems={this.state.wishItems}
+                  deleteWishList={this.deleteWishList}
                 />
               );
             }}

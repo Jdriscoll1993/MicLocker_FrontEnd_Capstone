@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { withRouter} from 'react-router-dom'
-import WishListManager from '../../../modules/WishListManager';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-export class GearWishListEditForm extends Component {
+export class AddWishList extends Component {
   state = {
     manufacturer: '',
     model: '',
@@ -12,29 +11,16 @@ export class GearWishListEditForm extends Component {
     url: ''
   };
 
-  componentDidMount() {
-    WishListManager.get(this.props.match.params.wishItemId).then(wishItem => {
-      this.setState({
-        manufacturer: wishItem.manufacturer,
-        model: wishItem.model,
-        category: wishItem.category,
-        subCategory: wishItem.subCategory,
-        forSale: wishItem.forSale,
-        url: wishItem.url
-      });
-    });
-  }
-
   handleFieldChange = wishlist => {
     const stateToChange = {};
     stateToChange[wishlist.target.id] = wishlist.target.value;
     this.setState(stateToChange);
   };
 
-  updateWishItem = wishlist => {
+  saveNewWishList = wishlist => {
     wishlist.preventDefault();
-    const editedWishItem = {
-      id: this.props.match.params.wishItemId,
+
+    const wishItem = {
       manufacturer: this.state.manufacturer,
       model: this.state.model,
       category: this.state.category,
@@ -42,10 +28,10 @@ export class GearWishListEditForm extends Component {
       forSale: this.state.forSale,
       url: this.state.url
     };
-    console.log('edited wish list', editedWishItem);
-    WishListManager.putWishList(editedWishItem).then(() =>
-      this.props.history.push('/home')
-    );
+
+    this.props
+      .addWishListItem(wishItem)
+      .then(() => this.props.history.push('/home'));
   };
 
   render() {
@@ -109,12 +95,12 @@ export class GearWishListEditForm extends Component {
           value={this.state.url}
           onChange={this.handleFieldChange}
         />        
-        <button className="button" onClick={this.updateWishItem}>
+        <button className="button" onClick={this.saveNewGearItem}>
           Submit
         </button>
       </form>
-    )
+    );
   }
 }
 
-export default withRouter(GearWishListEditForm);
+export default withRouter(AddWishList);

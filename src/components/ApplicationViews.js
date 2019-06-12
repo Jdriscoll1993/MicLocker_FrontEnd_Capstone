@@ -9,8 +9,11 @@ import Friends from '../components/social-page/Friends';
 import ExperienceEditForm from '../components/user-page/experiences/ExperienceEditForm';
 import AddExperience from '../components/user-page/experiences/AddExperience';
 
-import MyGearEditForm from '../components/user-page/my-gear/MyGearEditForm'
+import MyGearEditForm from '../components/user-page/my-gear/MyGearEditForm';
 import AddGear from '../components/user-page/my-gear/AddGear';
+
+import GearWishListEditForm from '../components/user-page/wish-list/GearWishListEditForm';
+import AddWishList from '../components/user-page/wish-list/AddWishList';
 
 class ApplicationViews extends Component {
   render() {
@@ -88,7 +91,7 @@ class ApplicationViews extends Component {
                 return (
                   <AddGear
                     {...props}
-                    gearItems={this.props.gearItem}
+                    gearItems={this.props.gearItems}
                     gearItem={this.gearItem}
                   />
                 );
@@ -102,6 +105,31 @@ class ApplicationViews extends Component {
                     {...props}
                     gearItems={this.props.gearItems}
                     updateGearItem={this.updateGearItem}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/new-wishlist"
+              render={props => {
+                return (
+                  <AddWishList
+                    {...props}
+                    wishItems={this.props.wishItems}
+                    wishItem={this.wishItem}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/wishItems/edit/:wishItemId"
+              render={props => {
+                return (
+                  <GearWishListEditForm
+                    {...props}
+                    wishItems={this.props.wishItems}
+                    updateWishItem={this.updateWishItem}
                   />
                 );
               }}
