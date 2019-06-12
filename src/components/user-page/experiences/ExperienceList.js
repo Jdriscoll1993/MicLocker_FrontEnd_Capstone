@@ -1,41 +1,62 @@
 import React, { Component } from 'react';
-import APIManager from '../../../db_calls/APIManager';
-import { Link } from 'react-router-dom';
-import ExperienceCard from '../../user-page/experiences/ExperienceCard'
+// import { Link } from 'react-router-dom';
+import ExperienceCard from './ExperienceCard';
+// import PropTypes from
+// 'prop-types';
+import ExperienceManager from '../../../modules/ExperienceManager';
 export class ExperienceList extends Component {
   state = {
     experiences: []
   };
 
-  // componentDidMount() {
+  // deleteExperience = id => {
   //   const newState = {};
-  //   APIManager.getAll('experiences')
-  //     .then(experiences => (newState.experiences = experiences))
-  //     .then(() => this.setState(newState));
-  // }
+  //   ExperienceManager.deleteEvent(id)
+  //     .then(ExperienceManager.getAll)
+  //     .then(experiences => {
+  //       console.log('experiences', experiences);
+  //       newState.experiences = experiences;
+  //       this.setState(newState);
+  //     });
+  // };
+
+  componentDidMount = () => {
+    ExperienceManager.getAll('experiences').then(experiences =>
+      this.setState({ experiences })
+    );
+  };
 
   render() {
+    //map through the props coming from Profile.js
     return (
-      <div className="btn-experiences">
-        <button>
+      <div>
+        {/* <button>
           <Link to="/experiences/new">Add Experience</Link>
-        </button>
-        <section className="experience-section">
-          {this.state.experiences.map(item => {
+        </button> */}
+        <section>
+          {this.state.experiences.map(experience => {
             return (
+              // outputting ExperienceCard
+              // in order to display particular card: experience is being passed into ExperienceCard as a prop
               <ExperienceCard
-                key={item.id}
-                event={item}
                 {...this.props}
-                deleteExperience={this.deleteExperience}
+                key={experience.id}
+                experience={experience}
+                // checkComplete={this.props.checkComplete}
+                delExperience={this.props.delExperience}
+                updateExperience={this.props.updateExperience}
               />
             );
           })}
         </section>
       </div>
-      
     );
   }
 }
+
+//PropTypes
+// ExperienceList.propTypes = {
+//   experiences: PropTypes.array.isRequired
+// };
 
 export default ExperienceList;

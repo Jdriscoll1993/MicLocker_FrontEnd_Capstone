@@ -24,7 +24,7 @@ class NavDropDown extends Component {
                     <Image
                       wrapped
                       size="medium"
-                      src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+                      src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
                     />
                     <Modal.Description>
                       <Header>Default Profile Image</Header>
@@ -33,6 +33,9 @@ class NavDropDown extends Component {
                         your e-mail address.
                       </p>
                       <p>Is it okay to use this photo?</p>
+                      <p>Status</p>
+                      <p>Buying</p>
+                      <p>Selling</p>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
@@ -51,5 +54,7 @@ class NavDropDown extends Component {
     );
   }
 }
+
+
 
 export default withRouter(NavDropDown);

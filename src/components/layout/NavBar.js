@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import NavDropDown from './NavDropDrown'
 
 export class NavBar extends Component {
+ 
   
   render() {
     return (
       <>
-        <nav className="navbar ml-right shadow">
+        <nav style={navStyle} className="navbar ml-right shadow">
           <ul className="nav nav-pills">
             <li className="nav-item">
               <Link className="nav-link" to="/friends">
@@ -23,6 +24,10 @@ export class NavBar extends Component {
       </>
     );
   }
+}
+
+const navStyle = {
+  display: "flex"
 }
 
 export default NavBar;

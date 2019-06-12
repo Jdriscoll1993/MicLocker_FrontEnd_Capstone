@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { Header } from 'semantic-ui-react';
+// import { Header } from 'semantic-ui-react';
 import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
 import Profile from '../components/user-page/Profile';
 import Friends from '../components/social-page/Friends';
+import ExperienceEditForm from '../components/user-page/experiences/ExperienceEditForm';
+import AddExperience from '../components/user-page/experiences/AddExperience'
 
 class ApplicationViews extends Component {
   render() {
@@ -41,7 +43,6 @@ class ApplicationViews extends Component {
                 );
               }}
             />
-
             {/* friends route */}
             <Route
               exact
@@ -50,7 +51,32 @@ class ApplicationViews extends Component {
                 return <Friends onLogout={this.props.onLogout} />;
               }}
             />
-            {/* account settings */}
+                      <Route
+              exact
+              path="/experiences/new"
+              render={props => {
+                return (
+                  <AddExperience
+                    {...props}
+                    experiences={this.props.experiences}
+                    addExperience={this.addExperience}
+                  />
+                );
+              }}
+            />
+            {/* experience edit form*/}
+            <Route
+              path="/experiences/edit/:experienceId"
+              render={props => {
+                return (
+                  <ExperienceEditForm
+                    {...props}
+                    experiences={this.props.experiences}
+                    updateExperience={this.updateExperience}
+                  />
+                );
+              }}
+            />
           </Router>
         </div>
       </>
