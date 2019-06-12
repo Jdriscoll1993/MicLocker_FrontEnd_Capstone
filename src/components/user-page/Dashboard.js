@@ -1,12 +1,45 @@
 import React from 'react';
-
+import { Modal, Image, Header } from 'semantic-ui-react';
 function Dashboard() {
   return (
-    <div>
-      <header style={dashStyle}>
-        <h1>Dashboard</h1>
-      </header>
-    </div>
+    <>
+      <div
+        style={{
+          background: '#ccc',
+          paddingLeft: '20px',
+          paddingRight: '20px'
+        }}
+      >
+        <h1 style={{ textAlign: 'center' }}>Dashboard</h1>
+
+        <Image
+          circular
+          style={{ display: 'flex', marginBottom: '15px' }}
+          wrapped
+          size="medium"
+          src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
+        />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'row',
+            color: '#333',
+            marginBottom: '50px'
+          }}
+        >
+          <Modal.Description>
+            <h2>Joey Driscoll</h2>
+            <h5>Status: Focal Twin6 Be 3-way Monitors FTW</h5>
+
+            <h6>
+              Im in the market for nothing because im broke'd. Accepting all
+              free buys.
+            </h6>
+            <h6>Selling everything in my studio because im broke'd</h6>
+          </Modal.Description>
+        </div>
+      </div>
+    </>
   );
 }
 export default Dashboard;
@@ -16,7 +49,7 @@ const dashStyle = {
   color: '#fff',
   textAlign: 'center',
   padding: '10px',
-  marginBottom: "4rem"
+  marginBottom: '4rem'
 };
 
 // import React from 'react'

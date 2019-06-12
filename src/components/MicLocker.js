@@ -4,8 +4,8 @@ import ApplicationViews from '../components/ApplicationViews';
 import { getUserFromLocalStorage } from '../authentication/userManager';
 import { withRouter } from 'react-router-dom';
 // import NavBar from '../components/layout/NavBar'
-// import Header from '../components/layout/Header'
-// import Footer from '../components/layout/Footer'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
 
 class MicLocker extends Component {
   state = {
@@ -21,11 +21,13 @@ class MicLocker extends Component {
   render() {
     return (
       <React.Fragment>
-        <ApplicationViews
+        <Header/>
+        <ApplicationViews 
           onLogin={user => this.setState({ user: user })}
           onLogout={this.logout}
           user={this.state.user}
         />
+        <Footer/>
       </React.Fragment>
     );
   }

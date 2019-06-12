@@ -4,30 +4,31 @@ import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
 
-import Header from '../layout/Header';
+// import Header from '../layout/Header';
 import NavBar from '../layout/NavBar';
 import Dashboard from '../user-page/Dashboard';
-import Footer from '../layout/Footer';
+// import Footer from '../layout/Footer';
 
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
-import AddExperience from '../user-page/experiences/AddExperience';
+import AddExperience from '../../components/user-page/experiences/AddExperience';
 
 // import Bio from './Bio/Bio';
 // import MyGear from './my-gear/MyGearList';
 // import WishList from './wish-list/GearWishListList';
+
 class Profile extends Component {
   //to access state: this.state.experiences
   state = {
     experiences: []
   };
 
-// logout function
+  // logout function
   logout = () => {
     this.props.onLogout();
     this.props.history.push('/login');
   };
-// get all experiences and set new state
+  // get all experiences and set new state
   componentDidMount() {
     ExperienceManager.getAll().then(allExperiences => {
       this.setState({
@@ -35,7 +36,7 @@ class Profile extends Component {
       });
     });
   }
-// POST - post a new experience, get all the experiences set new state, and direct the users to /home
+  // POST - post a new experience, get all the experiences set new state, and direct the users to /home
   addExperience = experience =>
     ExperienceManager.postExperience(experience)
       .then(() => ExperienceManager.getAll('experiences'))
@@ -45,7 +46,7 @@ class Profile extends Component {
         })
       )
       .then(() => this.props.history.push('/home'));
-// DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
+  // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
   deleteExperience = id => {
     const newState = {};
     ExperienceManager.deleteExperience(id)
@@ -62,39 +63,27 @@ class Profile extends Component {
   render() {
     return (
       <>
-      {/* semantic ui container */}
+        {/* semantic ui container */}
         <Container className="profile--container">
-          <Header />
+          {/* <Header /> */}
           <NavBar onLogout={this.props.onLogout} />
           <Dashboard />
-          <AddExperience addExperience={this.addExperience} />
+          <h1 style={{ textAlign: 'center' }}>Experiences</h1>
+          <AddExperience addExperience={this.props.addExperience} />
           <Route
             exact
             path="/home"
             render={props => {
               return (
                 <ExperienceList
+                {...props}
                   experiences={this.state.experiences}
-                  {...props}
                   deleteExperience={this.deleteExperience}
                 />
               );
             }}
           />
-          {/* <Route
-              exact
-              path="/experiences/new"
-              render={props => {
-                return (
-                  <AddExperience
-                    {...props}
-                    experiences={this.state.experiences}
-                    addExperience={this.addExperience}
-                  />
-                );
-              }}
-            /> */}
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </>
     );

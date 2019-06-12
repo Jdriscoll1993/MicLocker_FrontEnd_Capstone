@@ -10,7 +10,7 @@ function Footer() {
     );
   }
   const footerStyle = {
-    background: 'rgb(140, 100, 70)',
+    background: '#333',
     color: '#fff',
     textAlign: 'center',
     padding: '10px',
