@@ -69,7 +69,7 @@ class Profile extends Component {
           <NavBar onLogout={this.props.onLogout} />
           <Dashboard />
           <h1 style={{ textAlign: 'center' }}>Experiences</h1>
-          <AddExperience addExperience={this.props.addExperience} />
+          <AddExperience addExperience={this.addExperience} />
           <Route
             exact
             path="/home"

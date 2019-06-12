@@ -26,7 +26,7 @@ export class AddExperience extends Component {
       memory: this.state.memory
     };
 
-    this.addExperience(experience)
+    this.props.addExperience(experience)
       .then(() => this.props.history.push('/home'));
   };
 
