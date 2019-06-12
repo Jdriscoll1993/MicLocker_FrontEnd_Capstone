@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ExperienceCard from './ExperienceCard';
 // import PropTypes from
 // 'prop-types';
@@ -30,9 +30,9 @@ export class ExperienceList extends Component {
     //map through the props coming from Profile.js
     return (
       <div>
-        {/* <button>
-          <Link to="/experiences/new">Add Experience</Link>
-        </button> */}
+        <button style={{float:"right"}}>
+          <Link to="/new-experience">+</Link>
+        </button>
         <section>
           {this.state.experiences.map(experience => {
             return (

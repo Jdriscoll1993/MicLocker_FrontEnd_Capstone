@@ -8,6 +8,8 @@ import Friends from '../components/social-page/Friends';
 import ExperienceEditForm from '../components/user-page/experiences/ExperienceEditForm';
 import AddExperience from '../components/user-page/experiences/AddExperience'
 
+
+
 class ApplicationViews extends Component {
   render() {
     return (
@@ -53,7 +55,7 @@ class ApplicationViews extends Component {
             />
                       <Route
               exact
-              path="/experiences/new"
+              path="/new-experience"
               render={props => {
                 return (
                   <AddExperience
