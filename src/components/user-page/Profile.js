@@ -4,15 +4,22 @@ import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
 
-import NavBar from '../layout/NavBar';
-import Dashboard from '../user-page/Dashboard';
+// dashboard
+import Dashboard from '../user-page/Dashboard'
 
+// bio
+import BioManager from '../../modules/BioManager';
+import Bio from '../user-page/Bio/Bio';
+
+// experiences
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
 
+// gear list
 import GearManager from '../../modules/GearManager';
 import MyGearList from '../user-page/my-gear/MyGearList';
 
+// wish list
 import WishListManager from '../../modules/WishListManager';
 import GearWishListList from '../user-page/wish-list/GearWishListList';
 
@@ -21,7 +28,8 @@ class Profile extends Component {
   state = {
     experiences: [],
     gearItems: [],
-    wishItems: []
+    wishItems: [],
+    bios: []
   };
 
   // LOGOUT
@@ -47,7 +55,13 @@ class Profile extends Component {
               .then(wishItems => {
                 newState.wishItems = wishItems;
               })
-              .then(() => this.setState(newState))
+              .then(() =>
+                BioManager.getAll()
+                  .then(bios => {
+                    newState.bios = bios;
+                  })
+                  .then(() => this.setState(newState))
+              )
           )
       );
   }
@@ -66,12 +80,11 @@ class Profile extends Component {
       .then(() => this.props.history.push('/home'));
   // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
   deleteExperience = id => {
-    
     ExperienceManager.deleteExperience(id)
       .then(ExperienceManager.getAll)
       .then(experiences => {
-        console.log(this)
-        const newState = {experiences};
+        console.log(this);
+        const newState = { experiences };
         this.setState(newState);
         // this.props.history.push('/home');
       });
@@ -132,55 +145,71 @@ class Profile extends Component {
   render() {
     return (
       <>
-        {/* semantic ui container */}
-        <Container className="profile--container">
-          {/* <Header /> */}
-          {/* <NavBar onLogout={this.props.onLogout} /> */}
-          <Dashboard />
-          <h1 style={{ textAlign: 'center' }}>Experiences</h1>
-          <Route
-            exact
-            path="/home"
-            render={props => {
-              return (
-                <ExperienceList
-                  {...props}
-                  experiences={this.state.experiences}
-                  deleteExperience={this.deleteExperience}
-                />
-              );
-            }}
-          />
-          <h1 style={{ textAlign: 'center' }}>My Gear</h1>
-          <Route
-            exact
-            path="/home"
-            render={props => {
-              return (
-                <MyGearList
-                  {...props}
-                  gearItems={this.state.gearItems}
-                  deleteGearItem={this.deleteGearItem}
-                />
-              );
-            }}
-          />
-          <h1 style={{ textAlign: 'center' }}>Wish List</h1>
-          <Route
-            exact
-            path="/home"
-            render={props => {
-              return (
-                <GearWishListList
-                  {...props}
-                  wishItems={this.state.wishItems}
-                  deleteWishList={this.deleteWishList}
-                />
-              );
-            }}
-          />
-          {/* <Footer /> */}
-        </Container>
+        <div className="profile-style">
+          {/* semantic ui container */}
+          <Dashboard user={this.props.user} />
+          <Container fluid>
+
+          <div className='bio1'>
+            <Route
+              exact
+              path="/home"
+              render={props => {
+                return <Bio {...props} bios={this.state.bios} />;
+              }}
+            />
+            </div>
+
+            <div className='experiences2'>
+            <Route
+              exact
+              path="/home"
+              render={props => {
+                return (
+                  <ExperienceList
+                    {...props}
+                    experiences={this.state.experiences}
+                    deleteExperience={this.deleteExperience}
+                  />
+                );
+              }}
+            />
+            </div>
+
+            <div className='mygear3'>
+            <Route
+              exact
+              path="/home"
+              render={props => {
+                return (
+                  <MyGearList
+                    {...props}
+                    gearItems={this.state.gearItems}
+                    deleteGearItem={this.deleteGearItem}
+                  />
+                );
+              }}
+            />
+            </div>
+
+            <div className='wishlist4'>
+            <Route
+              exact
+              path="/home"
+              render={props => {
+                return (
+                  <GearWishListList
+                    {...props}
+                    wishItems={this.state.wishItems}
+                    deleteWishList={this.deleteWishList}
+                  />
+                );
+              }}
+            />
+            </div>
+            {/* <Footer /> */}
+          </Container>
+        </div>
       </>
     );
   }

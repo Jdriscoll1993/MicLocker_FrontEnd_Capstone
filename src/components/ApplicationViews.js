@@ -14,6 +14,8 @@ import AddGear from '../components/user-page/my-gear/AddGear';
 //wish list add and edit forms
 import GearWishListEditForm from '../components/user-page/wish-list/GearWishListEditForm';
 import AddWishList from '../components/user-page/wish-list/AddWishList';
+//bio edit form
+import BioEditForm from '../components/user-page/Bio/BioEditForm'
 
 class ApplicationViews extends Component {
   render() {
@@ -44,7 +46,7 @@ class ApplicationViews extends Component {
               path="/home"
               render={props => {
                 return this.props.user ? (
-                  <Profile {...props} onLogout={this.props.onLogout} />
+                  <Profile {...props} onLogout={this.props.onLogout} user={this.props.user} />
                 ) : (
                   <Redirect to="/login" />
                 );
@@ -134,6 +136,18 @@ class ApplicationViews extends Component {
                 );
               }}
             />
+            <Route
+              path="/bio/edit/:bioId"
+              render={props => {
+                return (
+                  <BioEditForm
+                    {...props}
+                    bios={this.props.bios}
+                    bio={this.bio}
+                  />
+                );
+              }}
+            />
           </Router>
         </div>
       </>
@@ -142,3 +156,4 @@ class ApplicationViews extends Component {
 }
 
 export default ApplicationViews;
+

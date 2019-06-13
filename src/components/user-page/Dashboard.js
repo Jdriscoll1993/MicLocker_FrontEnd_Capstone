@@ -1,70 +1,28 @@
 import React from 'react';
-import { Modal, Image, Button } from 'semantic-ui-react';
-function Dashboard() {
+import { Modal, Image, Button, Grid } from 'semantic-ui-react';
+function Dashboard(props) {
   return (
     <>
-      <div
-        style={{
-          background: '#ccc',
-          paddingLeft: '20px',
-          paddingRight: '20px',
-          paddingBottom: '25px'
-        }}
-      >
-        <Button
-          style={{
-            marginTop: '20px',
-            float: 'right',
-            background: '#355',
-            color: '#fff'
-          }}
-        >
-          Add Friend
-        </Button>
-        {/* <h1 style={{ textAlign: 'center' }}>Dashboard</h1> */}
-        <h2
-          style={{
-            paddingTop: '60px',
-            paddingBottom: '10px',
-            paddingLeft: '26px'
-          }}
-        >
-          Joey Driscoll
-        </h2>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            color: '#333',
-            marginBottom: '50px'
-          }}
-        >
-          <Image
-            circular
-            style={{ float: 'left', paddingRight: '20px' }}
-            wrapped
-            size="medium"
-            src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
-          />
-          <Modal.Description>
-            <div
-              style={{
-                background: '#3887',
-                padding: '20px'
-              }}
-            >
-              <h3>Status: Focal Twin6 Be 3-way Monitors FTW</h3>
+      <div style={{ padding: 50, margin: 100, background: '#ccc' }}>
+        <Modal.Content image>
+          <Button
+            style={{
+              float: 'right',
+              background: '#355',
+              color: '#f3f3f3'
+            }}
+          >
+            Add Friend
+          </Button>
 
-              <h4>
-                Buying: Im in the market for nothing because im broke'd.
-                Accepting all free buys.
-              </h4>
-              <h4>
-                Selling: Selling everything in my studio because im broke'd
-              </h4>
-            </div>
-          </Modal.Description>
-        </div>
+          <div style={{ float: 'right', margin: '50px' }}>
+            <p>Status</p>
+            <p>Buying</p>
+            <p>Selling</p>
+          </div>
+          <Image circular size="large" src={props.user.image} />
+          <Modal.Description />
+        </Modal.Content>
       </div>
     </>
   );

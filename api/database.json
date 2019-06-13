@@ -23,36 +23,86 @@
       "username": "paul",
       "password": null,
       "id": "KuNrcrjT1mVXZRLUgYHbt8ehdD83"
+    },
+    {
+      "email": "dad@dads.com",
+      "username": "dad",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560452339257?alt=media&token=b822bcda-8f81-474e-97d0-b559826fec5c",
+      "photo": {},
+      "id": "oQiYw3FHNrNq6PlFEtmrw24E77n1"
+    }
+  ],
+  "bios": [
+    {
+      "id": 1,
+      "aboutMe": "About me goes here"
     }
   ],
   "experiences": [
     {
-      "id": 2,
-      "summary": "shit throw alley",
-      "instruments": "trash can lids",
-      "memory": "fun times!!"
+      "summary": "experiences go here",
+      "instruments": "",
+      "memory": "",
+      "id": 1
+    },
+    {
+      "summary": "",
+      "instruments": "",
+      "memory": "",
+      "id": 2
+    },
+    {
+      "summary": "",
+      "instruments": "",
+      "memory": "",
+      "id": 3
+    },
+    {
+      "summary": "",
+      "instruments": "",
+      "memory": "",
+      "id": 4
     }
   ],
   "gearItems": [
     {
-      "id": 1,
-      "manufacturer": "Universal Audio!!",
-      "model": "Apollo 8p",
-      "category": "Studio Recording",
-      "subCategory": "Audio Interface",
-      "forSale": "false",
-      "url": "https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/5a29e3f3e2c4839f7f1f0463/1512694771650/?format=1500w"
+      "manufacturer": "",
+      "model": "gear goes here",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "id": 1
+    },
+    {
+      "manufacturer": "",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "id": 2
     }
   ],
   "wishItems": [
     {
-      "id": 1,
-      "manufacturer": "Universal Audio!",
-      "model": "Apollo 8p",
-      "category": "Studio Recording",
-      "subCategory": "Audio Interface",
-      "forSale": "false",
-      "url": "https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/5a29e3f3e2c4839f7f1f0463/1512694771650/?format=1500w"
+      "manufacturer": "",
+      "model": "wish list goes here",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "id": 1
+    },
+    {
+      "manufacturer": "",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "id": 2
     }
   ]
 }
