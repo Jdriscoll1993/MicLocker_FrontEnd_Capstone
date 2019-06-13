@@ -15,7 +15,7 @@ export default {
       },
     }).then(e => e.json())
   },
-  postMyGear(e) {
+  postGearItem(e) {
     return fetch(`${remoteURL}/gearItems`, {
       method: "POST",
       headers: {

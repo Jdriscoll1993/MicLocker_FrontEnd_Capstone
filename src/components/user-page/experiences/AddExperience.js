@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import ExperienceManager from '../../../modules/ExperienceManager';
 
 export class AddExperience extends Component {
   // component state -- not app level. not being shared between components
@@ -19,20 +19,20 @@ export class AddExperience extends Component {
 
   saveNewExperience = exp => {
     exp.preventDefault();
-
     const experience = {
       summary: this.state.summary,
       instruments: this.state.instruments,
       memory: this.state.memory
     };
-
-    this.props.addExperience(experience)
-      .then(() => this.props.history.push('/home'));
+    
+    ExperienceManager.postExperience(experience).then(() =>
+      this.props.history.push('/home')
+    );
   };
 
   render() {
     return (
-      <form style={{display:"flex", flex:"5"}} onSubmit={this.onSubmit}>
+      <form style={{ display: 'flex', flex: '5' }} onSubmit={this.onSubmit}>
         Description
         <input
           style={{ flex: '5', padding: '5px' }}
@@ -72,11 +72,6 @@ export class AddExperience extends Component {
 }
 
 export default withRouter(AddExperience);
-
-
-
-
-
 
 // // state is being changed as onChange is fired. visible in react tools via AddExperience
 // onSubmit = e => {

@@ -5,13 +5,13 @@ import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
 import Profile from '../components/user-page/Profile';
 import Friends from '../components/social-page/Friends';
-
+//experience add and edit forms
 import ExperienceEditForm from '../components/user-page/experiences/ExperienceEditForm';
 import AddExperience from '../components/user-page/experiences/AddExperience';
-
+//my gear add and edit forms
 import MyGearEditForm from '../components/user-page/my-gear/MyGearEditForm';
 import AddGear from '../components/user-page/my-gear/AddGear';
-
+//wish list add and edit forms
 import GearWishListEditForm from '../components/user-page/wish-list/GearWishListEditForm';
 import AddWishList from '../components/user-page/wish-list/AddWishList';
 

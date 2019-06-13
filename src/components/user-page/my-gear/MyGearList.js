@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MyGearCard from './MyGearCard';
-import GearManager from '../../../modules/GearManager';
+// import GearManager from '../../../modules/GearManager';
 export class MyGearList extends Component {
-  state = {
-    gearItems: []
-  };
 
-  componentDidMount = () => {
-    GearManager.getAll('gearItems').then(gearItems =>
-      this.setState({ gearItems })
-    );
-  };
 
   render() {
     return (
@@ -20,7 +12,7 @@ export class MyGearList extends Component {
           <Link to="/new-gear">+</Link>
         </button>
         <section>
-          {this.state.gearItems.map(gearItem => {
+          {this.props.gearItems.map(gearItem => {
             return (
               <MyGearCard
                 {...this.props}

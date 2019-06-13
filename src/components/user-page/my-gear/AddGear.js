@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import GearManager from '../../../modules/GearManager';
 export class AddGear extends Component {
   state = {
     manufacturer: '',
@@ -29,9 +29,9 @@ export class AddGear extends Component {
       url: this.state.url
     };
 
-    this.props
-      .addGearItem(gearItem)
-      .then(() => this.props.history.push('/home'));
+    GearManager.postGearItem(gearItem).then(() =>
+      this.props.history.push('/home')
+    );
   };
 
   render() {
@@ -94,7 +94,7 @@ export class AddGear extends Component {
           id="url"
           value={this.state.url}
           onChange={this.handleFieldChange}
-        />        
+        />
         <button className="button" onClick={this.saveNewGearItem}>
           Submit
         </button>

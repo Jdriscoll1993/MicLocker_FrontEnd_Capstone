@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import WishListManager from '../../../modules/WishListManager'
 export class AddWishList extends Component {
   state = {
     manufacturer: '',
@@ -29,10 +29,10 @@ export class AddWishList extends Component {
       url: this.state.url
     };
 
-    this.props
-      .addWishListItem(wishItem)
-      .then(() => this.props.history.push('/home'));
-  };
+    WishListManager.postWishList(wishItem).then(() =>
+    this.props.history.push('/home')
+  );
+};
 
   render() {
     return (
@@ -95,7 +95,7 @@ export class AddWishList extends Component {
           value={this.state.url}
           onChange={this.handleFieldChange}
         />        
-        <button className="button" onClick={this.saveNewGearItem}>
+        <button className="button" onClick={this.saveNewWishList}>
           Submit
         </button>
       </form>

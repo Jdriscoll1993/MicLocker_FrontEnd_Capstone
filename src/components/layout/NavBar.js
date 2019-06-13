@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
+import { Menu } from 'semantic-ui-react';
+import NavDropDown from './NavDropDrown';
 import { Link } from 'react-router-dom';
-import NavDropDown from './NavDropDrown'
+export default class NavBar extends Component {
+  state = { activeItem: 'home' };
 
-export class NavBar extends Component {
- 
-  
   render() {
     return (
-      <>
-        <nav style={navStyle} className="navbar ml-right shadow">
-          <ul className="nav nav-pills">
-            <li className="nav-item">
-              <Link className="nav-link" to="/friends">
-                Connect
-              </Link>
-            </li>
-            <li className="nav-item"> <NavDropDown onLogout={this.props.onLogout}/></li>
-          </ul>
-         
-          
-          
-        </nav>
-      </>
+      <Menu secondary style={{ background: '#f3f3f3' }}>
+        <Menu.Item>
+          <Link className="nav-link" to="/home">
+            Profile
+          </Link>
+        </Menu.Item>
+        <Menu.Item position="right">
+          <Link className="nav-link" to="/friends">
+            Friends
+          </Link>
+        </Menu.Item>
+        <Menu.Menu position="right">
+          <Menu.Item className="nav-item">
+            <NavDropDown onLogout={this.props.onLogout} />
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
     );
   }
 }
-
-const navStyle = {
-  display: "flex"
-}
-
-export default NavBar;
