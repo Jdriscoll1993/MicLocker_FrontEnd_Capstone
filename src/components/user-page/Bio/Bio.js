@@ -4,7 +4,7 @@ export class Bio extends Component {
   render() {
     return (
       <div>
-        {/* Bio */}
+        Bio
       </div>
     )
   }

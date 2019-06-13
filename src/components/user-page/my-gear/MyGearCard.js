@@ -43,7 +43,7 @@ export class MyGearCard extends Component {
         <h3 style={{ color: 'goldenrod' }}>For Sale:</h3>
         <h5>{forSale}</h5>
         <h3 style={{ color: 'goldenrod' }}>Image:</h3> 
-        <img src={url}/>
+        <img src={url} alt="gear pic" style={{width:"50%"}}/><br/>
         <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
           Delete
         </button>

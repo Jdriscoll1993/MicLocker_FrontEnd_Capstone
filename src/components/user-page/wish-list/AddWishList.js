@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import GearManager from '../../../modules/GearManager';
-export class AddGear extends Component {
+import WishListManager from '../../../modules/WishListManager'
+export class AddWishList extends Component {
   state = {
     manufacturer: '',
     model: '',
@@ -11,16 +11,16 @@ export class AddGear extends Component {
     url: ''
   };
 
-  handleFieldChange = gear => {
+  handleFieldChange = wishlist => {
     const stateToChange = {};
-    stateToChange[gear.target.id] = gear.target.value;
+    stateToChange[wishlist.target.id] = wishlist.target.value;
     this.setState(stateToChange);
   };
 
-  saveNewGearItem = gear => {
-    gear.preventDefault();
+  saveNewWishList = wishlist => {
+    wishlist.preventDefault();
 
-    const gearItem = {
+    const wishItem = {
       manufacturer: this.state.manufacturer,
       model: this.state.model,
       category: this.state.category,
@@ -29,10 +29,10 @@ export class AddGear extends Component {
       url: this.state.url
     };
 
-    GearManager.postGearItem(gearItem).then(() =>
-      this.props.history.push('/home')
-    );
-  };
+    WishListManager.postWishList(wishItem).then(() =>
+    this.props.history.push('/home')
+  );
+};
 
   render() {
     return (
@@ -94,8 +94,8 @@ export class AddGear extends Component {
           id="url"
           value={this.state.url}
           onChange={this.handleFieldChange}
-        />
-        <button className="button" onClick={this.saveNewGearItem}>
+        />        
+        <button className="button" onClick={this.saveNewWishList}>
           Submit
         </button>
       </form>
@@ -103,4 +103,4 @@ export class AddGear extends Component {
   }
 }
 
-export default withRouter(AddGear);
+export default withRouter(AddWishList);

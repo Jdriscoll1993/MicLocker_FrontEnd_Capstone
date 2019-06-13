@@ -24,13 +24,12 @@ export default class Login extends Component {
     });
   };
 
-
   render() {
     return (
-      <Container className="auth--container">
-        <Grid>
+      <Container style={{ width: 1500, height: 1500 }}className="auth--container">
+        <Grid >
           <Grid.Row centered>
-            <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
+            <Grid.Column largeScreen={10} computer={10} tablet={10} mobile={16}>
               <Segment>
                 <Header as="h1" textAlign="center">
                   Log In

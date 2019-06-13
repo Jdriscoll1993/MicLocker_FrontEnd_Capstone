@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
 import { Button, Dropdown, Modal, Image, Header } from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 class NavDropDown extends Component {
   render() {
     return (
       <Dropdown text="Username">
         <Dropdown.Menu>
           <Dropdown.Item>
-            <ul className="nav nav-pills">
-              <li className="nav-item">
-                <Link className="nav-link" to="/home">
-                  Profile
-                </Link>
-              </li>
-            </ul>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <ul className="nav nav-pills">
-              <li className="nav-item">
+            <div className="nav nav-pills">
+              <div className="nav-item">
                 <Modal trigger={<Button>Account Settings</Button>}>
                   <Modal.Header>Select a Photo</Modal.Header>
                   <Modal.Content image>
@@ -39,12 +30,12 @@ class NavDropDown extends Component {
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
-              </li>
-            </ul>
+              </div>
+            </div>
           </Dropdown.Item>
           <Dropdown.Item>
             <Button
-              onClick={() => this.props.onLogout()}
+              onClick={this.props.onLogout}
               content="Log Out"
               color="green"
             />
@@ -54,7 +45,5 @@ class NavDropDown extends Component {
     );
   }
 }
-
-
 
 export default withRouter(NavDropDown);
