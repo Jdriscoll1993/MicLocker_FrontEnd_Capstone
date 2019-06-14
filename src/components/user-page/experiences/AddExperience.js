@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ExperienceManager from '../../../modules/ExperienceManager';
-
+import * as userManager from '../../../authentication/userManager'
 export class AddExperience extends Component {
   // component state -- not app level. not being shared between components
   state = {
     summary: '',
     instruments: '',
-    memory: ''
+    memory: '',
+    userId: ''
+  };
+
+
+  componentDidMount = () => {
+    let userInfo = userManager.getUserFromLocalStorage();
+    this.setState({ userId: userInfo.id });
   };
 
   // Update state whenever an input field is edited

@@ -53,7 +53,7 @@ export class GearWishListCard extends Component {
         type="button"
         onClick={() => {
           this.props.history.push(
-            `/gearItems/edit/${this.props.gearItem.id}`
+            `/wishItems/edit/${this.props.wishItem.id}`
           );
         }}
       >

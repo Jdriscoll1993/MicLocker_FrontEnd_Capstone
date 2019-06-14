@@ -1,3 +1,5 @@
+import { getUserFromLocalStorage } from "../authentication/userManager";
+
 const remoteURL = "http://localhost:8088"
 
 export default {
@@ -16,6 +18,8 @@ export default {
     }).then(e => e.json())
   },
   postWishList(e) {
+    let user = getUserFromLocalStorage();
+    e.userId = user.id;
     return fetch(`${remoteURL}/wishItems`, {
       method: "POST",
       headers: {
@@ -25,6 +29,8 @@ export default {
     }).then(e => e.json())
   },
   putWishList(editedWishList) {
+    let user = getUserFromLocalStorage();
+    editedWishList.userId = user.id;
     return fetch(`${remoteURL}/wishItems/${editedWishList.id}`, {
       method: "PUT",
       headers: {

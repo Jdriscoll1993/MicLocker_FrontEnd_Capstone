@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import GearManager from '../../../modules/GearManager';
+import * as userManager from '../../../authentication/userManager'
 export class AddGear extends Component {
   state = {
     manufacturer: '',
@@ -8,7 +9,13 @@ export class AddGear extends Component {
     category: '',
     subCategory: '',
     forSale: '',
-    url: ''
+    url: '',
+    userId: ''
+  };
+
+  componentDidMount = () => {
+    let userInfo = userManager.getUserFromLocalStorage();
+    this.setState({ userId: userInfo.id });
   };
 
   handleFieldChange = gear => {

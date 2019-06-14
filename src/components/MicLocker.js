@@ -24,9 +24,13 @@ class MicLocker extends Component {
     return (
       <React.Fragment>
         <Header/>
-        <NavBar onLogout={this.logout}/>
+        {
+       
+          <NavBar user={this.state.user} onLogout={this.logout}/>  
+        }
+        
         <ApplicationViews 
-          onLogin={user => this.setState({ user: user })}
+          onLogin={user => this.setState({ user: user, isAuthenticated: true })}
           onLogout={this.logout}
           user={this.state.user}
         />

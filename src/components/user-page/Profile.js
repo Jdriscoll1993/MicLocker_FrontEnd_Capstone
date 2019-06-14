@@ -207,7 +207,6 @@ class Profile extends Component {
               }}
             />
             </div>
-            {/* <Footer /> */}
           </Container>
         </div>
       </>

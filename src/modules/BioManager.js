@@ -1,3 +1,5 @@
+import { getUserFromLocalStorage } from "../authentication/userManager";
+
 const remoteURL = "http://localhost:8088"
 
 export default {
@@ -15,16 +17,19 @@ export default {
   //     },
   //   }).then(e => e.json())
   // },
-  // postBio(e) {
-  //   return fetch(`${remoteURL}/bio`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(e)
-  //   }).then(e => e.json())
-  // },
+  postBio(newBio) {
+    return fetch(`${remoteURL}/bios`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newBio)
+    }).then(e => e.json())
+  },
   putBio(editedBio) {
+
+    let user = getUserFromLocalStorage();
+    editedBio.userId = user.id;
     return fetch(`${remoteURL}/bios/${editedBio.id}`, {
       method: "PUT",
       headers: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Image, Button, Grid } from 'semantic-ui-react';
+import { Modal, Image, Button, Grid, Row } from 'semantic-ui-react';
 function Dashboard(props) {
   return (
     <>
@@ -11,15 +11,15 @@ function Dashboard(props) {
               background: '#355',
               color: '#f3f3f3'
             }}
-          >
+            >
             Add Friend
           </Button>
 
-          <div style={{ float: 'right', margin: '50px' }}>
-            <p>Status</p>
-            <p>Buying</p>
-            <p>Selling</p>
-          </div>
+            <div style={{float:'right'}}>
+              <h2>Status</h2>
+              <h2>Buying</h2>
+              <h2>Selling</h2>
+            </div>
           <Image circular size="large" src={props.user.image} />
           <Modal.Description />
         </Modal.Content>

@@ -21,7 +21,7 @@ export default class NavBar extends Component {
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item className="nav-item">
-            <NavDropDown onLogout={this.props.onLogout} />
+            <NavDropDown user={this.props.user} onLogout={this.props.onLogout} />
           </Menu.Item>
         </Menu.Menu>
       </Menu>

@@ -19,7 +19,10 @@ export default class Register extends Component {
     email: '',
     username: '',
     password: '',
-    image: ''
+    image: '',
+    status:'',
+    buying:'',
+    selling:''
   };
 
   submit = () => {
