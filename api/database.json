@@ -5,108 +5,71 @@
       "username": "Joey",
       "password": null,
       "id": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560460824126?alt=media&token=5c32e986-418f-4dc1-98d4-ab8601e6b076",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560452339257?alt=media&token=d40f9eb4-71d6-4447-828b-af9b9fcb9bde",
       "photo": {},
       "status": "YEEET",
-      "buying": "broke"
-    },
-    {
-      "email": "kmage@mail.com",
-      "username": "KMage",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560460824126?alt=media&token=5c32e986-418f-4dc1-98d4-ab8601e6b076",
-      "photo": {},
-      "id": "fqrLhXP4O8VBWMnAAqNhQu1X2BH3"
-    },
-    {
-      "email": "lonnie@mail.com",
-      "username": "lonnie",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560460899925?alt=media&token=c0815903-21ad-4a69-add4-e6c4e94d3281",
-      "photo": {},
-      "id": "NAiXNpQTFFh4fFVaGwSRSetkgC13",
-      "status": "weee"
-    },
-    {
-      "email": "today@mail.com",
-      "username": "today",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560519922038?alt=media&token=5323d0ea-8ab9-4d43-bc98-0594df5e2994",
-      "status": "",
-      "buying": "",
-      "selling": "",
-      "photo": {},
-      "id": "UAGZ87yVBfcS4etnZUst5GiNvzk2"
-    },
-    {
-      "email": "carl@mail.com",
-      "username": "caarl",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560521876031?alt=media&token=930f88d3-6f6d-4e3f-991f-b1842628195a",
-      "status": "",
-      "buying": "",
-      "selling": "",
-      "photo": {},
-      "id": "uWYg8Hq0pKY62nurwMv4VaQPKJJ2"
+      "buying": "broke",
+      "selling": "everyting"
     },
     {
       "email": "gary@mail.com",
       "username": "gary",
       "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560522504757?alt=media&token=d69e0165-c2ee-4a97-bae3-74d54bc01143",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529500856?alt=media&token=e8dacffe-05c3-4676-b641-6c579f08128a",
       "status": "",
       "buying": "",
       "selling": "",
       "photo": {},
-      "id": "NTMxlqx3MHUZj8dCtp9gtpxjTcf2"
+      "id": "XWSrmTXFOUQXKgbw5UP9irq5fwg2"
     },
     {
-      "email": "tony@mail.com",
-      "username": "tony",
+      "email": "phil@mail.com",
+      "username": "phil",
       "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560526599907?alt=media&token=1d8ef2b4-24fc-4217-9556-b2851478eeed",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529556748?alt=media&token=545243d8-7fbb-479e-8da9-e75301cc002a",
       "status": "",
       "buying": "",
       "selling": "",
       "photo": {},
-      "id": "JpN2gCB9bIYaK1CVxzaL6hwOiog1"
+      "id": "seIyrmu6MVNyAGMGRyobPYpNjxy2"
+    },
+    {
+      "email": "george@mail.com",
+      "username": "george",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529613227?alt=media&token=955bdf1d-fe31-466d-a5d8-1d685a09efcd",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "0UHxWJyqNIe08yfzigKsuJo4mUM2"
     }
   ],
   "bios": [
     {
       "id": 1,
-      "aboutMe": "get some",
-      "userId": "fqrLhXP4O8VBWMnAAqNhQu1X2BH3"
-    },
-    {
-      "id": 2,
-      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
-      "userId": "NAiXNpQTFFh4fFVaGwSRSetkgC13"
-    },
-    {
-      "id": 3,
-      "aboutMe": "troll me!",
-      "userId": "UAGZ87yVBfcS4etnZUst5GiNvzk2"
-    },
-    {
-      "id": 4,
       "aboutMe": "c(ru)d",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "userId": "uWYg8Hq0pKY62nurwMv4VaQPKJJ2",
+      "userId": "tdz99460VreF1NFf0QMo5ADxDvk2",
       "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
+      "id": 2
+    },
+    {
+      "userId": "XWSrmTXFOUQXKgbw5UP9irq5fwg2",
+      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
+      "id": 3
+    },
+    {
+      "userId": "seIyrmu6MVNyAGMGRyobPYpNjxy2",
+      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
+      "id": 4
+    },
+    {
+      "userId": "0UHxWJyqNIe08yfzigKsuJo4mUM2",
+      "aboutMe": "Please write about yourself",
       "id": 5
-    },
-    {
-      "id": 6,
-      "aboutMe": "I'm a cool guy",
-      "userId": "NTMxlqx3MHUZj8dCtp9gtpxjTcf2"
-    },
-    {
-      "userId": "JpN2gCB9bIYaK1CVxzaL6hwOiog1",
-      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
-      "id": 7
     }
   ],
   "experiences": [
@@ -116,47 +79,25 @@
       "instruments": "",
       "memory": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "userId": "tdz99460VreF1NFf0QMo5ADxDvk2",
+      "summary": "hey",
+      "instruments": "yo",
+      "memory": "sup",
+      "id": 2
+    },
+    {
+      "userId": "XWSrmTXFOUQXKgbw5UP9irq5fwg2",
+      "summary": "hey",
+      "instruments": "yo",
+      "memory": "sup",
+      "id": 3
     }
   ],
   "gearItems": [
     {
       "id": 1,
-      "manufacturer": "Universal Audio!",
-      "model": "Apollo 8p",
-      "category": "Studio Recording",
-      "subCategory": "Audio Interface",
-      "forSale": "",
-      "url": "https://dt7v1i9vyp3mf.cloudfront.net/styles/header/s3/imagelibrary/U/UniversalAudioApollo8p_01-6VHiA8_apg1MxSEtYU_XK_8FOWCiGqcX.jpg"
-    },
-    {
-      "manufacturer": "hey",
-      "model": "",
-      "category": "",
-      "subCategory": "",
-      "forSale": "",
-      "url": "",
-      "id": 2
-    },
-    {
-      "manufacturer": "",
-      "model": "",
-      "category": "",
-      "subCategory": "3yert4",
-      "forSale": "",
-      "url": "",
-      "id": 3
-    },
-    {
-      "manufacturer": "hey",
-      "model": "",
-      "category": "",
-      "subCategory": "",
-      "forSale": "",
-      "url": "",
-      "id": 4
-    },
-    {
-      "id": 5,
       "manufacturer": "crud",
       "model": "",
       "category": "",
@@ -175,7 +116,7 @@
       "forSale": "",
       "url": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 2
+      "id": 1
     }
   ]
 }

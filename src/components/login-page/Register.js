@@ -20,25 +20,26 @@ export default class Register extends Component {
     username: '',
     password: '',
     image: '',
-    status:'',
-    buying:'',
-    selling:''
+    status: '',
+    buying: '',
+    selling: ''
   };
 
   submit = () => {
-    const storageRef=firebase.storage().ref('profiles')
+    const storageRef = firebase.storage().ref('profiles');
     const ref = storageRef.child(`${Date.now()}`);
 
-    ref.put(this.state.photo)
-     .then(data => data.ref.getDownloadURL())
-     .then(url => {
-       this.setState({image: url})
-    register(this.state).then(newUser => {
-      this.props.onRegister(newUser)
-      this.props.history.push('/');
-      
-    });
-  })}
+    ref
+      .put(this.state.photo)
+      .then(data => data.ref.getDownloadURL())
+      .then(url => {
+        this.setState({ image: url });
+        register(this.state).then(newUser => {
+          this.props.onRegister(newUser);
+          this.props.history.push('/login');
+        });
+      });
+  };
 
   render() {
     return (
@@ -74,10 +75,11 @@ export default class Register extends Component {
                   />
                   <Form.Field control="input" type="hidden" />
                   <Form.Field
-                  control="input"
-                  type="file"
-                  label="Photo"
-                  onChange={(e) => this.setState({ photo: e.target.files[0] })} />
+                    control="input"
+                    type="file"
+                    label="Photo"
+                    onChange={e => this.setState({ photo: e.target.files[0] })}
+                  />
                   <Button fluid content="Register" color="green" />
                 </Form>
                 <Message className="auth--message">

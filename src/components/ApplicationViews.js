@@ -18,20 +18,20 @@ import AddWishList from '../components/user-page/wish-list/AddWishList';
 import BioEditForm from '../components/user-page/Bio/BioEditForm'
 
 import BioManager from '../modules/BioManager'
-import ExperienceManager from '../modules/ExperienceManager';
+// import ExperienceManager from '../modules/ExperienceManager';
 class ApplicationViews extends Component {
 
 
   onRegister = (user) => {
 
-    const newBio = {userId:user.id, aboutMe: "I'm a cool guy that likes to hang out and play gamecube"}
+    const newBio = {userId:user.id, aboutMe: "Please write about yourself"}
     BioManager.postBio(newBio).then(newBio => {
       console.log(newBio);
     })
-    const newExp = {userId:user.id, summary:"hey", instruments:"yo", memory:"sup"}
-    ExperienceManager.postExperience(newExp).then(newExp => {
-      console.log(newExp)
-    })
+    // const newExp = {userId:user.id, summary:"hey", instruments:"yo", memory:"sup"}
+    // ExperienceManager.postExperience(newExp).then(newExp => {
+    //   console.log(newExp)
+    // })
 
     this.setState({
       user: user
