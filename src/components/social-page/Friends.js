@@ -16,6 +16,7 @@ export default class Friends extends Component {
 
   render() {
     return (
+      <div style={{background:"#c0ffee"}}>
       <Container className="profile--container">
         {/* <Header /> */}
         {/* <NavBar onLogout={this.props.onLogout}/> */}
@@ -24,6 +25,7 @@ export default class Friends extends Component {
         <UserList/>
         {/* <Footer /> */}
       </Container>
+      </div>
     );
   }
 }

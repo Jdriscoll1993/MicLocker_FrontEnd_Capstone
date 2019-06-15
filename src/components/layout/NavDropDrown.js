@@ -10,9 +10,11 @@ import {
 import { withRouter } from 'react-router-dom';
 import { getUserFromLocalStorage } from '../../authentication/userManager';
 
-// Wrap inputs in Form and attach button similiar to login page.
+// import SettingsManager from '../../modules/SettingsManager';
 
-// The Form will have an onSubmit function that autmically gets called the button is clicked (login page)
+// Wrap inputs in Form and attach button similiar to login page. +
+
+// The Form will have an onSubmit function that autmically gets called when the button is clicked (login page) +
 
 // submit () { logic to PUT (json server) update to current user will be in this function }
 
@@ -27,6 +29,13 @@ class NavDropDown extends Component {
     initialLoad: false,
     editableInfo: this.props.user
   };
+
+  // submitSettings = () => {
+  //   SettingsManager.putSettings(this.props.status, this.props.buying, this.props.selling).then(user => {
+  //     this.props.onSubmit(user);
+  //     this.props.history.push('/home');
+  //   });
+  // };
 
   onStatusChange(newStatus) {
     let editableInfo = this.state.editableInfo;
@@ -48,7 +57,8 @@ class NavDropDown extends Component {
 
   render() {
     return (
-      <Dropdown text="Username">
+      // {this.props.user.username}
+      <Dropdown text="username">
         <Dropdown.Menu>
           <Dropdown.Item>
             <div className="nav nav-pills">
@@ -65,7 +75,7 @@ class NavDropDown extends Component {
                       {/* <p>{this.state.editableInfo.buying}</p>
                       <p>{this.state.editableInfo.selling}</p>  */}
                       Status
-                      <Form className="settings--form" onSubmit={this.submit}>
+                      <Form className="settings--form" onSubmit={this.submitSettings}>
                         {/* <Form.Field
                           control="input"
                           value={this.state.editableInfo.status}

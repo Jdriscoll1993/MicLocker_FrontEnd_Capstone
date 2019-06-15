@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export class FriendList extends Component {
   render() {
     return (
-      <div>
+      <aside style={{background:"#ccc", padding: '200px', float:"left"}}>
         Friend List
-      </div>
+      </aside>
     )
   }
 }

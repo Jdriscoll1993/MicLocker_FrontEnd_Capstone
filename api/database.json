@@ -12,64 +12,27 @@
       "selling": "everyting"
     },
     {
-      "email": "gary@mail.com",
-      "username": "gary",
+      "email": "paul@mail.com",
+      "username": "paul",
       "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529500856?alt=media&token=e8dacffe-05c3-4676-b641-6c579f08128a",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560538428580?alt=media&token=c80eeaca-cb24-4ce2-b431-c32fe5738048",
       "status": "",
       "buying": "",
       "selling": "",
       "photo": {},
-      "id": "XWSrmTXFOUQXKgbw5UP9irq5fwg2"
-    },
-    {
-      "email": "phil@mail.com",
-      "username": "phil",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529556748?alt=media&token=545243d8-7fbb-479e-8da9-e75301cc002a",
-      "status": "",
-      "buying": "",
-      "selling": "",
-      "photo": {},
-      "id": "seIyrmu6MVNyAGMGRyobPYpNjxy2"
-    },
-    {
-      "email": "george@mail.com",
-      "username": "george",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560529613227?alt=media&token=955bdf1d-fe31-466d-a5d8-1d685a09efcd",
-      "status": "",
-      "buying": "",
-      "selling": "",
-      "photo": {},
-      "id": "0UHxWJyqNIe08yfzigKsuJo4mUM2"
+      "id": "JgEroIcG8kTYLbjd3yeTI4dRcMm2"
     }
   ],
   "bios": [
     {
       "id": 1,
-      "aboutMe": "c(ru)d",
+      "aboutMe": "read and update",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "userId": "tdz99460VreF1NFf0QMo5ADxDvk2",
-      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
-      "id": 2
-    },
-    {
-      "userId": "XWSrmTXFOUQXKgbw5UP9irq5fwg2",
-      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
-      "id": 3
-    },
-    {
-      "userId": "seIyrmu6MVNyAGMGRyobPYpNjxy2",
-      "aboutMe": "I'm a cool guy that likes to hang out and play gamecube",
-      "id": 4
-    },
-    {
-      "userId": "0UHxWJyqNIe08yfzigKsuJo4mUM2",
+      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
       "aboutMe": "Please write about yourself",
-      "id": 5
+      "id": 2
     }
   ],
   "experiences": [
@@ -79,20 +42,6 @@
       "instruments": "",
       "memory": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
-    },
-    {
-      "userId": "tdz99460VreF1NFf0QMo5ADxDvk2",
-      "summary": "hey",
-      "instruments": "yo",
-      "memory": "sup",
-      "id": 2
-    },
-    {
-      "userId": "XWSrmTXFOUQXKgbw5UP9irq5fwg2",
-      "summary": "hey",
-      "instruments": "yo",
-      "memory": "sup",
-      "id": 3
     }
   ],
   "gearItems": [
@@ -117,6 +66,13 @@
       "url": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 1
+    }
+  ],
+  "followUsers": [
+    {
+      "id": 1,
+      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     }
   ]
 }
