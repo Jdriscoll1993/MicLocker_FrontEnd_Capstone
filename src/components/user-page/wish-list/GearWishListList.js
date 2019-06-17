@@ -4,10 +4,6 @@ import GearWishListCard from '../wish-list/GearWishListCard';
 // import WishListManager from '../../../modules/WishListManager';
 import * as userManager from '../../../authentication/userManager';
 export class GearWishListList extends Component {
-  state = {
-    user: {}
-  };
-
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
     this.setState({ user: userInfo });
@@ -21,13 +17,15 @@ export class GearWishListList extends Component {
         </button>
         <section>
           {this.props.wishItems.map(wishItem => {
-            if (this.state.user.id === wishItem.userId) {
+   
+            if (this.props.user.id === wishItem.userId) {
               return (
                 <GearWishListCard
                   {...this.props}
                   key={wishItem.id}
                   wishItem={wishItem}
                   delItem={this.props.delItem}
+                  user={this.props.user}
                 />
               );
             }
@@ -39,14 +37,3 @@ export class GearWishListList extends Component {
 }
 
 export default GearWishListList;
-
-// {this.state.gearItems.map(gearItem => {
-//   return (
-//     <MyGearCard
-//       {...this.props}
-//       key={gearItem.id}
-//       gearItem={gearItem}
-//       delItem={this.props.delItem}
-//     />
-//   );
-// })}

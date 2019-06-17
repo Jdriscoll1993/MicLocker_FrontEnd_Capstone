@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { withRouter} from 'react-router-dom'
-import GearManager from '../../../modules/GearManager'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import GearManager from '../../../modules/GearManager';
 
 export class MyGearEditForm extends Component {
   state = {
@@ -13,16 +13,18 @@ export class MyGearEditForm extends Component {
   };
 
   componentDidMount() {
-    GearManager.get(this.props.match.params.gearItemId).then(gearItem => {
-      this.setState({
-        manufacturer: gearItem.manufacturer,
-        model: gearItem.model,
-        category: gearItem.category,
-        subCategory: gearItem.subCategory,
-        forSale: gearItem.forSale,
-        url: gearItem.url
-      });
-    });
+    GearManager.getOneUser(this.props.match.params.gearItemId).then(
+      gearItem => {
+        this.setState({
+          manufacturer: gearItem.manufacturer,
+          model: gearItem.model,
+          category: gearItem.category,
+          subCategory: gearItem.subCategory,
+          forSale: gearItem.forSale,
+          url: gearItem.url
+        });
+      }
+    );
   }
 
   handleFieldChange = gear => {
@@ -108,12 +110,12 @@ export class MyGearEditForm extends Component {
           id="url"
           value={this.state.url}
           onChange={this.handleFieldChange}
-        />        
+        />
         <button className="button" onClick={this.updateGearItem}>
           Submit
         </button>
       </form>
-    )
+    );
   }
 }
 

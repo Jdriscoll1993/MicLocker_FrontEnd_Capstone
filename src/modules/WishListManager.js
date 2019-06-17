@@ -9,6 +9,9 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/wishItems`).then(e => e.json())
   },
+  getOneUser(id){
+    return fetch(`${remoteURL}/wishItems?/userId=${id}`)
+  },
   deleteWishList(id) {
     return fetch(`${remoteURL}/wishItems/${id}`, {
       method: "DELETE",

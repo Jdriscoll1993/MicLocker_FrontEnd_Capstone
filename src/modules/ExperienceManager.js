@@ -10,6 +10,9 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/experiences`).then(e => e.json())
   },
+  getOneUser(id){
+    return fetch(`${remoteURL}/experiences?/userId=${id}`)
+  },
   deleteExperience(id) {
     return fetch(`${remoteURL}/experiences/${id}`, {
       method: "DELETE",

@@ -3,9 +3,9 @@ import BioCard from '../Bio/BioCard';
 // import ExperienceManager from '../../../modules/ExperienceManager';
 import * as userManager from '../../../authentication/userManager';
 export class Bio extends Component {
-  state = {
-    user: {}
-  };
+  // state = {
+  //   user: {}
+  // };
 
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
@@ -17,8 +17,15 @@ export class Bio extends Component {
     return (
       <section>
         {this.props.bios.map(bio => {
-          if (this.state.user.id === bio.userId) {
-            return <BioCard {...this.props} key={bio.id} bio={bio} />;
+          if (this.props.user.id === bio.userId) {
+            return (
+              <BioCard
+                {...this.props}
+                key={bio.id}
+                bio={bio}
+                user={this.props.user}
+              />
+            );
           }
         })}
       </section>

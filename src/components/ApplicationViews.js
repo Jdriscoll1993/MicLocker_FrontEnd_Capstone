@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import {  Route, Redirect } from 'react-router-dom';
 // import { Header } from 'semantic-ui-react';
 import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
@@ -38,15 +38,15 @@ class ApplicationViews extends Component {
     const newBio = { userId: user.id, aboutMe: 'Please write about yourself' };
     BioManager.postBio(newBio).then(newBio => {
       console.log(newBio);
+      // this.setState({
+      //   user: user
+      // });
     });
     // const newExp = {userId:user.id, summary:"hey", instruments:"yo", memory:"sup"}
     // ExperienceManager.postExperience(newExp).then(newExp => {
     //   console.log(newExp)
     // })
 
-    this.setState({
-      user: user
-    });
   };
 
   isAuthenticated = () => localStorage.getItem('user') !== null;
@@ -55,7 +55,7 @@ class ApplicationViews extends Component {
     return (
       <>
         <div className="App">
-          <Router>
+          
             {/* login route */}
             <Route
               path="/login"
@@ -94,7 +94,8 @@ class ApplicationViews extends Component {
               exact
               path="/friends"
               render={props => {
-                return <Friends {...props} onLogout={this.props.onLogout} />;
+                return <Friends {...props} onLogout={this.props.onLogout}
+                user={this.props.user} />;
               }}
             />
             <Route
@@ -180,7 +181,6 @@ class ApplicationViews extends Component {
                   <BioEditForm
                     {...props}
                     bios={this.props.bios}
-                    bio={this.bio}
                   />
                 );
               }}
@@ -206,13 +206,13 @@ class ApplicationViews extends Component {
                       selling: null
                     };
                   }
-                  return <OthersProfiles {...props} user={user} />;
+                  return <OthersProfiles {...props} user={this.props.user} />;
                 } else {
                   return <Redirect to="/login" />;
                 }
               }}
             />
-          </Router>
+         
         </div>
       </>
     );

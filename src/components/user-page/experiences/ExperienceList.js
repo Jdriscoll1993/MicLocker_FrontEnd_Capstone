@@ -4,9 +4,9 @@ import ExperienceCard from './ExperienceCard';
 // import ExperienceManager from '../../../modules/ExperienceManager';
 import * as userManager from '../../../authentication/userManager';
 export class ExperienceList extends Component {
-  state = {
-    user: {}
-  };
+  // state = {
+  //   user: {}
+  // };
 
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
@@ -22,13 +22,14 @@ export class ExperienceList extends Component {
         </button>
         <section>
           {this.props.experiences.map(experience => {
-            if (this.state.user.id === experience.userId) {
+            if (this.props.user.id === experience.userId) {
               return (
                 <ExperienceCard
                   {...this.props}
                   key={experience.id}
                   experience={experience}
                   delExperience={this.props.delExperience}
+                  user={this.props.user}
                 />
               );
             }

@@ -4,10 +4,6 @@ import MyGearCard from './MyGearCard';
 // import GearManager from '../../../modules/GearManager';
 import * as userManager from '../../../authentication/userManager';
 export class MyGearList extends Component {
-  state = {
-    user: {}
-  };
-
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
     this.setState({ user: userInfo });
@@ -21,13 +17,14 @@ export class MyGearList extends Component {
         </button>
         <section>
           {this.props.gearItems.map(gearItem => {
-            if (this.state.user.id === gearItem.userId) {
+            if (this.props.user.id === gearItem.userId) {
               return (
                 <MyGearCard
                   {...this.props}
                   key={gearItem.id}
                   gearItem={gearItem}
                   delItem={this.props.delItem}
+                  user={this.props.user}
                 />
               );
             }

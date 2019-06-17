@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MicLocker.css';
+import { BrowserRouter as Router } from 'react-router-dom'
 import ApplicationViews from '../components/ApplicationViews';
 import { getUserFromLocalStorage } from '../authentication/userManager';
 import { withRouter } from 'react-router-dom';
@@ -21,8 +22,9 @@ class MicLocker extends Component {
   render() {
     return (
       <React.Fragment>
+        <Router>
         <Header />
-        {<NavBar user={this.state.user} onLogout={this.logout} />}
+        <NavBar user={this.state.user} onLogout={this.logout} />
 
         <ApplicationViews
           onLogin={user => this.setState({ user: user, isAuthenticated: true })}
@@ -30,6 +32,7 @@ class MicLocker extends Component {
           user={this.state.user}
         />
         {/* <Footer /> */}
+        </Router>
       </React.Fragment>
     );
   }

@@ -29,8 +29,7 @@ class OthersProfiles extends Component {
     experiences: [],
     gearItems: [],
     wishItems: [],
-    bios: [],
-    user: {}
+    bios: []
   };
 
   // GET get all data and set new state
@@ -147,13 +146,13 @@ class OthersProfiles extends Component {
     return (
       <>
         <div className="profile-style">
-          <Dashboard user={this.state.user} />
+          <Dashboard user={this.props.user} />
           <Container fluid>
             <div className="bio1">
               <Bio
                 {...this.props}
                 bios={this.state.bios}
-                user={this.state.user}
+                // user={this.props.user}
               />
             </div>
 
@@ -162,7 +161,7 @@ class OthersProfiles extends Component {
                 {...this.props}
                 experiences={this.state.experiences}
                 deleteExperience={this.deleteExperience}
-                user={this.state.user}
+                // user={this.props.user}
               />
             </div>
 
@@ -171,13 +170,13 @@ class OthersProfiles extends Component {
                 {...this.props}
                 gearItems={this.state.gearItems}
                 deleteGearItem={this.deleteGearItem}
-                user={this.state.user}
+                // user={this.props.user}
               />
             </div>
 
             <div className="wishlist4">
               <GearWishListList
-                user={this.state.user}
+                // user={this.props.user}
                 {...this.props}
                 wishItems={this.state.wishItems}
                 deleteWishList={this.deleteWishList}

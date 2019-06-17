@@ -9,6 +9,9 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/gearItems`).then(e => e.json())
   },
+  getOneUser(id){
+    return fetch(`${remoteURL}/gearItems?/userId=${id}`)
+  },
   deleteGearItem(id) {
     return fetch(`${remoteURL}/gearItems/${id}`, {
       method: "DELETE",

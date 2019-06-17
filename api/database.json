@@ -32,75 +32,127 @@
       "selling": "",
       "photo": {},
       "id": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2"
+    },
+    {
+      "email": "C@mail.com",
+      "username": "Carroll",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794306162?alt=media&token=e30be8ad-f379-41d2-b647-8426824f162b",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2"
+    },
+    {
+      "email": "t@mail.com",
+      "username": "terry",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794343757?alt=media&token=3251d645-490f-486e-a941-9274145cf35f",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
     }
   ],
   "bios": [
     {
       "id": 1,
-      "aboutMe": "Joe",
+      "aboutMe": "Joeys about",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
       "aboutMe": "Please write about yourself",
-      "id": 2
+      "id": 4
     },
     {
-      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
-      "aboutMe": "Please write about yourself",
-      "id": 3
+      "id": 5,
+      "aboutMe": "Terry Town",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
     }
   ],
   "experiences": [
     {
-      "id": 1,
-      "summary": "crud",
-      "instruments": "",
-      "memory": "",
+      "id": 2,
+      "summary": "Joey Experience",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "summary": "",
+      "id": 3,
+      "summary": "terry expery",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
+    },
+    {
+      "summary": "terry jerry",
       "instruments": "",
       "memory": "",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 2
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 4
     }
   ],
   "gearItems": [
     {
       "id": 1,
-      "manufacturer": "crud",
+      "manufacturer": "Joey Gear",
+      "url": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "manufacturer": "terry gear",
       "model": "",
       "category": "",
       "subCategory": "",
       "forSale": "",
       "url": "",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 2
+    },
+    {
+      "manufacturer": "joey",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 4
     }
   ],
   "wishItems": [
     {
       "id": 1,
-      "manufacturer": "crud",
+      "manufacturer": "checking",
+      "url": "http://localhost:8088/wishItems?/userId=1",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "manufacturer": "terry wish",
       "model": "",
       "category": "",
       "subCategory": "",
       "forSale": "",
       "url": "",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 2
+    },
+    {
+      "manufacturer": "new",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 4
     }
   ],
   "followUsers": [
     {
-      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 3
-    },
-    {
-      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 4
+      "id": 7
     }
   ]
 }

@@ -10,7 +10,7 @@ export class ExperienceEditForm extends Component {
   };
 
   componentDidMount() {
-    ExperienceManager.get(this.props.match.params.experienceId).then(experience => {
+    ExperienceManager.getOneUser(this.props.match.params.experienceId).then(experience => {
       this.setState({
         summary: experience.summary,
         instruments: experience.instruments,

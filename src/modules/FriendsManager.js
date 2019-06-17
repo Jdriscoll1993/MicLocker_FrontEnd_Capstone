@@ -14,7 +14,9 @@ const users = {
   getAllUsers() {
     return fetch(`${remoteURL}/users`).then(e => e.json());
   },
-
+  getOneUser(id){
+    return fetch(`${remoteURL}/users?/userId=${id}`)
+  },
   addUserToFriendsList(user) {
     let sessionUser = getUserFromLocalStorage();
     const newRecord = { userId: user.id, follower: sessionUser.id };

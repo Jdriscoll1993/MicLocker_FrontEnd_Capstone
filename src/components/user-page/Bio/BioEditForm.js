@@ -8,7 +8,7 @@ export class BioEditForm extends Component {
   };
 
   componentDidMount() {
-    BioManager.get(this.props.match.params.bioId).then(bio => {
+    BioManager.getOneUser(this.props.match.params.bioId).then(bio => {
       this.setState({
         aboutMe: bio.aboutMe
       });

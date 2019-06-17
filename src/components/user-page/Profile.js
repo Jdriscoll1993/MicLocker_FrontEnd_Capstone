@@ -149,7 +149,7 @@ class Profile extends Component {
           <Dashboard user={this.props.user} />
           <Container fluid>
             <div className="bio1">
-              <Bio {...this.props} bios={this.state.bios} />
+              <Bio {...this.props} bios={this.state.bios}user={this.props.user}/>
             </div>
 
             <div className="experiences2">
@@ -157,6 +157,7 @@ class Profile extends Component {
                 {...this.props}
                 experiences={this.state.experiences}
                 deleteExperience={this.deleteExperience}
+                user={this.props.user}
               />
             </div>
 
@@ -164,7 +165,7 @@ class Profile extends Component {
               <MyGearList
                 {...this.props}
                 gearItems={this.state.gearItems}
-                deleteGearItem={this.deleteGearItem}
+                deleteGearItem={this.deleteGearItem}user={this.props.user}
               />
             </div>
 
@@ -172,7 +173,7 @@ class Profile extends Component {
               <GearWishListList
                 {...this.props}
                 wishItems={this.state.wishItems}
-                deleteWishList={this.deleteWishList}
+                deleteWishList={this.deleteWishList}user={this.props.user}
               />
             </div>
           </Container>
