@@ -3,9 +3,16 @@ import { Modal, Image, Button, Header } from 'semantic-ui-react';
 function Dashboard(props) {
   return (
     <>
-      <div style={{ padding: 'auto', margin: 'auto', background: '#ccc' }}>
+      <div
+        style={{
+          padding: 'auto',
+          margin: 'auto',
+          marginBottom: '45px',
+          marginTop: '45px',
+          background: '#ccc'
+        }}
+      >
         <Modal.Content image>
-          <Header>hello {props.user.username}</Header>
           <Button
             style={{
               float: 'right',
@@ -15,9 +22,15 @@ function Dashboard(props) {
           >
             Add Friend
           </Button>
-          <Image circular size="large" src={props.user.image} />
+          <Image
+            // circular
+            size="large"
+            style={{ padding: '50px' }}
+            src={props.user.image}
+          />
           <Modal.Description />
         </Modal.Content>
+        <Header>hello {props.user.username}</Header>
       </div>
     </>
   );

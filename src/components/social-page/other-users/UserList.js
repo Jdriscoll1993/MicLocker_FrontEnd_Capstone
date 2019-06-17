@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import users from '../../../modules/FriendsManager';
+// import users from '../../../modules/FriendsManager';
 import UserCard from './UserCard';
 export class UserList extends Component {
   state = {

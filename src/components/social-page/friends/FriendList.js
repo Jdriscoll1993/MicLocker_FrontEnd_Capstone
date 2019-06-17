@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UserCard from '../../social-page/other-users/UserCard';
-import users from '../../../modules/FriendsManager';
 export class FriendList extends Component {
   state = {
     followedUsers: []

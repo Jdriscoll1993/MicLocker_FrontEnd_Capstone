@@ -37,7 +37,7 @@
   "bios": [
     {
       "id": 1,
-      "aboutMe": "read and update",
+      "aboutMe": "Joe",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
@@ -81,26 +81,26 @@
   ],
   "wishItems": [
     {
+      "id": 1,
       "manufacturer": "crud",
       "model": "",
       "category": "",
       "subCategory": "",
       "forSale": "",
       "url": "",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 1
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     }
   ],
   "followUsers": [
     {
-      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 2
-    },
-    {
       "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 3
+    },
+    {
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 4
     }
   ]
 }

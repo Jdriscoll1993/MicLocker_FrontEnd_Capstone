@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
 
 // dashboard
-import Dashboard from '../user-page/Dashboard'
+import Dashboard from '../user-page/Dashboard';
 
 // bio
 import BioManager from '../../modules/BioManager';
 import Bio from '../user-page/Bio/Bio';
 
-// experiences
+// experiencesl
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
 
@@ -146,66 +146,34 @@ class Profile extends Component {
     return (
       <>
         <div className="profile-style">
-          {/* semantic ui container */}
           <Dashboard user={this.props.user} />
           <Container fluid>
-
-          <div className='bio1'>
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return <Bio {...props} bios={this.state.bios} />;
-              }}
-            />
+            <div className="bio1">
+              <Bio {...this.props} bios={this.state.bios} />
             </div>
 
-            <div className='experiences2'>
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return (
-                  <ExperienceList
-                    {...props}
-                    experiences={this.state.experiences}
-                    deleteExperience={this.deleteExperience}
-                  />
-                );
-              }}
-            />
+            <div className="experiences2">
+              <ExperienceList
+                {...this.props}
+                experiences={this.state.experiences}
+                deleteExperience={this.deleteExperience}
+              />
             </div>
 
-            <div className='mygear3'>
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return (
-                  <MyGearList
-                    {...props}
-                    gearItems={this.state.gearItems}
-                    deleteGearItem={this.deleteGearItem}
-                  />
-                );
-              }}
-            />
+            <div className="mygear3">
+              <MyGearList
+                {...this.props}
+                gearItems={this.state.gearItems}
+                deleteGearItem={this.deleteGearItem}
+              />
             </div>
 
-            <div className='wishlist4'>
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return (
-                  <GearWishListList
-                    {...props}
-                    wishItems={this.state.wishItems}
-                    deleteWishList={this.deleteWishList}
-                  />
-                );
-              }}
-            />
+            <div className="wishlist4">
+              <GearWishListList
+                {...this.props}
+                wishItems={this.state.wishItems}
+                deleteWishList={this.deleteWishList}
+              />
             </div>
           </Container>
         </div>

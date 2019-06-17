@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
-import { link } from 'react-router-dom';
+// import { withRouter } from 'react-router';
+// import { link } from 'react-router-dom';
 
 export class UserSearch extends Component {
   // handleSearch(input) {

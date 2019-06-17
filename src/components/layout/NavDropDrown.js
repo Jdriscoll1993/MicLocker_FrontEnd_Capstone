@@ -4,13 +4,12 @@ import {
   Dropdown,
   Modal,
   Image,
-  Header,
   Form
 } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
-import { getUserFromLocalStorage } from '../../authentication/userManager';
+// import { getUserFromLocalStorage } from '../../authentication/userManager';
 
-// import SettingsManager from '../../modules/SettingsManager';
+import SettingsManager from '../../modules/SettingsManager';
 
 // Wrap inputs in Form and attach button similiar to login page. +
 
@@ -30,12 +29,16 @@ class NavDropDown extends Component {
     editableInfo: this.props.user
   };
 
-  // submitSettings = () => {
-  //   SettingsManager.putSettings(this.props.status, this.props.buying, this.props.selling).then(user => {
-  //     this.props.onSubmit(user);
-  //     this.props.history.push('/home');
-  //   });
-  // };
+  submitSettings = () => {
+    SettingsManager.putSettings(
+      this.props.status,
+      this.props.buying,
+      this.props.selling
+    ).then(user => {
+      this.props.onSubmit(user);
+      this.props.history.push('/home');
+    });
+  };
 
   onStatusChange(newStatus) {
     let editableInfo = this.state.editableInfo;
@@ -58,7 +61,7 @@ class NavDropDown extends Component {
   render() {
     return (
       // {this.props.user.username}
-      <Dropdown text="username">
+      <Dropdown text="Settings">
         <Dropdown.Menu>
           <Dropdown.Item>
             <div className="nav nav-pills">
@@ -72,10 +75,11 @@ class NavDropDown extends Component {
                       src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
                     />
                     <Modal.Description>
-                      {/* <p>{this.state.editableInfo.buying}</p>
-                      <p>{this.state.editableInfo.selling}</p>  */}
                       Status
-                      {/* <Form className="settings--form" onSubmit={this.submitSettings}>
+                      <Form
+                        className="settings--form"
+                        onSubmit={this.submitSettings}
+                      >
                         <Form.Field
                           control="input"
                           value={this.state.editableInfo.status}
@@ -94,7 +98,7 @@ class NavDropDown extends Component {
                           onChange={e => this.onSellingChange(e.target.value)}
                         />
                         <Button fluid content="Save Settings" color="green" />
-                      </Form> */}
+                      </Form>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>

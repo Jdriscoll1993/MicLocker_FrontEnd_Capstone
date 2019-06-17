@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
@@ -148,11 +147,14 @@ class OthersProfiles extends Component {
     return (
       <>
         <div className="profile-style">
-          {/* semantic ui container */}
           <Dashboard user={this.state.user} />
           <Container fluid>
             <div className="bio1">
-              <Bio {...this.props} bios={this.state.bios} />;
+              <Bio
+                {...this.props}
+                bios={this.state.bios}
+                user={this.state.user}
+              />
             </div>
 
             <div className="experiences2">
@@ -160,6 +162,7 @@ class OthersProfiles extends Component {
                 {...this.props}
                 experiences={this.state.experiences}
                 deleteExperience={this.deleteExperience}
+                user={this.state.user}
               />
             </div>
 
@@ -168,11 +171,13 @@ class OthersProfiles extends Component {
                 {...this.props}
                 gearItems={this.state.gearItems}
                 deleteGearItem={this.deleteGearItem}
+                user={this.state.user}
               />
             </div>
 
             <div className="wishlist4">
               <GearWishListList
+                user={this.state.user}
                 {...this.props}
                 wishItems={this.state.wishItems}
                 deleteWishList={this.deleteWishList}

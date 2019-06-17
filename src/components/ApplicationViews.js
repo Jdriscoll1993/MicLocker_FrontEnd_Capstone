@@ -21,7 +21,7 @@ import BioManager from '../modules/BioManager';
 
 import users from '../modules/FriendsManager';
 
-import OthersProfiles from '../components/social-page/OthersProfiles'
+import OthersProfiles from '../components/social-page/OthersProfiles';
 // import ExperienceManager from '../modules/ExperienceManager';
 class ApplicationViews extends Component {
   state = {

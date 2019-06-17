@@ -35,7 +35,9 @@ export class BioEditForm extends Component {
     return (
       <React.Fragment>
         {/* Bio Edit Form */}
-        <form className="bioForm">
+        
+        <form 
+        className="bioForm">
           <div className="form-group">
             <label htmlFor="bio-aboutMe">About Me</label>
             <input
