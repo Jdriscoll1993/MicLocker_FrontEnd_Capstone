@@ -1,70 +1,36 @@
 import React from 'react';
-import { Modal, Image, Button } from 'semantic-ui-react';
-function Dashboard() {
+import { Modal, Image, Button, Header } from 'semantic-ui-react';
+function Dashboard(props) {
   return (
     <>
       <div
         style={{
-          background: '#ccc',
-          paddingLeft: '20px',
-          paddingRight: '20px',
-          paddingBottom: '25px'
+          padding: 'auto',
+          margin: 'auto',
+          marginBottom: '45px',
+          marginTop: '45px',
+          background: '#ccc'
         }}
       >
-        <Button
-          style={{
-            marginTop: '20px',
-            float: 'right',
-            background: '#355',
-            color: '#fff'
-          }}
-        >
-          Add Friend
-        </Button>
-        {/* <h1 style={{ textAlign: 'center' }}>Dashboard</h1> */}
-        <h2
-          style={{
-            paddingTop: '60px',
-            paddingBottom: '10px',
-            paddingLeft: '26px'
-          }}
-        >
-          Joey Driscoll
-        </h2>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            color: '#333',
-            marginBottom: '50px'
-          }}
-        >
+        <Modal.Content image>
+          <Button
+            style={{
+              float: 'right',
+              background: '#355',
+              color: '#f3f3f3'
+            }}
+          >
+            Add Friend
+          </Button>
           <Image
-            circular
-            style={{ float: 'left', paddingRight: '20px' }}
-            wrapped
-            size="medium"
-            src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
+            // circular
+            size="large"
+            style={{ padding: '50px' }}
+            src={props.user.image}
           />
-          <Modal.Description>
-            <div
-              style={{
-                background: '#3887',
-                padding: '20px'
-              }}
-            >
-              <h3>Status: Focal Twin6 Be 3-way Monitors FTW</h3>
-
-              <h4>
-                Buying: Im in the market for nothing because im broke'd.
-                Accepting all free buys.
-              </h4>
-              <h4>
-                Selling: Selling everything in my studio because im broke'd
-              </h4>
-            </div>
-          </Modal.Description>
-        </div>
+          <Modal.Description />
+        </Modal.Content>
+        <Header>hello {props.user.username}</Header>
       </div>
     </>
   );

@@ -7,6 +7,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
+      <div className="navbar-style">
       <Menu secondary style={{ background: '#f3f3f3' }}>
         <Menu.Item>
           <Link className="nav-link" to="/home">
@@ -20,10 +21,12 @@ export default class NavBar extends Component {
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item className="nav-item">
-            <NavDropDown onLogout={this.props.onLogout} />
+            <NavDropDown user={this.props.user} onLogout={this.props.onLogout} editableInfo={this.props.editableInfo}  />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
+      </div>
     );
   }
 }
+

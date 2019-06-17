@@ -13,7 +13,7 @@ export class GearWishListEditForm extends Component {
   };
 
   componentDidMount() {
-    WishListManager.get(this.props.match.params.wishItemId).then(wishItem => {
+    WishListManager.getOneUser(this.props.match.params.wishItemId).then(wishItem => {
       this.setState({
         manufacturer: wishItem.manufacturer,
         model: wishItem.model,

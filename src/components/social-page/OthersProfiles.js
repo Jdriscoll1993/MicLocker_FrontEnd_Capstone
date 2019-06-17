@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import { Container } from 'semantic-ui-react';
@@ -11,7 +10,7 @@ import Dashboard from '../user-page/Dashboard';
 import BioManager from '../../modules/BioManager';
 import Bio from '../user-page/Bio/Bio';
 
-// experiencesl
+// experiences
 import ExperienceManager from '../../modules/ExperienceManager';
 import ExperienceList from '../user-page/experiences/ExperienceList';
 
@@ -23,52 +22,52 @@ import MyGearList from '../user-page/my-gear/MyGearList';
 import WishListManager from '../../modules/WishListManager';
 import GearWishListList from '../user-page/wish-list/GearWishListList';
 
-
-class Profile extends Component {
-  //to access state: this.state.experiences
-  state = {
-    experiences: [],
-    gearItems: [],
-    wishItems: [],
-    bios: []
-  };
-
-  // LOGOUT
-  logout = () => {
-    this.props.onLogout();
-    this.props.history.push('/login');
-  };
-
+import users from '../../modules/FriendsManager';
+class OthersProfiles extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: this.props.user,
+      experiences: [],
+      gearItems: [],
+      wishItems: [],
+      bios: []
+    };
+  }
 
   // GET get all data and set new state
   componentDidMount() {
-    // const userId = this.props.match.params.user
-    // get user id, get all persons shit 
+    console.log(this.props.match.params);
+    const thisUser = this.props.match.params.userId;
+    users.getUser(thisUser).then(user => {
+      this.setState({ user });
+    });
+    this.setState({ user: this.props.user });
     const newState = {};
-    ExperienceManager.getOneUser(this.props.user.id)
+    ExperienceManager.getOneUser(thisUser)
       .then(experiences => {
         newState.experiences = experiences;
+        console.log(newState);
       })
       .then(() =>
-        GearManager.getOneUser(this.props.user.id)
+        GearManager.getOneUser(thisUser)
           .then(gearItems => {
             newState.gearItems = gearItems;
           })
           .then(() =>
-            WishListManager.getOneUser(this.props.user.id)
+            WishListManager.getOneUser(thisUser)
               .then(wishItems => {
                 newState.wishItems = wishItems;
               })
               .then(() =>
-                BioManager.getOneUser(this.props.user.id)
+                BioManager.getOneUser(thisUser)
                   .then(bios => {
                     newState.bios = bios;
                   })
                   .then(() => this.setState(newState))
-                  
               )
           )
-      )
+      );
   }
 
   // EXPERIENCES
@@ -151,13 +150,13 @@ class Profile extends Component {
     return (
       <>
         <div className="profile-style">
-          <Dashboard user={this.props.user} />
+          <Dashboard user={this.state.user} />
           <Container fluid>
             <div className="bio1">
               <Bio
                 {...this.props}
                 bios={this.state.bios}
-                user={this.props.user}
+                // user={this.props.user}
               />
             </div>
 
@@ -166,7 +165,7 @@ class Profile extends Component {
                 {...this.props}
                 experiences={this.state.experiences}
                 deleteExperience={this.deleteExperience}
-                user={this.props.user}
+                // user={this.props.user}
               />
             </div>
 
@@ -175,16 +174,16 @@ class Profile extends Component {
                 {...this.props}
                 gearItems={this.state.gearItems}
                 deleteGearItem={this.deleteGearItem}
-                user={this.props.user}
+                // user={this.props.user}
               />
             </div>
 
             <div className="wishlist4">
               <GearWishListList
+                // user={this.props.user}
                 {...this.props}
                 wishItems={this.state.wishItems}
                 deleteWishList={this.deleteWishList}
-                user={this.props.user}
               />
             </div>
           </Container>
@@ -193,4 +192,4 @@ class Profile extends Component {
     );
   }
 }
-export default withRouter(Profile);
+export default withRouter(OthersProfiles);

@@ -17,7 +17,8 @@ export class GearWishListCard extends Component {
     return {
       background: '#f4f4f4',
       padding: '10px',
-      border: '1px #ccc dotted'
+      border: '1px #ccc dotted',
+      marginBottom: '15px'
     };
   };
 
@@ -31,33 +32,34 @@ export class GearWishListCard extends Component {
       url
     } = this.props.wishItem;
     return (
-      <div style={this.getStyle()}>
-        <h3 style={{ color: 'goldenrod' }}>Manufacturer:</h3>
-        <h5>{manufacturer}</h5>
-        <h3 style={{ color: 'goldenrod' }}>Model:</h3>
-        <h5>{model}</h5>
-        <h3 style={{ color: 'goldenrod' }}>Category:</h3>
-        <h5>{category}</h5>
-        <h3 style={{ color: 'goldenrod' }}>Sub-Category:</h3>
-        <h5>{subCategory}</h5>
-        <h3 style={{ color: 'goldenrod' }}>For Sale:</h3>
-        <h5>{forSale}</h5>
-        <h3 style={{ color: 'goldenrod' }}>Image:</h3> 
-        <img src={url} alt="gear pic" style={{width:"50%"}}/><br/>
-        <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
-          Delete
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            this.props.history.push(
-              `/wishItems/edit/${this.props.wishItem.id}`
-            );
-          }}
-        >
-          Edit
-        </button>
+      <div className="wish-div" style={this.getStyle()}>
+      <h2 style={{textAlign:'center'}}>{model}</h2>
+      <h2 style={{ color: 'goldenrod', textAlign:'center' }}>For Sale:</h2>
+      <h2 style={{textAlign:'center'}}>{forSale}</h2>
+      <img src={url} alt="gear pic" style={{width:"80%", margin: 60}}/><br/>
+      <div className='gear-details'>
+      <h2 style={{ color: 'goldenrod' }}
+      >Manufacturer:</h2>
+      <h2>{manufacturer}</h2>
+      <h2 style={{ color: 'goldenrod' }}>Category:</h2>
+      <h2>{category}</h2>
+      <h2 style={{ color: 'goldenrod' }}>Sub-Category:</h2>
+      <h2>{subCategory}</h2>
       </div>
+      <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
+        Delete
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          this.props.history.push(
+            `/wishItems/edit/${this.props.wishItem.id}`
+          );
+        }}
+      >
+        Edit
+      </button>
+    </div>
     );
   }
 }

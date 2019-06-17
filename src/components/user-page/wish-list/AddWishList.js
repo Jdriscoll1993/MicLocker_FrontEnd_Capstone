@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import WishListManager from '../../../modules/WishListManager'
+import * as userManager from '../../../authentication/userManager'
 export class AddWishList extends Component {
   state = {
     manufacturer: '',
@@ -8,7 +9,13 @@ export class AddWishList extends Component {
     category: '',
     subCategory: '',
     forSale: '',
-    url: ''
+    url: '',
+    userId: ''
+  };
+
+  componentDidMount = () => {
+    let userInfo = userManager.getUserFromLocalStorage();
+    this.setState({ userId: userInfo.id });
   };
 
   handleFieldChange = wishlist => {
@@ -19,7 +26,6 @@ export class AddWishList extends Component {
 
   saveNewWishList = wishlist => {
     wishlist.preventDefault();
-
     const wishItem = {
       manufacturer: this.state.manufacturer,
       model: this.state.model,

@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ExperienceManager from '../../../modules/ExperienceManager';
-
+import * as userManager from '../../../authentication/userManager'
 export class AddExperience extends Component {
   // component state -- not app level. not being shared between components
   state = {
     summary: '',
     instruments: '',
-    memory: ''
+    memory: '',
+    userId: ''
+  };
+
+
+  componentDidMount = () => {
+    let userInfo = userManager.getUserFromLocalStorage();
+    this.setState({ userId: userInfo.id });
   };
 
   // Update state whenever an input field is edited
@@ -35,7 +42,7 @@ export class AddExperience extends Component {
       <form style={{ display: 'flex', flex: '5' }} onSubmit={this.onSubmit}>
         Description
         <input
-          style={{ flex: '5', padding: '5px' }}
+          // style={{ flex: '5', padding: '5px' }}
           type="text"
           name="summary"
           id="summary"
@@ -45,7 +52,7 @@ export class AddExperience extends Component {
         />
         Instruments
         <input
-          style={{ flex: '5', padding: '5px' }}
+          // style={{ flex: '5', padding: '5px' }}
           type="text"
           name="instruments"
           id="instruments"
@@ -55,7 +62,7 @@ export class AddExperience extends Component {
         />
         Memory
         <input
-          style={{ flex: '5', padding: '5px' }}
+          // style={{ flex: '5', padding: '5px' }}
           type="text"
           name="memory"
           id="memory"

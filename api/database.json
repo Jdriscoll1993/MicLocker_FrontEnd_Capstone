@@ -4,55 +4,165 @@
       "email": "driscoll.recording@gmail.com",
       "username": "Joey",
       "password": null,
-      "id": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
-    },
-    {
-      "email": "kids@kids.com",
-      "username": "",
-      "password": null,
-      "id": "4nwP3kiQm3MRAlQdYcxeGHSWrzD2"
-    },
-    {
-      "email": "jenna@mail.com",
-      "username": "jenna",
-      "password": null,
-      "id": "H7qaVaJLIxhJ02C1u6v3D0YNmHJ2"
+      "id": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560452339257?alt=media&token=d40f9eb4-71d6-4447-828b-af9b9fcb9bde",
+      "photo": {},
+      "status": "YEEET",
+      "buying": "broke",
+      "selling": "everyting"
     },
     {
       "email": "paul@mail.com",
       "username": "paul",
       "password": null,
-      "id": "KuNrcrjT1mVXZRLUgYHbt8ehdD83"
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560538428580?alt=media&token=c80eeaca-cb24-4ce2-b431-c32fe5738048",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "JgEroIcG8kTYLbjd3yeTI4dRcMm2"
+    },
+    {
+      "email": "tony@mail.com",
+      "username": "tony",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560714675505?alt=media&token=c9ccc029-6ef0-4288-9379-c75338ceadbd",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2"
+    },
+    {
+      "email": "C@mail.com",
+      "username": "Carroll",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794306162?alt=media&token=e30be8ad-f379-41d2-b647-8426824f162b",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2"
+    },
+    {
+      "email": "t@mail.com",
+      "username": "terry",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794343757?alt=media&token=3251d645-490f-486e-a941-9274145cf35f",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
+    }
+  ],
+  "bios": [
+    {
+      "id": 1,
+      "aboutMe": "Joeys about",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
+      "aboutMe": "Please write about yourself",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "aboutMe": "Terry Town",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
     }
   ],
   "experiences": [
     {
       "id": 2,
-      "summary": "shit throw alley",
-      "instruments": "trash can lids",
-      "memory": "fun times!!"
+      "summary": "Joey Experience",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "id": 3,
+      "summary": "terry expery",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
+    },
+    {
+      "summary": "terry jerry",
+      "instruments": "",
+      "memory": "",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 4
+    },
+    {
+      "summary": "Joey experience 2",
+      "instruments": "",
+      "memory": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 5
     }
   ],
   "gearItems": [
     {
       "id": 1,
-      "manufacturer": "Universal Audio!!",
-      "model": "Apollo 8p",
-      "category": "Studio Recording",
-      "subCategory": "Audio Interface",
-      "forSale": "false",
-      "url": "https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/5a29e3f3e2c4839f7f1f0463/1512694771650/?format=1500w"
+      "url": "https://pbs.twimg.com/profile_images/640760380034293760/3NlnmX7U.jpg",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "manufacturer": "terry gear",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 2
+    },
+    {
+      "manufacturer": "hey nate",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 3
     }
   ],
   "wishItems": [
     {
       "id": 1,
-      "manufacturer": "Universal Audio!",
-      "model": "Apollo 8p",
-      "category": "Studio Recording",
-      "subCategory": "Audio Interface",
-      "forSale": "false",
-      "url": "https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/5a29e3f3e2c4839f7f1f0463/1512694771650/?format=1500w"
+      "url": "https://pbs.twimg.com/profile_images/640760380034293760/3NlnmX7U.jpg",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "manufacturer": "terry wish",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 2
+    }
+  ],
+  "followUsers": [
+    {
+      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 1
+    },
+    {
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 2
+    },
+    {
+      "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 3
+    },
+    {
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 4
     }
   ]
 }

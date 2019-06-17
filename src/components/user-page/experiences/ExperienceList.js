@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ExperienceCard from './ExperienceCard';
-// import ExperienceManager from '../../../modules/ExperienceManager';
+import * as userManager from '../../../authentication/userManager';
 export class ExperienceList extends Component {
 
+
+  componentDidMount = () => {
+    let userInfo = userManager.getUserFromLocalStorage();
+    this.setState({ user: userInfo });
+  };
 
   render() {
     //map through the props coming from Profile.js
@@ -15,14 +20,12 @@ export class ExperienceList extends Component {
         <section>
           {this.props.experiences.map(experience => {
             return (
-              // outputting ExperienceCard
-              // in order to display particular card: experience is being passed into ExperienceCard as a prop
               <ExperienceCard
                 {...this.props}
                 key={experience.id}
                 experience={experience}
-                // checkComplete={this.props.checkComplete}
                 delExperience={this.props.delExperience}
+                user={this.props.user}
               />
             );
           })}
@@ -33,3 +36,6 @@ export class ExperienceList extends Component {
 }
 
 export default ExperienceList;
+
+// outputting ExperienceCard
+// in order to display particular card: experience is being passed into ExperienceCard as a prop

@@ -1,3 +1,5 @@
+import { getUserFromLocalStorage } from "../authentication/userManager";
+
 const remoteURL = "http://localhost:8088"
 
 export default {
@@ -6,6 +8,9 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/gearItems`).then(e => e.json())
+  },
+  getOneUser(id){
+    return fetch(`${remoteURL}/gearItems?userId=${id}`).then(e => e.json())
   },
   deleteGearItem(id) {
     return fetch(`${remoteURL}/gearItems/${id}`, {
@@ -16,6 +21,8 @@ export default {
     }).then(e => e.json())
   },
   postGearItem(e) {
+    let user = getUserFromLocalStorage();
+    e.userId = user.id;
     return fetch(`${remoteURL}/gearItems`, {
       method: "POST",
       headers: {
@@ -25,6 +32,8 @@ export default {
     }).then(e => e.json())
   },
   putMyGear(editedGear) {
+    let user = getUserFromLocalStorage();
+    editedGear.userId = user.id;
     return fetch(`${remoteURL}/gearItems/${editedGear.id}`, {
       method: "PUT",
       headers: {

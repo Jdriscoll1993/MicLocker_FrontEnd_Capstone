@@ -17,7 +17,8 @@ export class ExperienceCard extends Component {
     return {
       background: '#f4f4f4',
       padding: '10px',
-      border: '1px #ccc dotted'
+      border: '1px #ccc dotted',
+      marginBottom: '15px'
     };
   };
 
@@ -25,7 +26,7 @@ export class ExperienceCard extends Component {
     //destructuring by pulling out particular properties so "drilling" is not needed to target props. Passing id, and summary
     const { summary, instruments, memory } = this.props.experience;
     return (
-      <div style={this.getStyle()}>
+      <div className="experience-div" style={this.getStyle()}>
         <h3 style={{ color: 'goldenrod' }}>Description:</h3>
         <h5>{summary}</h5>
         <h3 style={{ color: 'goldenrod' }}> Instruments</h3>

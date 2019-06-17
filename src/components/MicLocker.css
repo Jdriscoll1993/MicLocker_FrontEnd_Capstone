@@ -1,11 +1,79 @@
-#root {
-  background-color: rgb(176, 176, 175);
+.profile-style {
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 150px;
 }
+.navbar-style {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+div.ui.fluid.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.bio1 {
+  width: 50%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  max-height: 400px;
+  margin-bottom: 75px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.bio-div {
+  max-height: 500px;
+}
+.experiences2 {
+  width: 50%;
+  padding: 10px;
+  max-height: 400px;
+  margin-bottom: 75px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.experience-div {
+  /* max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; */
+}
+.mygear3 {
+  width: 50%;
+  padding: 10px;
+  max-height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.gear-div {
+  /* max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; */
+}
+.wishlist4 {
+  width: 50%;
+  padding: 10px;
+  max-height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.wish-div {
+  /* max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; */
+}
+
+/* .gear-details {
+  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 10px;
+} */
 
 /* .App {
   text-align: center;
 } */
-
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
