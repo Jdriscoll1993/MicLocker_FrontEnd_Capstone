@@ -11,7 +11,7 @@ export default {
     return fetch(`${remoteURL}/experiences`).then(e => e.json())
   },
   getOneUser(id){
-    return fetch(`${remoteURL}/experiences?/userId=${id}`)
+    return fetch(`${remoteURL}/experiences?userId=${id}`).then(e => e.json())
   },
   deleteExperience(id) {
     return fetch(`${remoteURL}/experiences/${id}`, {

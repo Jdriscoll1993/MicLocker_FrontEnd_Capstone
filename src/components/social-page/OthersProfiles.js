@@ -24,13 +24,16 @@ import GearWishListList from '../user-page/wish-list/GearWishListList';
 
 import users from '../../modules/FriendsManager';
 class OthersProfiles extends Component {
-  //to access state: this.state.experiences
-  state = {
-    experiences: [],
-    gearItems: [],
-    wishItems: [],
-    bios: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: this.props.user,
+      experiences: [],
+      gearItems: [],
+      wishItems: [],
+      bios: []
+    };
+  }
 
   // GET get all data and set new state
   componentDidMount() {
@@ -41,22 +44,23 @@ class OthersProfiles extends Component {
     });
     this.setState({ user: this.props.user });
     const newState = {};
-    ExperienceManager.getAll()
+    ExperienceManager.getOneUser(thisUser)
       .then(experiences => {
         newState.experiences = experiences;
+        console.log(newState);
       })
       .then(() =>
-        GearManager.getAll()
+        GearManager.getOneUser(thisUser)
           .then(gearItems => {
             newState.gearItems = gearItems;
           })
           .then(() =>
-            WishListManager.getAll()
+            WishListManager.getOneUser(thisUser)
               .then(wishItems => {
                 newState.wishItems = wishItems;
               })
               .then(() =>
-                BioManager.getAll()
+                BioManager.getOneUser(thisUser)
                   .then(bios => {
                     newState.bios = bios;
                   })
@@ -146,7 +150,7 @@ class OthersProfiles extends Component {
     return (
       <>
         <div className="profile-style">
-          <Dashboard user={this.props.user} />
+          <Dashboard user={this.state.user} />
           <Container fluid>
             <div className="bio1">
               <Bio

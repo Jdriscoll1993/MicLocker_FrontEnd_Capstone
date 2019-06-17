@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 // import { Header } from 'semantic-ui-react';
 import Login from '../components/login-page/Login';
 import Register from '../components/login-page/Register';
@@ -46,7 +46,6 @@ class ApplicationViews extends Component {
     // ExperienceManager.postExperience(newExp).then(newExp => {
     //   console.log(newExp)
     // })
-
   };
 
   isAuthenticated = () => localStorage.getItem('user') !== null;
@@ -55,164 +54,157 @@ class ApplicationViews extends Component {
     return (
       <>
         <div className="App">
-          
-            {/* login route */}
-            <Route
-              path="/login"
-              render={props => (
-                <Login {...props} onLogin={this.props.onLogin} />
-              )}
-            />
-            {/* register route */}
-            <Route
-              path="/register"
-              render={props => (
-                <Register
+          {/* login route */}
+          <Route
+            path="/login"
+            render={props => <Login {...props} onLogin={this.props.onLogin} />}
+          />
+          {/* register route */}
+          <Route
+            path="/register"
+            render={props => (
+              <Register {...props} onRegister={user => this.onRegister(user)} />
+            )}
+          />
+          {/* logout route */}
+          <Route
+            exact
+            path="/home"
+            render={props => {
+              return this.props.user ? (
+                <Profile
                   {...props}
-                  onRegister={user => this.onRegister(user)}
+                  onLogout={this.props.onLogout}
+                  user={this.props.user}
                 />
-              )}
-            />
-            {/* logout route */}
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return this.props.user ? (
-                  <Profile
-                    {...props}
-                    onLogout={this.props.onLogout}
-                    user={this.props.user}
-                  />
-                ) : (
-                  <Redirect to="/login" />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          />
+          {/* friends route */}
+          <Route
+            exact
+            path="/friends"
+            render={props => {
+              return (
+                <Friends
+                  {...props}
+                  onLogout={this.props.onLogout}
+                  user={this.props.user}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/new-experience"
+            render={props => {
+              return (
+                <AddExperience
+                  {...props}
+                  experiences={this.props.experiences}
+                  addExperience={this.addExperience}
+                />
+              );
+            }}
+          />
+          {/* experience edit form*/}
+          <Route
+            path="/experiences/edit/:experienceId"
+            render={props => {
+              return (
+                <ExperienceEditForm
+                  {...props}
+                  experiences={this.props.experiences}
+                  updateExperience={this.updateExperience}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/new-gear"
+            render={props => {
+              return (
+                <AddGear
+                  {...props}
+                  gearItems={this.props.gearItems}
+                  gearItem={this.gearItem}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/gearItems/edit/:gearItemId"
+            render={props => {
+              return (
+                <MyGearEditForm
+                  {...props}
+                  gearItems={this.props.gearItems}
+                  updateGearItem={this.updateGearItem}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/new-wishlist"
+            render={props => {
+              return (
+                <AddWishList
+                  {...props}
+                  wishItems={this.props.wishItems}
+                  wishItem={this.wishItem}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/wishItems/edit/:wishItemId"
+            render={props => {
+              return (
+                <GearWishListEditForm
+                  {...props}
+                  wishItems={this.props.wishItems}
+                  updateWishItem={this.updateWishItem}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/bio/edit/:bioId"
+            render={props => {
+              return <BioEditForm {...props} bios={this.props.bios} />;
+            }}
+          />
+          <Route
+            exact
+            path="/users/:userId"
+            render={props => {
+              if (this.isAuthenticated()) {
+                let user = this.state.allUsers.find(
+                  user => user.id === props.match.params.id 
                 );
-              }}
-            />
-            {/* friends route */}
-            <Route
-              exact
-              path="/friends"
-              render={props => {
-                return <Friends {...props} onLogout={this.props.onLogout}
-                user={this.props.user} />;
-              }}
-            />
-            <Route
-              exact
-              path="/new-experience"
-              render={props => {
-                return (
-                  <AddExperience
-                    {...props}
-                    experiences={this.props.experiences}
-                    addExperience={this.addExperience}
-                  />
-                );
-              }}
-            />
-            {/* experience edit form*/}
-            <Route
-              path="/experiences/edit/:experienceId"
-              render={props => {
-                return (
-                  <ExperienceEditForm
-                    {...props}
-                    experiences={this.props.experiences}
-                    updateExperience={this.updateExperience}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/new-gear"
-              render={props => {
-                return (
-                  <AddGear
-                    {...props}
-                    gearItems={this.props.gearItems}
-                    gearItem={this.gearItem}
-                  />
-                );
-              }}
-            />
-            <Route
-              path="/gearItems/edit/:gearItemId"
-              render={props => {
-                return (
-                  <MyGearEditForm
-                    {...props}
-                    gearItems={this.props.gearItems}
-                    updateGearItem={this.updateGearItem}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/new-wishlist"
-              render={props => {
-                return (
-                  <AddWishList
-                    {...props}
-                    wishItems={this.props.wishItems}
-                    wishItem={this.wishItem}
-                  />
-                );
-              }}
-            />
-            <Route
-              path="/wishItems/edit/:wishItemId"
-              render={props => {
-                return (
-                  <GearWishListEditForm
-                    {...props}
-                    wishItems={this.props.wishItems}
-                    updateWishItem={this.updateWishItem}
-                  />
-                );
-              }}
-            />
-            <Route
-              path="/bio/edit/:bioId"
-              render={props => {
-                return (
-                  <BioEditForm
-                    {...props}
-                    bios={this.props.bios}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/users/:userId"
-              render={props => {
-                if (this.isAuthenticated()) {
-                  let user = this.state.allUsers.find(
-                    user => user.id === props.match.params.id
-                  );
-                  if (!user) {
-                    user = {
-                      email: null,
-                      username: null,
-                      password: null,
-                      id: null,
-                      image: null,
-                      photo: null,
-                      status: null,
-                      buying: null,
-                      selling: null
-                    };
-                  }
-                  return <OthersProfiles {...props} user={this.props.user} />;
-                } else {
-                  return <Redirect to="/login" />;
+                if (!user) {
+                  user = {
+                    email: null,
+                    username: null,
+                    password: null,
+                    id: null,
+                    image: null,
+                    photo: null,
+                    status: null,
+                    buying: null,
+                    selling: null
+                  };
                 }
-              }}
-            />
-         
+                return <OthersProfiles {...props} user={this.props.user} />;
+              } else {
+                return <Redirect to="/login" />;
+              }
+            }}
+          />
         </div>
       </>
     );

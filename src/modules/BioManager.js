@@ -10,7 +10,7 @@ export default {
     return fetch(`${remoteURL}/bios`).then(e => e.json())
   },
   getOneUser(id){
-    return fetch(`${remoteURL}/bios?/userId=${id}`)
+    return fetch(`${remoteURL}/bios?userId=${id}`).then(e => e.json())
   },
   // deleteBio(id) {
   //   return fetch(`${remoteURL}/bio/${id}`, {

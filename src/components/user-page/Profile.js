@@ -23,6 +23,7 @@ import MyGearList from '../user-page/my-gear/MyGearList';
 import WishListManager from '../../modules/WishListManager';
 import GearWishListList from '../user-page/wish-list/GearWishListList';
 
+
 class Profile extends Component {
   //to access state: this.state.experiences
   state = {
@@ -38,32 +39,36 @@ class Profile extends Component {
     this.props.history.push('/login');
   };
 
+
   // GET get all data and set new state
   componentDidMount() {
+    // const userId = this.props.match.params.user
+    // get user id, get all persons shit 
     const newState = {};
-    ExperienceManager.getAll()
+    ExperienceManager.getOneUser(this.props.user.id)
       .then(experiences => {
         newState.experiences = experiences;
       })
       .then(() =>
-        GearManager.getAll()
+        GearManager.getOneUser(this.props.user.id)
           .then(gearItems => {
             newState.gearItems = gearItems;
           })
           .then(() =>
-            WishListManager.getAll()
+            WishListManager.getOneUser(this.props.user.id)
               .then(wishItems => {
                 newState.wishItems = wishItems;
               })
               .then(() =>
-                BioManager.getAll()
+                BioManager.getOneUser(this.props.user.id)
                   .then(bios => {
                     newState.bios = bios;
                   })
                   .then(() => this.setState(newState))
+                  
               )
           )
-      );
+      )
   }
 
   // EXPERIENCES
@@ -149,7 +154,11 @@ class Profile extends Component {
           <Dashboard user={this.props.user} />
           <Container fluid>
             <div className="bio1">
-              <Bio {...this.props} bios={this.state.bios}user={this.props.user}/>
+              <Bio
+                {...this.props}
+                bios={this.state.bios}
+                user={this.props.user}
+              />
             </div>
 
             <div className="experiences2">
@@ -165,7 +174,8 @@ class Profile extends Component {
               <MyGearList
                 {...this.props}
                 gearItems={this.state.gearItems}
-                deleteGearItem={this.deleteGearItem}user={this.props.user}
+                deleteGearItem={this.deleteGearItem}
+                user={this.props.user}
               />
             </div>
 
@@ -173,7 +183,8 @@ class Profile extends Component {
               <GearWishListList
                 {...this.props}
                 wishItems={this.state.wishItems}
-                deleteWishList={this.deleteWishList}user={this.props.user}
+                deleteWishList={this.deleteWishList}
+                user={this.props.user}
               />
             </div>
           </Container>

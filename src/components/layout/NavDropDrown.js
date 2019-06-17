@@ -76,7 +76,7 @@ class NavDropDown extends Component {
                     />
                     <Modal.Description>
                       Status
-                      {/* <Form
+                      <Form
                         className="settings--form"
                         onSubmit={this.submitSettings}
                       >
@@ -98,7 +98,7 @@ class NavDropDown extends Component {
                           onChange={e => this.onSellingChange(e.target.value)}
                         />
                         <Button fluid content="Save Settings" color="green" />
-                      </Form> */}
+                      </Form>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>

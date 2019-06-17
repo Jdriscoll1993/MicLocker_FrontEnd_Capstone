@@ -17,18 +17,15 @@ export class GearWishListList extends Component {
         </button>
         <section>
           {this.props.wishItems.map(wishItem => {
-   
-            if (this.props.user.id === wishItem.userId) {
-              return (
-                <GearWishListCard
-                  {...this.props}
-                  key={wishItem.id}
-                  wishItem={wishItem}
-                  delItem={this.props.delItem}
-                  user={this.props.user}
-                />
-              );
-            }
+            return (
+              <GearWishListCard
+                {...this.props}
+                key={wishItem.id}
+                wishItem={wishItem}
+                delItem={this.props.delItem}
+                user={this.props.user}
+              />
+            );
           })}
         </section>
       </div>

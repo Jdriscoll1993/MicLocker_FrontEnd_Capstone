@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ExperienceCard from './ExperienceCard';
-// import ExperienceManager from '../../../modules/ExperienceManager';
 import * as userManager from '../../../authentication/userManager';
 export class ExperienceList extends Component {
-  // state = {
-  //   user: {}
-  // };
+
 
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
@@ -22,17 +19,15 @@ export class ExperienceList extends Component {
         </button>
         <section>
           {this.props.experiences.map(experience => {
-            if (this.props.user.id === experience.userId) {
-              return (
-                <ExperienceCard
-                  {...this.props}
-                  key={experience.id}
-                  experience={experience}
-                  delExperience={this.props.delExperience}
-                  user={this.props.user}
-                />
-              );
-            }
+            return (
+              <ExperienceCard
+                {...this.props}
+                key={experience.id}
+                experience={experience}
+                delExperience={this.props.delExperience}
+                user={this.props.user}
+              />
+            );
           })}
         </section>
       </div>

@@ -17,17 +17,15 @@ export class MyGearList extends Component {
         </button>
         <section>
           {this.props.gearItems.map(gearItem => {
-            if (this.props.user.id === gearItem.userId) {
-              return (
-                <MyGearCard
-                  {...this.props}
-                  key={gearItem.id}
-                  gearItem={gearItem}
-                  delItem={this.props.delItem}
-                  user={this.props.user}
-                />
-              );
-            }
+            return (
+              <MyGearCard
+                {...this.props}
+                key={gearItem.id}
+                gearItem={gearItem}
+                delItem={this.props.delItem}
+                user={this.props.user}
+              />
+            );
           })}
         </section>
       </div>

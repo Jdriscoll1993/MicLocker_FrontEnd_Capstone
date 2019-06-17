@@ -10,7 +10,7 @@ export default {
     return fetch(`${remoteURL}/wishItems`).then(e => e.json())
   },
   getOneUser(id){
-    return fetch(`${remoteURL}/wishItems?/userId=${id}`)
+    return fetch(`${remoteURL}/wishItems?userId=${id}`).then(e => e.json())
   },
   deleteWishList(id) {
     return fetch(`${remoteURL}/wishItems/${id}`, {

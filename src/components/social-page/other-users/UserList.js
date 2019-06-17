@@ -18,7 +18,8 @@ export class UserList extends Component {
     if (!!this.props.allUsers) {
       const userCard = users.map(user => (
         <div key={user.id}>
-          <UserCard {...this.props}
+          <UserCard
+            {...this.props}
             user={user}
             key={user.id}
             followed={true}
@@ -32,9 +33,7 @@ export class UserList extends Component {
 
   render() {
     return (
-      <div
-        style={{ background: '#f4f4f4', padding: '225px', textAlign: 'center' }}
-      >
+      <div style={{ background: '#f4f4f4', textAlign: 'center' }}>
         {this.makeAllUserCard(this.props.allUsers)}
       </div>
     );
