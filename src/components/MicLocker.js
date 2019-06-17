@@ -35,8 +35,8 @@ class MicLocker extends Component {
           onLogin={user => this.setState({ user: user, isAuthenticated: true })}
           onLogout={this.logout}
           user={this.state.user}
-        />
-        <Footer />
+          />
+          {/* <Footer /> */}
       </React.Fragment>
     );
   }

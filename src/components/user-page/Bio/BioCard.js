@@ -10,7 +10,6 @@ export class BioCard extends Component {
     return {
       background: '#f4f4f4',
       padding: '10px',
-      border: '1px #ccc dotted',
       marginBottom: '50px'
     };
   };

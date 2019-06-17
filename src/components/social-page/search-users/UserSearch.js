@@ -13,8 +13,7 @@ export class UserSearch extends Component {
 
   render() {
     return (
-      <div style={{ background: '#375', padding: '100px' }}>
-        User Search
+      <div style={{ background: '#375', padding: '100px', textAlign:'center' }}>
         <input onKeyUp={e => this.handleSearch(e)} />
         <button>Search Users</button>
       </div>

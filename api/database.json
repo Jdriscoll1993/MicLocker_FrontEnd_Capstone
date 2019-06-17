@@ -21,6 +21,17 @@
       "selling": "",
       "photo": {},
       "id": "JgEroIcG8kTYLbjd3yeTI4dRcMm2"
+    },
+    {
+      "email": "tony@mail.com",
+      "username": "tony",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560714675505?alt=media&token=c9ccc029-6ef0-4288-9379-c75338ceadbd",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2"
     }
   ],
   "bios": [
@@ -33,6 +44,11 @@
       "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
       "aboutMe": "Please write about yourself",
       "id": 2
+    },
+    {
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
+      "aboutMe": "Please write about yourself",
+      "id": 3
     }
   ],
   "experiences": [
@@ -42,6 +58,13 @@
       "instruments": "",
       "memory": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "summary": "",
+      "instruments": "",
+      "memory": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 2
     }
   ],
   "gearItems": [
@@ -70,9 +93,14 @@
   ],
   "followUsers": [
     {
-      "id": 1,
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 2
+    },
+    {
       "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 3
     }
   ]
 }

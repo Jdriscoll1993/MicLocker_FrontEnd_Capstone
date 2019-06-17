@@ -75,8 +75,8 @@ class NavDropDown extends Component {
                       {/* <p>{this.state.editableInfo.buying}</p>
                       <p>{this.state.editableInfo.selling}</p>  */}
                       Status
-                      <Form className="settings--form" onSubmit={this.submitSettings}>
-                        {/* <Form.Field
+                      {/* <Form className="settings--form" onSubmit={this.submitSettings}>
+                        <Form.Field
                           control="input"
                           value={this.state.editableInfo.status}
                           onChange={e => this.onStatusChange(e.target.value)}
@@ -92,9 +92,9 @@ class NavDropDown extends Component {
                           control="input"
                           value={this.state.editableInfo.selling}
                           onChange={e => this.onSellingChange(e.target.value)}
-                        /> */}
+                        />
                         <Button fluid content="Save Settings" color="green" />
-                      </Form>
+                      </Form> */}
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
