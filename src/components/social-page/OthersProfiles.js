@@ -83,9 +83,9 @@ class OthersProfiles extends Component {
       )
       .then(() => this.props.history.push('/home'));
   // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
-  deleteExperience = id => {
+  deleteExperience = (id, userId) => {
     ExperienceManager.deleteExperience(id)
-      .then(ExperienceManager.getAll)
+      .then(ExperienceManager.getOneUser(userId))
       .then(experiences => {
         console.log(this);
         const newState = { experiences };

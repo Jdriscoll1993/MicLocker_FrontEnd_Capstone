@@ -7,7 +7,9 @@ import users from '../../modules/FriendsManager';
 export default class Friends extends Component {
   state = {
     allUsers: [],
-    followedUsers: []
+    followedUsers: [],
+    searchResults: [],
+    searchInput: ''
   };
 
   componentDidMount() {
@@ -24,6 +26,15 @@ export default class Friends extends Component {
       this.setState({ allUsers: parsedUsers });
     });
   }
+
+  getSearchResults = input => {
+    this.setState({ searchInput: input})
+    let newSearchResults = []
+    users.search('users', input)
+      .then(results => (newSearchResults = results))
+      .then(() => this.setState({ searchResults: newSearchResults }));
+    }
+    
 
   unfollow = user => {
     users.checkForFollow(user).then(response =>
@@ -64,7 +75,7 @@ export default class Friends extends Component {
     return (
       <div style={{ background: '#c0ffee' }}>
         <Container className="profile--container">
-          <UserSearch />
+          <UserSearch getSearchResults={this.getsearchResults} />
           <FriendList
             {...this.props}
             followedUsers={this.state.followedUsers}

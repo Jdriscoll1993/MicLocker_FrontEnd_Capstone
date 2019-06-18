@@ -10,13 +10,14 @@ import Footer from '../components/layout/Footer';
 
 class MicLocker extends Component {
   state = {
-    user: getUserFromLocalStorage()
+    user: getUserFromLocalStorage(),
+    isAuthenticated: false
   };
 
   logout = () => {
     localStorage.removeItem('user');
     this.props.history.push('/login');
-    this.setState({ user: null });
+    this.setState({ user: null, isAuthenticated: false });
   };
 
   render() {
@@ -24,12 +25,17 @@ class MicLocker extends Component {
       <React.Fragment>
         <Router>
         <Header />
-        <NavBar user={this.state.user} onLogout={this.logout} />
+
+        {/* JSX conditional rendering. Logic on left evaluates to true or false and renders the JSX that is to the right of && -- if logic evaluates to false, nothing is rendered and code is skipped over*/}
+        {
+          this.state.isAuthenticated && <NavBar user={this.state.user} onLogout={this.logout} />
+        }
 
         <ApplicationViews
           onLogin={user => this.setState({ user: user, isAuthenticated: true })}
           onLogout={this.logout}
           user={this.state.user}
+          isAuthenticated={this.state.isAuthenticated}
         />
         <Footer />
         </Router>
@@ -38,3 +44,4 @@ class MicLocker extends Component {
   }
 }
 export default withRouter(MicLocker);
+

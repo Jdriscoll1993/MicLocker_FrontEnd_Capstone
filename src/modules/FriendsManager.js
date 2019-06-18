@@ -4,18 +4,18 @@ const remoteURL = 'http://localhost:8088';
 
 const users = {
   getUser(id) {
-    return fetch(`${remoteURL}/users/${id}`).then(e => e.json())
+    return fetch(`${remoteURL}/users/${id}`).then(e => e.json());
   },
   getAll(user) {
-    return fetch(
-      `${remoteURL}/followUsers?follower=${user}&_expand=user`
-    ).then(e => e.json());
+    return fetch(`${remoteURL}/followUsers?follower=${user}&_expand=user`).then(
+      e => e.json()
+    );
   },
   getAllUsers() {
     return fetch(`${remoteURL}/users`).then(e => e.json());
   },
-  getOneUser(id){
-    return fetch(`${remoteURL}/users?userId=${id}`).then(e => e.json())
+  getOneUser(id) {
+    return fetch(`${remoteURL}/users?userId=${id}`).then(e => e.json());
   },
   addUserToFriendsList(user) {
     let sessionUser = getUserFromLocalStorage();
@@ -38,11 +38,14 @@ const users = {
 
   unfollowUser(id) {
     return fetch(`${remoteURL}/followUsers/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json"
-      },
-    }).then(e => e.json())
+        'Content-Type': 'application/json'
+      }
+    }).then(e => e.json());
+  },
+  search(input) {
+    return fetch(`${remoteURL}/users?name_like=${input}`).then(e => e.json());
   }
 };
 

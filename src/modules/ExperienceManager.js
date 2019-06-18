@@ -13,6 +13,9 @@ export default {
   getOneUser(id){
     return fetch(`${remoteURL}/experiences?userId=${id}`).then(e => e.json())
   },
+  getExpById(id){
+    return fetch(`${remoteURL}/experiences/${id}`).then(e => e.json())
+  },
   deleteExperience(id) {
     return fetch(`${remoteURL}/experiences/${id}`, {
       method: "DELETE",

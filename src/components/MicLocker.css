@@ -3,9 +3,13 @@
   margin-right: 300px;
   margin-bottom: 150px;
 }
+
+/* body {
+  background-color: #333;
+} */
 .navbar-style {
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-top: -30px;
+  padding: 0.5px;
 }
 div.ui.fluid.container {
   display: flex;

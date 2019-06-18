@@ -15,7 +15,7 @@ function Footer() {
     textAlign: 'center',
     padding: '10px',
     fontFamily: 'helvetica',
-    marginBottom: '15px'
+    paddingBottom:'30px'
   }
 
 export default Footer;

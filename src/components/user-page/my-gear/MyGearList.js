@@ -24,6 +24,7 @@ export class MyGearList extends Component {
                 gearItem={gearItem}
                 delItem={this.props.delItem}
                 user={this.props.user}
+                
               />
             );
           })}

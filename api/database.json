@@ -54,13 +54,147 @@
       "selling": "",
       "photo": {},
       "id": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
+    },
+    {
+      "email": "Jordy@mail.com",
+      "username": "Jordy",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560816343700?alt=media&token=d1968e8f-aa55-40c8-acaa-b9e81d1e15c6",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2"
+    },
+    {
+      "email": "gorgon@mail.com",
+      "username": "Gorgon",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560816440110?alt=media&token=1b23031e-f94b-4bf7-a5f0-384535df20c8",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1"
+    },
+    {
+      "email": "b@mail.com",
+      "username": "Beetis",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560867902285?alt=media&token=92aebcf2-5577-410f-9044-6ecec81e61dd",
+      "status": "",
+      "buying": "",
+      "selling": "",
+      "photo": {},
+      "id": "dnhcaYQvUlck7jt26IBePXdv4Go1"
+    },
+    {
+      "email": "a@mail.com",
+      "username": "allan",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560868943729?alt=media&token=685cad8d-aecb-4960-944e-25333c3a2305",
+      "photo": {},
+      "id": "LJ6AKu9nKqZPFesFlyPTItKzJhg1"
+    },
+    {
+      "email": "javi@mail.com",
+      "username": "Javier",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560874777535?alt=media&token=1c9b663c-6d2e-4ed6-8790-dcf231fbc838",
+      "photo": {},
+      "id": "JALEQs6diBYwjMlOGrb5Wpbi9Us1"
+    },
+    {
+      "email": "greg@mail.com",
+      "username": "Gregor",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560875583086?alt=media&token=1ef711f6-ef1f-48af-902a-a10af8915456",
+      "photo": {},
+      "id": "RYArzVvqVKgRWfwZdi5y8GMPlBO2"
+    },
+    {
+      "email": "j@mail.com",
+      "username": "jimmy",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560875709141?alt=media&token=ff191e47-c283-40d4-906c-f04765f4ebe5",
+      "photo": {},
+      "id": "lYldwHmnBNeujB10hCYnmVZYBdD2"
+    },
+    {
+      "email": "ed@mail.com",
+      "username": "eddie",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560875970703?alt=media&token=a9a87cb7-2499-4ae7-9dcb-cd0464bd4c99",
+      "photo": {},
+      "id": "pfU7frvIWmUqy7abJhXua2DucMh1"
+    },
+    {
+      "email": "felix@mail.com",
+      "username": "felix",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876063866?alt=media&token=73dad5bb-44c8-4d4a-9acd-7ebe6b1841eb",
+      "photo": {},
+      "id": "PktApVAJwXeJXTJjAQIdGpaWB5r1"
+    },
+    {
+      "email": "frank@mail.com",
+      "username": "frank",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876193888?alt=media&token=ee116943-325d-4a98-9530-41caefe9315f",
+      "photo": {},
+      "id": "BQDOHrz57ucT4eLkew8HPiA1A8N2"
+    },
+    {
+      "email": "gil@mail.com",
+      "username": "gil",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876315232?alt=media&token=80f099a2-3b97-4309-9ff6-4bb59efabffe",
+      "photo": {},
+      "id": "z9QhzMptxaYxucoi1e9ycSsH7Hp1"
+    },
+    {
+      "email": "gg@mail.com",
+      "username": "george",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876442715?alt=media&token=ff2abe66-d599-4646-bd0c-00de8168c021",
+      "photo": {},
+      "id": "IqbT8QZj3ycUNFPWJyNTZuzAdDl2"
+    },
+    {
+      "email": "gw@mail.com",
+      "username": "gwen",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876514668?alt=media&token=2ca88ab9-e2ba-41ac-abbf-81cf81191fb0",
+      "photo": {},
+      "id": "EqF1hnjWrqOyBC5lEi1OMvk4UQn1"
+    },
+    {
+      "email": "blah@mail.com",
+      "username": "blah",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876693121?alt=media&token=894d5598-4492-4d37-91cb-12513416e8cc",
+      "photo": {},
+      "id": "3AoIP7rIoKW7VKfjKDnD1snAKFv1"
+    },
+    {
+      "email": "gar@mail.com",
+      "username": "gary",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560885719849?alt=media&token=5275fd98-d3d6-492b-bbca-e97bd90dc3e8",
+      "photo": {},
+      "id": "tAD4znkLwuS62Yg3hBpmlh5MHk92"
     }
   ],
   "bios": [
     {
       "id": 1,
-      "aboutMe": "Joeys about",
+      "aboutMe": "joeys aboutt",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "id": 2,
+      "aboutMe": "terry world",
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
     },
     {
       "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
@@ -68,55 +202,113 @@
       "id": 4
     },
     {
-      "id": 5,
-      "aboutMe": "Terry Town",
-      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
+      "userId": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2",
+      "aboutMe": "Please write about yourself",
+      "id": 6
+    },
+    {
+      "userId": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "aboutMe": "Please write about yourself",
+      "id": 7
+    },
+    {
+      "userId": "dnhcaYQvUlck7jt26IBePXdv4Go1",
+      "aboutMe": "Please write about yourself",
+      "id": 8
+    },
+    {
+      "userId": "LJ6AKu9nKqZPFesFlyPTItKzJhg1",
+      "aboutMe": "Please write about yourself",
+      "id": 9
+    },
+    {
+      "userId": "JALEQs6diBYwjMlOGrb5Wpbi9Us1",
+      "aboutMe": "Please write about yourself",
+      "id": 10
+    },
+    {
+      "userId": "RYArzVvqVKgRWfwZdi5y8GMPlBO2",
+      "aboutMe": "Please write about yourself",
+      "id": 11
+    },
+    {
+      "userId": "lYldwHmnBNeujB10hCYnmVZYBdD2",
+      "aboutMe": "Please write about yourself",
+      "id": 12
+    },
+    {
+      "userId": "pfU7frvIWmUqy7abJhXua2DucMh1",
+      "aboutMe": "Please write about yourself",
+      "id": 13
+    },
+    {
+      "userId": "PktApVAJwXeJXTJjAQIdGpaWB5r1",
+      "aboutMe": "Please write about yourself",
+      "id": 14
+    },
+    {
+      "userId": "BQDOHrz57ucT4eLkew8HPiA1A8N2",
+      "aboutMe": "Please write about yourself",
+      "id": 15
+    },
+    {
+      "userId": "z9QhzMptxaYxucoi1e9ycSsH7Hp1",
+      "aboutMe": "Please write about yourself",
+      "id": 16
+    },
+    {
+      "userId": "IqbT8QZj3ycUNFPWJyNTZuzAdDl2",
+      "aboutMe": "Please write about yourself",
+      "id": 17
+    },
+    {
+      "userId": "EqF1hnjWrqOyBC5lEi1OMvk4UQn1",
+      "aboutMe": "Please write about yourself",
+      "id": 18
+    },
+    {
+      "userId": "3AoIP7rIoKW7VKfjKDnD1snAKFv1",
+      "aboutMe": "Please write about yourself",
+      "id": 19
+    },
+    {
+      "userId": "tAD4znkLwuS62Yg3hBpmlh5MHk92",
+      "aboutMe": "Please write about yourself",
+      "id": 20
     }
   ],
   "experiences": [
     {
-      "id": 2,
-      "summary": "Joey Experience",
+      "id": 1,
+      "summary": "joey",
+      "instruments": "",
+      "memory": "",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "id": 3,
-      "summary": "terry expery",
+      "id": 2,
+      "summary": "TerryTory",
       "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
-    },
-    {
-      "summary": "terry jerry",
-      "instruments": "",
-      "memory": "",
-      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
-      "id": 4
-    },
-    {
-      "summary": "Joey experience 2",
-      "instruments": "",
-      "memory": "",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 5
     }
   ],
   "gearItems": [
     {
-      "id": 1,
-      "url": "https://pbs.twimg.com/profile_images/640760380034293760/3NlnmX7U.jpg",
-      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
-    },
-    {
-      "manufacturer": "terry gear",
+      "manufacturer": "terry world",
       "model": "",
       "category": "",
       "subCategory": "",
       "forSale": "",
       "url": "",
       "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
-      "id": 2
+      "id": 1
     },
     {
-      "manufacturer": "hey nate",
+      "id": 2,
+      "manufacturer": "joey",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "manufacturer": "jboy",
       "model": "",
       "category": "",
       "subCategory": "",
@@ -129,40 +321,190 @@
   "wishItems": [
     {
       "id": 1,
-      "url": "https://pbs.twimg.com/profile_images/640760380034293760/3NlnmX7U.jpg",
+      "manufacturer": "wish",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
-      "manufacturer": "terry wish",
+      "manufacturer": "",
+      "model": "",
+      "category": "",
+      "subCategory": "",
+      "forSale": "",
+      "url": "",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 2
+    },
+    {
+      "manufacturer": "terry 4 life",
       "model": "",
       "category": "",
       "subCategory": "",
       "forSale": "",
       "url": "",
       "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
-      "id": 2
+      "id": 3
     }
   ],
   "followUsers": [
     {
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "follower": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "id": 7
+    },
+    {
       "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 1
+      "follower": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "id": 8
     },
     {
       "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 2
+      "follower": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "id": 9
     },
     {
       "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 3
+      "follower": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "id": 10
     },
     {
       "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 14
+    },
+    {
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "follower": "tAD4znkLwuS62Yg3hBpmlh5MHk92",
+      "id": 21
+    },
+    {
+      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "follower": "tAD4znkLwuS62Yg3hBpmlh5MHk92",
+      "id": 22
+    },
+    {
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "follower": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 23
+    },
+    {
+      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "follower": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 24
+    },
+    {
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
+      "follower": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 25
+    },
+    {
+      "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
+      "follower": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 26
+    },
+    {
+      "userId": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2",
+      "follower": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "id": 27
+    }
+  ],
+  "settings": [
+    {
+      "userId": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 1
+    },
+    {
+      "userId": "dnhcaYQvUlck7jt26IBePXdv4Go1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 2
+    },
+    {
+      "userId": "LJ6AKu9nKqZPFesFlyPTItKzJhg1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 3
+    },
+    {
+      "userId": "JALEQs6diBYwjMlOGrb5Wpbi9Us1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
       "id": 4
+    },
+    {
+      "userId": "RYArzVvqVKgRWfwZdi5y8GMPlBO2",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 5
+    },
+    {
+      "userId": "lYldwHmnBNeujB10hCYnmVZYBdD2",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 6
+    },
+    {
+      "userId": "pfU7frvIWmUqy7abJhXua2DucMh1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 7
+    },
+    {
+      "userId": "PktApVAJwXeJXTJjAQIdGpaWB5r1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 8
+    },
+    {
+      "userId": "BQDOHrz57ucT4eLkew8HPiA1A8N2",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 9
+    },
+    {
+      "userId": "z9QhzMptxaYxucoi1e9ycSsH7Hp1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 10
+    },
+    {
+      "userId": "IqbT8QZj3ycUNFPWJyNTZuzAdDl2",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 11
+    },
+    {
+      "userId": "EqF1hnjWrqOyBC5lEi1OMvk4UQn1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 12
+    },
+    {
+      "userId": "3AoIP7rIoKW7VKfjKDnD1snAKFv1",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 13
+    },
+    {
+      "userId": "tAD4znkLwuS62Yg3hBpmlh5MHk92",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 14
     }
   ]
 }

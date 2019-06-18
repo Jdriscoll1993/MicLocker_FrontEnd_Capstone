@@ -13,7 +13,7 @@ export class MyGearEditForm extends Component {
   };
 
   componentDidMount() {
-    GearManager.getOneUser(this.props.match.params.gearItemId).then(
+    GearManager.getGearById(this.props.match.params.gearItemId).then(
       gearItem => {
         this.setState({
           manufacturer: gearItem.manufacturer,
