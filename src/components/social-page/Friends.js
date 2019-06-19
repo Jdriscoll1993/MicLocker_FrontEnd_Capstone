@@ -2,52 +2,35 @@ import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
 import FriendList from './friends/FriendList';
 import UserList from './other-users/UserList';
-import UserSearch from './search-users/UserSearch';
-import users from '../../modules/FriendsManager';
+import FriendsManager from '../../modules/FriendsManager';
 export default class Friends extends Component {
   state = {
-    allUsers: [],
     followedUsers: [],
-    searchResults: [],
-    searchInput: ''
+    searchResults: []
   };
 
   componentDidMount() {
-    const sessionUser = JSON.parse(localStorage.getItem('user'));
-    users.getAll(sessionUser.id).then(users => {
-      const followedArray = [];
-      users.forEach(user => {
-        followedArray.push(user.user);
-      });
-      this.setState({ followedUsers: followedArray });
-    });
-    users.getAllUsers().then(users => {
-      const parsedUsers = users.filter(user => user.id !== sessionUser.id);
-      this.setState({ allUsers: parsedUsers });
-    });
+    this.parsedUser();
   }
 
-  getSearchResults = input => {
-    this.setState({ searchInput: input})
-    let newSearchResults = []
-    users.search('users', input)
-      .then(results => (newSearchResults = results))
-      .then(() => this.setState({ searchResults: newSearchResults }));
+  componentDidUpdate(prevProps) {
+    if(prevProps !== this.props) {
+      this.parsedUser()
     }
-    
+  }
 
   unfollow = user => {
-    users.checkForFollow(user).then(response =>
-      users.unfollowUser(response[0].id).then(_reply => {
+    FriendsManager.checkForFollow(user).then(response =>
+      FriendsManager.unfollowUser(response[0].id).then(_reply => {
         const sessionUser = JSON.parse(localStorage.getItem('user'));
-        users.getAll(sessionUser.id).then(users => {
+        FriendsManager.getAll(sessionUser.id).then(users => {
           const followedArray = [];
           users.forEach(user => {
             followedArray.push(user.user);
           });
           this.setState({ followedUsers: followedArray });
         });
-        users.getAllUsers().then(users => {
+        FriendsManager.getAllUsers().then(users => {
           const parsedUsers = users.filter(user => user.id !== sessionUser.id);
           this.setState({ allUsers: parsedUsers });
         });
@@ -56,26 +39,39 @@ export default class Friends extends Component {
   };
 
   addUserToFriendsList = user => {
-    users.addUserToFriendsList(user);
+    FriendsManager.addUserToFriendsList(user);
     const sessionUser = JSON.parse(localStorage.getItem('user'));
-    users.getAll(sessionUser.id).then(users => {
+    FriendsManager.getAll(sessionUser.id).then(users => {
       const followedArray = [];
       users.forEach(user => {
         followedArray.push(user.user);
       });
       this.setState({ followedUsers: followedArray });
     });
-    users.getAllUsers().then(users => {
+    FriendsManager.getAllUsers().then(users => {
       const parsedUsers = users.filter(user => user.id !== sessionUser.id);
       this.setState({ allUsers: parsedUsers });
     });
   };
 
+  parsedUser = () => {
+    const sessionUser = JSON.parse(localStorage.getItem('user'));
+    const followedArray = [];
+    FriendsManager.getAll(sessionUser.id)
+    .then(users => {
+      users.forEach(user => {
+        followedArray.push(user.user)
+      });
+    }).then(()=> {
+      const parsedUsers = followedArray.filter(user => user.id !== sessionUser.id);
+      this.setState({ allUsers: parsedUsers, followedUsers: followedArray });
+    })
+  };
   render() {
     return (
       <div style={{ background: '#c0ffee' }}>
         <Container className="profile--container">
-          <UserSearch getSearchResults={this.getsearchResults} />
+          {/* <UserSearch getSearchResults={this.getsearchResults} /> */}
           <FriendList
             {...this.props}
             followedUsers={this.state.followedUsers}
@@ -83,7 +79,7 @@ export default class Friends extends Component {
           />
           <UserList
             {...this.props}
-            allUsers={this.state.allUsers}
+            allUsers={this.props.allUsers}
             add={this.addUserToFriendsList}
           />
         </Container>

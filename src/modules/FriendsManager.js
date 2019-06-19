@@ -45,7 +45,7 @@ const users = {
     }).then(e => e.json());
   },
   search(input) {
-    return fetch(`${remoteURL}/users?name_like=${input}`).then(e => e.json());
+    return fetch(`${remoteURL}/users?q=${input}`).then(e => e.json());
   }
 };
 

@@ -3,14 +3,7 @@ import React, { Component } from 'react';
 // import { link } from 'react-router-dom';
 
 export class UserSearch extends Component {
-  handleSearch(input) {
-    //only search on enter/return keypress
-    if (input.keyCode === 13) {
-      console.log(input.target.value);
-      this.props.getSearchResults(input.target.value);
-      this.props.history.push('/search');
-    }
-  }
+
 
   render() {
     return (

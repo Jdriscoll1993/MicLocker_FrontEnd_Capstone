@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Modal, Image, Button, Header } from 'semantic-ui-react';
+import { Modal, Image, Header } from 'semantic-ui-react';
 import SettingsManager from '../../modules/SettingsManager';
 class Dashboard extends Component {
-
   componentDidMount() {
     SettingsManager.getOneUser(this.props.user).then(settings => {
-      console.log(this.props.user)
+      console.log(this.props.user);
     });
   }
 
@@ -15,20 +14,23 @@ class Dashboard extends Component {
       <>
         <div
           style={{
-            background:'#f3f3f3',
-            marginTop:'25px'
+            background: '#f3f3f3',
+            marginTop: '25px'
           }}
         >
           <Image
             circular
             size="big"
-            style={{ padding: '50px', display:'block',
-            marginLeft: 'auto',
-            marginRight: 'auto' }}
+            style={{
+              padding: '50px',
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}
             src={this.props.user.image}
           />
           <Modal.Content image>
-          {this.props.status} {this.props.buying} {this.props.selling} 
+            {this.props.status} {this.props.buying} {this.props.selling}
             {/* <Button
               style={{
                 float: 'right',
@@ -40,7 +42,7 @@ class Dashboard extends Component {
             </Button> */}
             <Modal.Description />
           </Modal.Content>
-          <Header></Header>
+          <Header />
         </div>
       </>
     );

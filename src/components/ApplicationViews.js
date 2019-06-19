@@ -26,30 +26,50 @@ import SettingsManager from '../modules/SettingsManager';
 // import ExperienceManager from '../modules/ExperienceManager';
 class ApplicationViews extends Component {
   state = {
-    allUsers: []
+    allUsers: [],
+    search: ''
+  };
+
+  onSearchSubmit = () => {
+    users.search(this.state.search).then(res => {
+      this.setState({ allUsers: res });
+      console.log(res);
+    });
   };
 
   componentDidMount() {
     users.getAllUsers().then(allUsers => {
-      this.setState(allUsers);
+      this.setState({ allUsers: allUsers });
     });
   }
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
   onRegister = user => {
     const newBio = { userId: user.id, aboutMe: 'Please write about yourself' };
     BioManager.postBio(newBio).then(newBio => {
       console.log(newBio);
-    const newSettings = { userId: user.id, status:'im a cool guy who likes to play gamecube', buying:'broke rn', selling:'chimichangas'}
-    SettingsManager.postSettings(newSettings).then(newSettings=> {
-      this.setState(newSettings)
-      console.log('new user settings', newSettings)
-    })
+      const newSettings = {
+        userId: user.id,
+        status: 'im a cool guy who likes to play gamecube',
+        buying: 'broke rn',
+        selling: 'chimichangas'
+      };
+      SettingsManager.postSettings(newSettings).then(newSettings => {
+        this.setState(newSettings);
+        console.log('new user settings', newSettings);
+      });
     });
   };
 
   isAuthenticated = () => localStorage.getItem('user') !== null;
 
   render() {
+    console.log(this.state);
     return (
       <>
         <div className="App">
@@ -72,7 +92,10 @@ class ApplicationViews extends Component {
             render={props => {
               return this.props.isAuthenticated ? (
                 <Profile
-                  {...props} status={this.state.status} buying={this.state.buying} selling={this.state.selling}
+                  {...props}
+                  status={this.state.status}
+                  buying={this.state.buying}
+                  selling={this.state.selling}
                   onLogout={this.props.onLogout}
                   user={this.props.user}
                 />
@@ -91,6 +114,10 @@ class ApplicationViews extends Component {
                   {...props}
                   onLogout={this.props.onLogout}
                   user={this.props.user}
+                  updateSearch={this.updateSearch}
+                  handleFieldChange={this.handleFieldChange}
+                  onSearchSubmit={this.onSearchSubmit}
+                  allUsers={this.state.allUsers}
                 />
               ) : (
                 <Redirect to="/login" />
@@ -106,7 +133,6 @@ class ApplicationViews extends Component {
                   {...props}
                   experiences={this.props.experiences}
                   addExperience={this.addExperience}
-                  
                 />
               ) : (
                 <Redirect to="/login" />
