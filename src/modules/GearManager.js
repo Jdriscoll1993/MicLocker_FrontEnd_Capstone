@@ -12,6 +12,9 @@ export default {
   getOneUser(id){
     return fetch(`${remoteURL}/gearItems?userId=${id}`).then(e => e.json())
   },
+  getGearById(id){
+    return fetch(`${remoteURL}/gearItems/${id}`).then(e => e.json())
+  },
   deleteGearItem(id) {
     return fetch(`${remoteURL}/gearItems/${id}`, {
       method: "DELETE",

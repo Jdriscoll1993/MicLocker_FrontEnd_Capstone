@@ -9,6 +9,10 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/settings`).then(e => e.json())
   },
+  getOneUser(id){
+    return fetch(`${remoteURL}/settings?userId=${id}`).then(e => e.json())
+    .then(console.log("one user", id))
+  },
   // deleteSettings(id) {
   //   return fetch(`${remoteURL}/settings/${id}`, {
   //     method: "DELETE",

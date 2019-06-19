@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FriendsManager from '../../../modules/FriendsManager';
 
- class UserCard extends Component {
+class UserCard extends Component {
   state = {
     followedBySessionUser: false
   };
@@ -39,11 +39,15 @@ import FriendsManager from '../../../modules/FriendsManager';
             unfollow
           </button>
         )}
-        <button onClick={() => {
-          this.props.history.push(`/users/${this.props.user.id}`)
-        }}>Go To Profile</button>
+        <button
+          onClick={() => {
+            this.props.history.push(`/users/${this.props.user.id}`);
+          }}
+        >
+          Go To Profile
+        </button>
       </div>
     );
   }
 }
-export default UserCard
+export default UserCard;

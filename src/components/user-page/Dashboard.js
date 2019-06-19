@@ -1,38 +1,51 @@
-import React from 'react';
-import { Modal, Image, Button, Header } from 'semantic-ui-react';
-function Dashboard(props) {
-  return (
-    <>
-      <div
-        style={{
-          padding: 'auto',
-          margin: 'auto',
-          marginBottom: '45px',
-          marginTop: '45px',
-          background: '#ccc'
-        }}
-      >
-        <Modal.Content image>
-          <Button
-            style={{
-              float: 'right',
-              background: '#355',
-              color: '#f3f3f3'
-            }}
-          >
-            Add Friend
-          </Button>
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { Modal, Image, Header } from 'semantic-ui-react';
+import SettingsManager from '../../modules/SettingsManager';
+class Dashboard extends Component {
+  componentDidMount() {
+    SettingsManager.getOneUser(this.props.user).then(settings => {
+      console.log(this.props.user);
+    });
+  }
+
+  render() {
+    return (
+      <>
+        <div
+          style={{
+            background: '#f3f3f3',
+            marginTop: '25px'
+          }}
+        >
           <Image
-            // circular
-            size="large"
-            style={{ padding: '50px' }}
-            src={props.user.image}
+            circular
+            size="big"
+            style={{
+              padding: '50px',
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}
+            src={this.props.user.image}
           />
-          <Modal.Description />
-        </Modal.Content>
-        <Header>hello {props.user.username}</Header>
-      </div>
-    </>
-  );
+          <Modal.Content image>
+            {this.props.status} {this.props.buying} {this.props.selling}
+            {/* <Button
+              style={{
+                float: 'right',
+                background: '#355',
+                color: '#f3f3f3'
+              }}
+            >
+              Add Friend
+            </Button> */}
+            <Modal.Description />
+          </Modal.Content>
+          <Header />
+        </div>
+      </>
+    );
+  }
 }
-export default Dashboard;
+export default withRouter(Dashboard);

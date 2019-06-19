@@ -10,7 +10,7 @@ export class ExperienceCard extends Component {
     this.setState({
       saveDisabled: true
     });
-    this.props.deleteExperience(this.props.experience.id);
+    this.props.deleteExperience(this.props.experience.id, this.props.experience.userId);
   };
 
   getStyle = () => {

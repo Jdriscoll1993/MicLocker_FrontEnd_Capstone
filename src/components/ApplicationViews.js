@@ -22,35 +22,54 @@ import BioManager from '../modules/BioManager';
 import users from '../modules/FriendsManager';
 
 import OthersProfiles from '../components/social-page/OthersProfiles';
+import SettingsManager from '../modules/SettingsManager';
 // import ExperienceManager from '../modules/ExperienceManager';
 class ApplicationViews extends Component {
   state = {
-    allUsers: []
+    allUsers: [],
+    search: ''
+  };
+
+  onSearchSubmit = () => {
+    users.search(this.state.search).then(res => {
+      this.setState({ allUsers: res });
+      console.log(res);
+    });
   };
 
   componentDidMount() {
     users.getAllUsers().then(allUsers => {
-      this.setState(allUsers);
+      this.setState({ allUsers: allUsers });
     });
   }
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
   onRegister = user => {
     const newBio = { userId: user.id, aboutMe: 'Please write about yourself' };
     BioManager.postBio(newBio).then(newBio => {
       console.log(newBio);
-      // this.setState({
-      //   user: user
-      // });
+      const newSettings = {
+        userId: user.id,
+        status: 'im a cool guy who likes to play gamecube',
+        buying: 'broke rn',
+        selling: 'chimichangas'
+      };
+      SettingsManager.postSettings(newSettings).then(newSettings => {
+        this.setState(newSettings);
+        console.log('new user settings', newSettings);
+      });
     });
-    // const newExp = {userId:user.id, summary:"hey", instruments:"yo", memory:"sup"}
-    // ExperienceManager.postExperience(newExp).then(newExp => {
-    //   console.log(newExp)
-    // })
   };
 
   isAuthenticated = () => localStorage.getItem('user') !== null;
 
   render() {
+    console.log(this.state);
     return (
       <>
         <div className="App">
@@ -71,9 +90,12 @@ class ApplicationViews extends Component {
             exact
             path="/home"
             render={props => {
-              return this.props.user ? (
+              return this.props.isAuthenticated ? (
                 <Profile
                   {...props}
+                  status={this.state.status}
+                  buying={this.state.buying}
+                  selling={this.state.selling}
                   onLogout={this.props.onLogout}
                   user={this.props.user}
                 />
@@ -87,12 +109,18 @@ class ApplicationViews extends Component {
             exact
             path="/friends"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <Friends
                   {...props}
                   onLogout={this.props.onLogout}
                   user={this.props.user}
+                  updateSearch={this.updateSearch}
+                  handleFieldChange={this.handleFieldChange}
+                  onSearchSubmit={this.onSearchSubmit}
+                  allUsers={this.state.allUsers}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
@@ -100,12 +128,14 @@ class ApplicationViews extends Component {
             exact
             path="/new-experience"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <AddExperience
                   {...props}
                   experiences={this.props.experiences}
                   addExperience={this.addExperience}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
@@ -113,12 +143,14 @@ class ApplicationViews extends Component {
           <Route
             path="/experiences/edit/:experienceId"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <ExperienceEditForm
                   {...props}
                   experiences={this.props.experiences}
                   updateExperience={this.updateExperience}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
@@ -126,24 +158,28 @@ class ApplicationViews extends Component {
             exact
             path="/new-gear"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <AddGear
                   {...props}
                   gearItems={this.props.gearItems}
                   gearItem={this.gearItem}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
           <Route
             path="/gearItems/edit/:gearItemId"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <MyGearEditForm
                   {...props}
                   gearItems={this.props.gearItems}
                   updateGearItem={this.updateGearItem}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
@@ -151,31 +187,39 @@ class ApplicationViews extends Component {
             exact
             path="/new-wishlist"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <AddWishList
                   {...props}
                   wishItems={this.props.wishItems}
                   wishItem={this.wishItem}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
           <Route
             path="/wishItems/edit/:wishItemId"
             render={props => {
-              return (
+              return this.props.isAuthenticated ? (
                 <GearWishListEditForm
                   {...props}
                   wishItems={this.props.wishItems}
                   updateWishItem={this.updateWishItem}
                 />
+              ) : (
+                <Redirect to="/login" />
               );
             }}
           />
           <Route
             path="/bio/edit/:bioId"
             render={props => {
-              return <BioEditForm {...props} bios={this.props.bios} />;
+              return this.props.isAuthenticated ? (
+                <BioEditForm {...props} bios={this.props.bios} />
+              ) : (
+                <Redirect to="/login" />
+              );
             }}
           />
           <Route
@@ -184,7 +228,7 @@ class ApplicationViews extends Component {
             render={props => {
               if (this.isAuthenticated()) {
                 let user = this.state.allUsers.find(
-                  user => user.id === props.match.params.id 
+                  user => user.id === props.match.params.id
                 );
                 if (!user) {
                   user = {

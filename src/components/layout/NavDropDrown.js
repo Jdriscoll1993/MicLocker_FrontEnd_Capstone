@@ -1,49 +1,22 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Dropdown,
-  Modal,
-  Image,
-  Form
-} from 'semantic-ui-react';
+import { Button, Dropdown, Modal, Image, Form } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
-// import { getUserFromLocalStorage } from '../../authentication/userManager';
-
-import SettingsManager from '../../modules/SettingsManager';
-
-// Wrap inputs in Form and attach button similiar to login page. +
-
-// The Form will have an onSubmit function that autmically gets called when the button is clicked (login page) +
-
-// submit () { logic to PUT (json server) update to current user will be in this function }
-
-// make a user object with all needed users fields ** Reference the object being used in the Register component (the state object here represents the user)
-
-// Should just be able to grab editable info and use as user object for Put
-
-//then, to navigate user back to main page, use the routes/history thing at the end of the on submit function
 
 class NavDropDown extends Component {
   state = {
     initialLoad: false,
     editableInfo: this.props.user
+      ? this.props.user
+      : { buying: '', selling: '', status: '' }
   };
-
-  submitSettings = () => {
-    SettingsManager.putSettings(
-      this.props.status,
-      this.props.buying,
-      this.props.selling
-    ).then(user => {
-      this.props.onSubmit(user);
-      this.props.history.push('/home');
-    });
-  };
+ 
 
   onStatusChange(newStatus) {
     let editableInfo = this.state.editableInfo;
     editableInfo.status = newStatus;
-    this.setState({ editableInfo: editableInfo });
+    this.setState({
+      editableInfo: editableInfo
+    });
   }
 
   onBuyingChange(newBuy) {
@@ -59,11 +32,14 @@ class NavDropDown extends Component {
   }
 
   render() {
+    // console.log('navdrop', this.props.user)
     return (
       // {this.props.user.username}
-      <Dropdown text="Settings">
-        <Dropdown.Menu>
-          <Dropdown.Item>
+      <Dropdown 
+      
+      text={'Greetings ' + this.props.user.username}>
+        <Dropdown.Menu style={{marginTop:'20px'}}>
+          {/* <Dropdown.Item>
             <div className="nav nav-pills">
               <div className="nav-item">
                 <Modal trigger={<Button>Account Settings</Button>}>
@@ -104,9 +80,10 @@ class NavDropDown extends Component {
                 </Modal>
               </div>
             </div>
-          </Dropdown.Item>
+          </Dropdown.Item> */}
           <Dropdown.Item>
             <Button
+            
               onClick={this.props.onLogout}
               content="Log Out"
               color="green"

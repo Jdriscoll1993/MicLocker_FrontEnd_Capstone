@@ -151,7 +151,7 @@ class Profile extends Component {
     return (
       <>
         <div className="profile-style">
-          <Dashboard user={this.props.user} />
+          <Dashboard user={this.props.user} status={this.props.status} buying={this.props.buying} selling={this.props.selling} />
           <Container fluid>
             <div className="bio1">
               <Bio
