@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ExperienceCard from './ExperienceCard';
 import * as userManager from '../../../authentication/userManager';
+import { List, Button } from 'semantic-ui-react';
+
 export class ExperienceList extends Component {
-
-
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
     this.setState({ user: userInfo });
@@ -13,24 +13,27 @@ export class ExperienceList extends Component {
   render() {
     //map through the props coming from Profile.js
     return (
-      <div>
-        <button style={{ float: 'right' }}>
-          <Link to="/new-experience">+</Link>
-        </button>
-        <section>
-          {this.props.experiences.map(experience => {
-            return (
-              <ExperienceCard
-                {...this.props}
-                key={experience.id}
-                experience={experience}
-                delExperience={this.props.delExperience}
-                user={this.props.user}
-              />
-            );
-          })}
-        </section>
-      </div>
+      
+        <div>
+          <Button color="green">
+            <Link to="/new-experience">Add experience</Link>
+          </Button>
+
+          <section>
+            {this.props.experiences.map(experience => {
+              return (
+                <ExperienceCard
+                  {...this.props}
+                  key={experience.id}
+                  experience={experience}
+                  delExperience={this.props.delExperience}
+                  user={this.props.user}
+                />
+              );
+            })}
+          </section>
+        </div>
+      
     );
   }
 }

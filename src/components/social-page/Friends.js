@@ -3,6 +3,7 @@ import { Container } from 'semantic-ui-react';
 import FriendList from './friends/FriendList';
 import UserList from './other-users/UserList';
 import FriendsManager from '../../modules/FriendsManager';
+import './Friends.css'
 export default class Friends extends Component {
   state = {
     followedUsers: [],
@@ -69,8 +70,8 @@ export default class Friends extends Component {
   };
   render() {
     return (
-      <div style={{ background: '#c0ffee' }}>
-        <Container className="profile--container">
+      <div className="friends--container">
+        <Container>
           {/* <UserSearch getSearchResults={this.getsearchResults} /> */}
           <FriendList
             {...this.props}

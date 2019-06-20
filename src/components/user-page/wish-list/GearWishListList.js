@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import GearWishListCard from '../wish-list/GearWishListCard';
-// import WishListManager from '../../../modules/WishListManager';
 import * as userManager from '../../../authentication/userManager';
+import {  Button } from 'semantic-ui-react';
 export class GearWishListList extends Component {
   componentDidMount = () => {
     let userInfo = userManager.getUserFromLocalStorage();
@@ -12,9 +12,9 @@ export class GearWishListList extends Component {
   render() {
     return (
       <div>
-        <button style={{ float: 'right' }}>
-          <Link to="/new-wishlist">+</Link>
-        </button>
+        <Button color='green'>
+          <Link to="/new-wishlist">Add Item to Wish List</Link>
+        </Button>
         <section>
           {this.props.wishItems.map(wishItem => {
             return (

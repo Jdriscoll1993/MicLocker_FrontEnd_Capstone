@@ -20,7 +20,7 @@ export class UserList extends Component {
   render() {
     console.log(this.props.allUsers);
     return (
-      <div style={{ background: '#f4f4f4', textAlign: 'center' }}>
+      <div>
         <input
           type="text"
           id="search"

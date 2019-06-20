@@ -23,6 +23,7 @@ import MyGearList from '../user-page/my-gear/MyGearList';
 import WishListManager from '../../modules/WishListManager';
 import GearWishListList from '../user-page/wish-list/GearWishListList';
 
+import './Profile.css';
 
 class Profile extends Component {
   //to access state: this.state.experiences
@@ -39,11 +40,10 @@ class Profile extends Component {
     this.props.history.push('/login');
   };
 
-
   // GET get all data and set new state
   componentDidMount() {
     // const userId = this.props.match.params.user
-    // get user id, get all persons shit 
+    // get user id, get all persons shit
     const newState = {};
     ExperienceManager.getOneUser(this.props.user.id)
       .then(experiences => {
@@ -65,10 +65,9 @@ class Profile extends Component {
                     newState.bios = bios;
                   })
                   .then(() => this.setState(newState))
-                  
               )
           )
-      )
+      );
   }
 
   // EXPERIENCES
@@ -150,8 +149,13 @@ class Profile extends Component {
   render() {
     return (
       <>
-        <div className="profile-style">
-          <Dashboard user={this.props.user} status={this.props.status} buying={this.props.buying} selling={this.props.selling} />
+        <div className="profile--container">
+          <Dashboard
+            user={this.props.user}
+            status={this.props.status}
+            buying={this.props.buying}
+            selling={this.props.selling}
+          />
           <Container fluid>
             <div className="bio1">
               <Bio
@@ -168,7 +172,7 @@ class Profile extends Component {
                 deleteExperience={this.deleteExperience}
                 user={this.props.user}
               />
-            </div>
+           </div>
 
             <div className="mygear3">
               <MyGearList

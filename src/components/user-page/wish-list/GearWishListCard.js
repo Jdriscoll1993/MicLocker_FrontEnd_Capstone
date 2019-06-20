@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Button, Card, Image } from 'semantic-ui-react';
 
 export class GearWishListCard extends Component {
   state = {
@@ -32,36 +33,40 @@ export class GearWishListCard extends Component {
       url
     } = this.props.wishItem;
     return (
-      <div className="wish-div" style={this.getStyle()}>
-      <h2 style={{textAlign:'center'}}>{model}</h2>
-      <h2 style={{ color: 'goldenrod', textAlign:'center' }}>For Sale:</h2>
-      <h2 style={{textAlign:'center'}}>{forSale}</h2>
-      <img src={url} alt="gear pic" style={{width:"80%", margin: 60}}/><br/>
-      <div className='gear-details'>
-      <h2 style={{ color: 'goldenrod' }}
-      >Manufacturer:</h2>
-      <h2>{manufacturer}</h2>
-      <h2 style={{ color: 'goldenrod' }}>Category:</h2>
-      <h2>{category}</h2>
-      <h2 style={{ color: 'goldenrod' }}>Sub-Category:</h2>
-      <h2>{subCategory}</h2>
-      </div>
-      <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
-        Delete
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          this.props.history.push(
-            `/wishItems/edit/${this.props.wishItem.id}`
-          );
-        }}
-      >
-        Edit
-      </button>
-    </div>
+      <Card.Group>
+        <Card style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Card.Content>
+        <Card.Header style={{ textAlign: 'center' }}>{model}</Card.Header>
+        <Card.Description>
+        <Image src={url} alt="gear pic"/>
+        <br />
+        <div className="gear-details">
+          <h2>Manufacturer:</h2>
+          <h2>{manufacturer}</h2>
+          <h2>Category:</h2>
+          <h2>{category}</h2>
+          <h2>Sub-Category:</h2>
+          <h2>{subCategory}</h2>
+        </div>
+        </Card.Description>
+        </Card.Content>
+        <Button color='red' onClick={this.handleClick} disabled={this.state.saveDisabled}>
+          Delete
+        </Button>
+        <Button color='yellow'
+          type="button"
+          onClick={() => {
+            this.props.history.push(
+              `/wishItems/edit/${this.props.wishItem.id}`
+            );
+          }}
+        >
+          Edit
+        </Button>
+      </Card>
+      </Card.Group>
     );
   }
 }
 
-export default withRouter (GearWishListCard);
+export default withRouter(GearWishListCard);

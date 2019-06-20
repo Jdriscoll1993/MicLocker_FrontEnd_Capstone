@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BioCard from '../Bio/BioCard';
+import { Card, Button } from 'semantic-ui-react';
+
 export class Bio extends Component {
 
   render() {
