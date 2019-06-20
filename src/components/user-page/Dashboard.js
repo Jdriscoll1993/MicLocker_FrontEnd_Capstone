@@ -15,11 +15,13 @@ class Dashboard extends Component {
         <div className="dashboard--container">
           <Image
             circular
-            size="big"
+            size="large"
             style={{
               display: 'block',
               marginLeft: 'auto',
-              marginRight: 'auto'
+              marginRight: 'auto',
+              padding: '30px',
+              boxShadow:'5px 5px 5px #333'
             }}
             src={this.props.user.image}
           />
