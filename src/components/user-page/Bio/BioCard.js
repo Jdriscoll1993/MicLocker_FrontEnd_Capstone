@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import { Button, Card } from 'semantic-ui-react';
+
 export class BioCard extends Component {
   state = {
     saveDisabled: false
   };
 
   getStyle = () => {
-    return {
-      background: '#f4f4f4',
-      padding: '10px',
-      marginBottom: '50px'
-    };
+    return {};
   };
 
   render() {
     const { aboutMe } = this.props.bio;
     return (
-      <div className="bio-div" style={this.getStyle()}>
-        <h3 style={{ color: 'goldenrod' }}>About Me:</h3>
-        <h5>{aboutMe}</h5>
-        <button
-          type="button"
-          onClick={() => {
-            this.props.history.push(`/bio/edit/${this.props.bio.id}`);
-          }}
-        >
-          Edit
-        </button>
-      </div>
+      <Card.Group className="bio-div">
+        <Card style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Card.Content>About Me:
+          <Card.Description>
+          <h5>{aboutMe}</h5>
+          </Card.Description>
+          </Card.Content>
+          <Button color="yellow"
+            type="button"
+            onClick={() => {
+              this.props.history.push(`/bio/edit/${this.props.bio.id}`);
+            }}
+          >
+            Edit
+          </Button>
+        </Card>
+      </Card.Group>
     );
   }
 }

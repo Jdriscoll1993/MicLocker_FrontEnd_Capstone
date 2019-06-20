@@ -12,17 +12,11 @@ class Dashboard extends Component {
   render() {
     return (
       <>
-        <div
-          style={{
-            background: '#f3f3f3',
-            marginTop: '25px'
-          }}
-        >
+        <div className="dashboard--container">
           <Image
             circular
             size="big"
             style={{
-              padding: '50px',
               display: 'block',
               marginLeft: 'auto',
               marginRight: 'auto'

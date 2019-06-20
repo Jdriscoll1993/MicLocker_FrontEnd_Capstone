@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MyGearCard from './MyGearCard';
-// import GearManager from '../../../modules/GearManager';
+import {  Button } from 'semantic-ui-react';
+
 import * as userManager from '../../../authentication/userManager';
 export class MyGearList extends Component {
   componentDidMount = () => {
@@ -12,9 +13,9 @@ export class MyGearList extends Component {
   render() {
     return (
       <div>
-        <button style={{ float: 'right' }}>
-          <Link to="/new-gear">+</Link>
-        </button>
+        <Button color='green'>
+          <Link to="/new-gear">Add Gear</Link>
+        </Button>
         <section>
           {this.props.gearItems.map(gearItem => {
             return (

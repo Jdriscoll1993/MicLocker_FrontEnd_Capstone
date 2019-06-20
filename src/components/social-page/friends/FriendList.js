@@ -49,7 +49,7 @@ export class FriendList extends Component {
 
   render() {
     return (
-      <h2 style={{ background: '#ccc', float: 'left' }}>
+      <h2>
         {this.makeAllUserCard(this.props.followedUsers)}
       </h2>
     );

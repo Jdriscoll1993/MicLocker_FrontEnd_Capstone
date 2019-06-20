@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import { Button, Card } from 'semantic-ui-react';
 export class ExperienceCard extends Component {
   state = {
     saveDisabled: false
@@ -10,7 +10,10 @@ export class ExperienceCard extends Component {
     this.setState({
       saveDisabled: true
     });
-    this.props.deleteExperience(this.props.experience.id, this.props.experience.userId);
+    this.props.deleteExperience(
+      this.props.experience.id,
+      this.props.experience.userId
+    );
   };
 
   getStyle = () => {
@@ -26,27 +29,40 @@ export class ExperienceCard extends Component {
     //destructuring by pulling out particular properties so "drilling" is not needed to target props. Passing id, and summary
     const { summary, instruments, memory } = this.props.experience;
     return (
-      <div className="experience-div" style={this.getStyle()}>
-        <h3 style={{ color: 'goldenrod' }}>Description:</h3>
-        <h5>{summary}</h5>
-        <h3 style={{ color: 'goldenrod' }}> Instruments</h3>
-        <h5>{instruments}</h5>
-        <h3 style={{ color: 'goldenrod' }}> Memory</h3>
-        <h5>{memory}</h5>
-        <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
-          Delete
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            this.props.history.push(
-              `/experiences/edit/${this.props.experience.id}`
-            );
-          }}
-        >
-          Edit
-        </button>
-      </div>
+      <Card.Group>
+        <Card style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Card.Content>
+            <Card.Header>Experience</Card.Header>
+            <Card.Description>
+              <h5>{summary}</h5>
+              <h3> Instruments played:</h3>
+              <h5>{instruments}</h5>
+              <h3> Memory of the event:</h3>
+              <h5>{memory}</h5>
+            </Card.Description>
+          </Card.Content>
+          <div className="ui two buttons">
+            <Button
+              color="red"
+              onClick={this.handleClick}
+              disabled={this.state.saveDisabled}
+            >
+              Delete
+            </Button>
+            <Button
+              color="yellow"
+              type="button"
+              onClick={() => {
+                this.props.history.push(
+                  `/experiences/edit/${this.props.experience.id}`
+                );
+              }}
+            >
+              Edit
+            </Button>
+          </div>
+        </Card>
+      </Card.Group>
     );
   }
 }
