@@ -23,7 +23,7 @@ export class MyGearList extends Component {
                 {...this.props}
                 key={gearItem.id}
                 gearItem={gearItem}
-                delItem={this.props.delItem}
+                deleteGearItem={this.props.deleteGearItem}
                 user={this.props.user}
                 
               />

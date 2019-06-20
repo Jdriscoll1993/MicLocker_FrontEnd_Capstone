@@ -83,16 +83,15 @@ class OthersProfiles extends Component {
       )
       .then(() => this.props.history.push('/home'));
   // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
-  deleteExperience = (id, userId) => {
+  deleteExperience = id => {
     ExperienceManager.deleteExperience(id)
-      .then(ExperienceManager.getOneUser(userId))
+    .then(() => ExperienceManager.getAll('experiences'))
       .then(experiences => {
-        console.log(this);
-        const newState = { experiences };
-        this.setState(newState);
-        // this.props.history.push('/home');
-      });
-  };
+        this.setState({
+          experiences: experiences
+        })
+      })
+  }
 
   // MY GEAR
 
@@ -107,17 +106,14 @@ class OthersProfiles extends Component {
       )
       .then(() => this.props.history.push('/home'));
   // DELETE - delete an existing gear item based off of the id, get all th experiences, set new state, direct user to /home
-  deleteGearItem = id => {
-    const newState = {};
+  deleteGearItem = (id, userId) => {
     GearManager.deleteGearItem(id)
-      .then(GearManager.getAll)
+      .then(() => GearManager.getOneUser(userId))
       .then(gearItems => {
-        newState.gearItems = gearItems;
+        this.setState({
+          gearItems: gearItems
+        })
       })
-      .then(() => {
-        this.setState(newState);
-        this.props.history.push('/home');
-      });
   };
 
   // WISH LIST
@@ -133,16 +129,13 @@ class OthersProfiles extends Component {
       )
       .then(() => this.props.history.push('/home'));
   // DELETE - delete an existing wish list off of the id, get all the wish lists, set new state, direct user to /home
-  deleteWishList = id => {
-    const newState = {};
+  deleteWishList = (id, userId) => {
     WishListManager.deleteWishList(id)
-      .then(WishListManager.getAll)
+      .then(() => WishListManager.getOneUser(userId))
       .then(wishItems => {
-        newState.wishItems = wishItems;
-      })
-      .then(() => {
-        this.setState(newState);
-        this.props.history.push('/home');
+        this.setState({
+          wishItems: wishItems
+        })
       });
   };
 
