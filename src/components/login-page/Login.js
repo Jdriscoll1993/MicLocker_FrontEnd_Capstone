@@ -52,9 +52,9 @@ export default class Login extends Component {
                   <Grid.Row centered>
                     <Grid.Column
                       largeScreen={12}
-                      computer={10}
+                      computer={12}
                       tablet={10}
-                      mobile={12}
+                      mobile={10}
                     >
                       <Segment>
                         <Header as="h1" textAlign="center">

@@ -16,7 +16,8 @@ export class BioCard extends Component {
     return (
       <Card.Group className="bio-div">
         <Card style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Card.Content>About Me:
+          <Card.Content>
+            <h2 style={{textAlign:'center'}}>About Me:</h2>
           <Card.Description>
           <h5>{aboutMe}</h5>
           </Card.Description>

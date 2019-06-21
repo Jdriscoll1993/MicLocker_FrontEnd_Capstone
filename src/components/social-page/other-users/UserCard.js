@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FriendsManager from '../../../modules/FriendsManager';
+import { Container, Card, Button, Icon } from 'semantic-ui-react';
 
 class UserCard extends Component {
   state = {
@@ -24,29 +25,46 @@ class UserCard extends Component {
 
   render() {
     return (
-      <div>
-        <h2>{this.props.user.username}</h2>
-        <h2>{this.props.user.email}</h2>
-        {this.props.followed ? (
-          <button
-            disabled={this.state.followedBySessionUser}
-            onClick={this.FollowUser}
-          >
-            Do it
-          </button>
-        ) : (
-          <button onClick={() => this.props.unfollow(this.props.user)}>
-            unfollow
-          </button>
-        )}
-        <button
-          onClick={() => {
-            this.props.history.push(`/users/${this.props.user.id}`);
-          }}
-        >
-          Go To Profile
-        </button>
-      </div>
+      <Container>
+        <Card fluid>
+          <Card.Content width={10}>
+            <h2>{this.props.user.username}</h2>
+            <h2>{this.props.user.email}</h2>
+          </Card.Content>
+          {this.props.followed ? (
+            <Button
+              color="black"
+              animated="fade"
+              disabled={this.state.followedBySessionUser}
+              onClick={this.FollowUser}
+            >
+              <Button.Content visible> Follow User</Button.Content>
+              <Button.Content hidden>
+                <Icon size="large" loading name="asterisk" />
+              </Button.Content>
+            </Button>
+          ) : (
+            <Button
+              animated="fade"
+              secondary
+              onClick={() => this.props.unfollow(this.props.user)}
+            >
+              <Button.Content visible> Unfollow</Button.Content>
+              <Button.Content hidden>
+                <Icon size="large" loading name="frown" />
+              </Button.Content>
+            </Button>
+          )}
+          <Button
+          
+            onClick={() => {
+              this.props.history.push(`/users/${this.props.user.id}`);
+            }}
+          ><Icon animated='fade' size="large" name="universal access" />
+            Go To Profile
+          </Button>
+        </Card>
+      </Container>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-import { Container } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 
 // dashboard
 import Dashboard from '../user-page/Dashboard';
@@ -85,13 +85,13 @@ class Profile extends Component {
   // DELETE - delete an existing experience based off of the id, get all th experiences, set new state, direct user to /home
   deleteExperience = (id, userId) => {
     ExperienceManager.deleteExperience(id)
-    .then(() => ExperienceManager.getOneUser(userId))
+      .then(() => ExperienceManager.getOneUser(userId))
       .then(experiences => {
         this.setState({
           experiences: experiences
-        })
-      })
-  }
+        });
+      });
+  };
 
   // MY GEAR
 
@@ -112,8 +112,8 @@ class Profile extends Component {
       .then(gearItems => {
         this.setState({
           gearItems: gearItems
-        })
-      })
+        });
+      });
   };
 
   // WISH LIST
@@ -135,7 +135,7 @@ class Profile extends Component {
       .then(wishItems => {
         this.setState({
           wishItems: wishItems
-        })
+        });
       });
   };
 
@@ -157,32 +157,40 @@ class Profile extends Component {
                 user={this.props.user}
               />
             </div>
-
-            <div className="experiences2">
-              <ExperienceList
-                {...this.props}
-                experiences={this.state.experiences}
-                deleteExperience={this.deleteExperience}
-                user={this.props.user}
-              />
-           </div>
-
-            <div className="mygear3">
-              <MyGearList
-                {...this.props}
-                gearItems={this.state.gearItems}
-                deleteGearItem={this.deleteGearItem}
-                user={this.props.user}
-              />
+            <div style={{marginTop: '45px'}}>
+              <h2 style={{ textAlign: 'center', color: 'white' }}>
+                Musical Experiences
+              </h2>
+              <div className="experiences2">
+                <ExperienceList
+                  {...this.props}
+                  experiences={this.state.experiences}
+                  deleteExperience={this.deleteExperience}
+                  user={this.props.user}
+                />
+              </div>
             </div>
-
-            <div className="wishlist4">
-              <GearWishListList
-                {...this.props}
-                wishItems={this.state.wishItems}
-                deleteWishList={this.deleteWishList}
-                user={this.props.user}
-              />
+            <div style={{marginTop: '45px'}}>
+              <h2 style={{ textAlign: 'center', color: 'white' }}>My Gear</h2>
+              <div className="mygear3">
+                <MyGearList
+                  {...this.props}
+                  gearItems={this.state.gearItems}
+                  deleteGearItem={this.deleteGearItem}
+                  user={this.props.user}
+                />
+              </div>
+            </div>
+            <div style={{marginTop: '45px'}}>
+              <h2 style={{ textAlign: 'center', color: 'white' }}>Wish List</h2>
+              <div className="wishlist4">
+                <GearWishListList
+                  {...this.props}
+                  wishItems={this.state.wishItems}
+                  deleteWishList={this.deleteWishList}
+                  user={this.props.user}
+                />
+              </div>
             </div>
           </Container>
         </div>

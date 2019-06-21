@@ -13,7 +13,7 @@ export class MyGearList extends Component {
   render() {
     return (
       <div>
-        <Button color='green'>
+        <Button color='white'>
           <Link to="/new-gear">Add Gear</Link>
         </Button>
         <section>

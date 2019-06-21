@@ -23,6 +23,7 @@ import WishListManager from '../../modules/WishListManager';
 import GearWishListList from '../user-page/wish-list/GearWishListList';
 
 import users from '../../modules/FriendsManager';
+import '../user-page/Profile.css'
 class OthersProfiles extends Component {
   constructor(props) {
     super(props);
@@ -142,7 +143,7 @@ class OthersProfiles extends Component {
   render() {
     return (
       <>
-        <div className="profile-style">
+        <div className="profile--container">
           <Dashboard user={this.state.user} />
           <Container fluid>
             <div className="bio1">

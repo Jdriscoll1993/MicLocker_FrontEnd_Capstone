@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import WishListManager from '../../../modules/WishListManager'
 import * as userManager from '../../../authentication/userManager'
+import { Button, Form, Segment, Input, TextArea } from 'semantic-ui-react';
 export class AddWishList extends Component {
   state = {
     manufacturer: '',
@@ -42,10 +43,16 @@ export class AddWishList extends Component {
 
   render() {
     return (
-      <form style={{ display: 'flex', flex: '5' }} onSubmit={this.onSubmit}>
+      <Segment>
+      <Form style={{
+              width: '500px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: '90px'
+            }} onSubmit={this.onSubmit}>
         Manufacturer
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="manufacturer"
           id="manufacturer"
@@ -54,8 +61,8 @@ export class AddWishList extends Component {
           onChange={this.handleFieldChange}
         />
         Model
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="model"
           id="model"
@@ -64,8 +71,8 @@ export class AddWishList extends Component {
           onChange={this.handleFieldChange}
         />
         Category
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="category"
           id="category"
@@ -74,8 +81,8 @@ export class AddWishList extends Component {
           onChange={this.handleFieldChange}
         />
         Sub Category
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="subCategory"
           id="subCategory"
@@ -85,7 +92,7 @@ export class AddWishList extends Component {
         />
         For Sale?
         <input
-          style={{ flex: '5', padding: '5px' }}
+          
           type="checkbox"
           name="forSale"
           id="forSale"
@@ -93,18 +100,19 @@ export class AddWishList extends Component {
           onChange={this.handleFieldChange}
         />
         Image URL
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="url"
           id="url"
           value={this.state.url}
           onChange={this.handleFieldChange}
         />        
-        <button className="button" onClick={this.saveNewWishList}>
+        <Button className="button" onClick={this.saveNewWishList}>
           Submit
-        </button>
-      </form>
+        </Button>
+      </Form>
+      </Segment>
     );
   }
 }

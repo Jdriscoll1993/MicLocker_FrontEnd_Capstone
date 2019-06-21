@@ -37,7 +37,7 @@ export class MyGearCard extends Component {
     } = this.props.gearItem;
     return (
       <Card.Group>
-        <Card style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Card style={{ display: 'flex', justifyContent: 'space-between', flexWrap:'nowrap'  }}>
           <Card.Content>
             <Card.Header style={{ textAlign: 'center' }}>{model}</Card.Header>
             <Card.Description>

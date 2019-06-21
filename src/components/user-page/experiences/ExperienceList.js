@@ -13,7 +13,7 @@ export class ExperienceList extends Component {
   render() {
     return (
       <div>
-        <Button color="green">
+        <Button color="white">
           <Link to="/new-experience">Add experience</Link>
         </Button>
         <section>

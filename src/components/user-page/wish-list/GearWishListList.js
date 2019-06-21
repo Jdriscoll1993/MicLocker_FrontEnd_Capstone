@@ -12,7 +12,7 @@ export class GearWishListList extends Component {
   render() {
     return (
       <div>
-        <Button color='green'>
+        <Button color='white'>
           <Link to="/new-wishlist">Add Item to Wish List</Link>
         </Button>
         <section>

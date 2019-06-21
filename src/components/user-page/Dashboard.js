@@ -17,16 +17,23 @@ class Dashboard extends Component {
             circular
             size="large"
             style={{
+              marginTop:'35px',
               display: 'block',
               marginLeft: 'auto',
               marginRight: 'auto',
-              padding: '30px',
-              boxShadow:'5px 5px 5px #333'
+              padding: '15px',
+              background: '#333'
             }}
             src={this.props.user.image}
           />
           <Modal.Content image>
             {this.props.status} {this.props.buying} {this.props.selling}
+            <h1 style={{
+              marginLeft:'30px', 
+              width:'100px',textAlign: 'center', padding: '20px', color:"#fff",
+          background: '#333', border:"2px solid rgb(28, 33, 29)"  }}>
+              {this.props.user.username}
+            </h1>
             {/* <Button
               style={{
                 float: 'right',

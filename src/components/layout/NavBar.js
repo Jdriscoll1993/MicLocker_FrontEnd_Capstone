@@ -10,7 +10,7 @@ export default class NavBar extends Component {
       <div className="navbar-style">
       <Menu  style={{ background: '#f3f3f3' }}>
         <Menu.Item>
-          <Link className="nav-link" to="/home">
+          <Link color="black" className="nav-link" to="/home">
             Profile
           </Link>
         </Menu.Item>
