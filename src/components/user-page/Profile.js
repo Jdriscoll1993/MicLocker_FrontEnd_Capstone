@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-import { Container, Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 // dashboard
 import Dashboard from '../user-page/Dashboard';

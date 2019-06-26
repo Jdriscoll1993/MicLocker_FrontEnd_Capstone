@@ -3,9 +3,6 @@
   margin-right: 100px;
 }
 
-/* body {
-  background-color: #333;
-} */
 .navbar-style {
   margin-top: -30px;
   padding: 0.5px;
@@ -22,9 +19,7 @@ div.ui.fluid.container {
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* .bio-div {
-  max-height: 500px;
-} */
+
 .experiences2 {
   max-height: 500px;
   margin-bottom: 75px;
@@ -32,11 +27,7 @@ div.ui.fluid.container {
   overflow-y: auto;
   overflow-x: hidden;
 }
-.experience-div {
-  /* max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden; */
-}
+
 .mygear3 {
   max-height: 500px;
   margin-bottom: 75px;
@@ -44,11 +35,7 @@ div.ui.fluid.container {
   overflow-y: auto;
   overflow-x: hidden;
 }
-.gear-div {
-  /* max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden; */
-}
+
 .wishlist4 {
   max-height: 500px;
   margin-bottom: 75px;
@@ -56,50 +43,3 @@ div.ui.fluid.container {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
-.wish-div {
-  /* max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden; */
-}
-
-/* .gear-details {
-  display: flex;
-  display: none;
-  flex-wrap: wrap;
-  width: 50%;
-  padding: 10px;
-} */
-
-/* .App {
-  text-align: center;
-} */
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-*
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
