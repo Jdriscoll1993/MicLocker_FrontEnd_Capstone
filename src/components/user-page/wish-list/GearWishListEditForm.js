@@ -63,7 +63,12 @@ export class GearWishListEditForm extends Component {
         >
           Edit this Wish List Item
         </label>
-        <Form  onSubmit={this.onSubmit}>
+        <Form style={{
+              width: '500px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: '90px'
+            }}   onSubmit={this.onSubmit}>
           Manufacturer
           <Input
             
@@ -73,7 +78,7 @@ export class GearWishListEditForm extends Component {
             placeholder="Manufacturer"
             value={this.state.manufacturer}
             onChange={this.handleFieldChange}
-          />
+          /><br/>
           Model
           <Input
             
@@ -83,7 +88,7 @@ export class GearWishListEditForm extends Component {
             placeholder="Model"
             value={this.state.model}
             onChange={this.handleFieldChange}
-          />
+          /><br/>
           Category
           <Input
             
@@ -93,7 +98,7 @@ export class GearWishListEditForm extends Component {
             placeholder="Category"
             value={this.state.category}
             onChange={this.handleFieldChange}
-          />
+          /><br/>
           Sub Category
           <Input
             
@@ -103,7 +108,7 @@ export class GearWishListEditForm extends Component {
             placeholder="Sub Category"
             value={this.state.subCategory}
             onChange={this.handleFieldChange}
-          />
+          /><br/>
           {/* For Sale?
           <Input
             
@@ -121,7 +126,7 @@ export class GearWishListEditForm extends Component {
             id="url"
             value={this.state.url}
             onChange={this.handleFieldChange}
-          />
+          /><br/>
           <Button className="button" onClick={this.updateWishItem}>
             Submit
           </Button>

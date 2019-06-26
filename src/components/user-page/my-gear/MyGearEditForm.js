@@ -63,7 +63,12 @@ export class MyGearEditForm extends Component {
         >
           Edit This Gear Item
         </label>
-      <Form  onSubmit={this.onSubmit}>
+      <Form style={{
+              width: '500px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: '90px'
+            }}  onSubmit={this.onSubmit}>
         Manufacturer
         <Input
           
