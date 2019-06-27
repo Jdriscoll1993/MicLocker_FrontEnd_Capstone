@@ -44,12 +44,12 @@ export class GearWishListCard extends Component {
               <Image src={url} alt="gear pic" />
               <br />
               <div className="gear-details">
-                <h2>Manufacturer:</h2>
-                <h2>{manufacturer}</h2>
-                <h2>Category:</h2>
-                <h2>{category}</h2>
-                <h2>Sub-Category:</h2>
-                <h2>{subCategory}</h2>
+                <h3>Manufacturer:</h3>
+                <h5>{manufacturer}</h5>
+                <h3>Category:</h3>
+                <h5>{category}</h5>
+                <h3>Sub-Category:</h3>
+                <h5>{subCategory}</h5>
               </div>
             </Card.Description>
           </Card.Content>

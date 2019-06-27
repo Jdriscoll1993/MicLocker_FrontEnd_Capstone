@@ -188,7 +188,7 @@
   "bios": [
     {
       "id": 1,
-      "aboutMe": "Im a pretty cool guy who likes to play GameCube in front of people",
+      "aboutMe": "I'm a pretty cool guy who likes to play GameCube in front of people. Strong believer in the 5-meals-a day-system.",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
@@ -310,6 +310,13 @@
       "instruments": "One Turntable for scratching, MPK249 for launching samples and virtual instruments, I actually did some backup vox but it was rap lol",
       "memory": "This was the first real club I ever played at. Existing in such college town with nothing else to do, this drew in a full house the Saturday night we performed on. A couple buddies went up and we got super drunk for free. My friend drove us back to Nashville at 4am",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
+    },
+    {
+      "summary": "This was a terrible event",
+      "instruments": "Hello Kitty Mini Grand Piano",
+      "memory": "Nobody should know about this",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 6
     }
   ],
   "gearItems": [
@@ -431,6 +438,16 @@
       "url": "",
       "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
       "id": 13
+    },
+    {
+      "manufacturer": "Sanrio",
+      "model": "Helloy Kitty Mini Grand",
+      "category": "Pianos",
+      "subCategory": "Mini Grand Piano",
+      "forSale": "",
+      "url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQIK4wKsLtqEQXB1jO7BQxIuM_Y4-x0ebuUazbQF2W-A_uUGnZmrYOXu-zVX7IcG4iyhJMmb9I8AKg&usqp=CAc",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 14
     }
   ],
   "wishItems": [
@@ -521,22 +538,17 @@
       "id": 27
     },
     {
-      "userId": "JgEroIcG8kTYLbjd3yeTI4dRcMm2",
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 28
     },
     {
-      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
-      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
-      "id": 29
-    },
-    {
-      "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
+      "userId": "z9QhzMptxaYxucoi1e9ycSsH7Hp1",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 30
     },
     {
-      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "userId": "VYI93GJMn5Zhtt6oDCw6Ddt7Blj2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 31
     },
@@ -544,6 +556,11 @@
       "userId": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 32
+    },
+    {
+      "userId": "PktApVAJwXeJXTJjAQIdGpaWB5r1",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 43
     }
   ],
   "settings": [

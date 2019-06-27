@@ -3,7 +3,9 @@ import { Container } from 'semantic-ui-react';
 import FriendList from './friends/FriendList';
 import UserList from './other-users/UserList';
 import FriendsManager from '../../modules/FriendsManager';
-import './Friends.css'
+import './Friends.css';
+import { Grid } from 'semantic-ui-react';
+
 export default class Friends extends Component {
   state = {
     followedUsers: [],
@@ -15,8 +17,8 @@ export default class Friends extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps !== this.props) {
-      this.parsedUser()
+    if (prevProps !== this.props) {
+      this.parsedUser();
     }
   }
 
@@ -59,31 +61,38 @@ export default class Friends extends Component {
     const sessionUser = JSON.parse(localStorage.getItem('user'));
     const followedArray = [];
     FriendsManager.getAll(sessionUser.id)
-    .then(users => {
-      users.forEach(user => {
-        followedArray.push(user.user)
+      .then(users => {
+        users.forEach(user => {
+          followedArray.push(user.user);
+        });
+      })
+      .then(() => {
+        const parsedUsers = followedArray.filter(
+          user => user.id !== sessionUser.id
+        );
+        this.setState({ allUsers: parsedUsers, followedUsers: followedArray });
       });
-    }).then(()=> {
-      const parsedUsers = followedArray.filter(user => user.id !== sessionUser.id);
-      this.setState({ allUsers: parsedUsers, followedUsers: followedArray });
-    })
   };
   render() {
     return (
-      <div className="friends--container">
-        <Container>
-          {/* <UserSearch getSearchResults={this.getsearchResults} /> */}
-          <FriendList
-            {...this.props}
-            followedUsers={this.state.followedUsers}
-            unfollow={this.unfollow}
-          />
-          <UserList
-            {...this.props}
-            allUsers={this.props.allUsers}
-            add={this.addUserToFriendsList}
-          />
-        </Container>
+      <div>
+        <Grid columns={2} padded className="friends--container">
+          <Grid.Column floated="left" width={5}>
+            {/* <UserSearch getSearchResults={this.getsearchResults} /> */}
+            <FriendList
+              {...this.props}
+              followedUsers={this.state.followedUsers}
+              unfollow={this.unfollow}
+            />
+          </Grid.Column>
+          <Grid.Column floated="right" width={5}>
+            <UserList
+              {...this.props}
+              allUsers={this.props.allUsers}
+              add={this.addUserToFriendsList}
+            />
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }

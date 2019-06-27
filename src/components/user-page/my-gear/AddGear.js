@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import GearManager from '../../../modules/GearManager';
 import * as userManager from '../../../authentication/userManager'
+import { Button, Form, Segment, Input } from 'semantic-ui-react';
 export class AddGear extends Component {
   state = {
     manufacturer: '',
@@ -43,69 +44,87 @@ export class AddGear extends Component {
 
   render() {
     return (
-      <form style={{ display: 'flex', flex: '5' }} onSubmit={this.onSubmit}>
+      <Segment>
+                        <label
+                style={{
+                  textAlign: 'center',
+                  fontSize: '36px',
+                  marginBottom: '45px',
+                  marginTop: '90px'
+                }}
+              >
+                
+                Add New Gear Item
+              </label>
+      <Form style={{
+              width: '500px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: '90px'
+            }} onSubmit={this.onSubmit}>
         Manufacturer
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="manufacturer"
           id="manufacturer"
           placeholder="Manufacturer"
           value={this.state.manufacturer}
           onChange={this.handleFieldChange}
-        />
+        /><br/>
         Model
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="model"
           id="model"
           placeholder="Model"
           value={this.state.model}
           onChange={this.handleFieldChange}
-        />
+        /><br/>
         Category
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="category"
           id="category"
           placeholder="Category"
           value={this.state.category}
           onChange={this.handleFieldChange}
-        />
+        /><br/>
         Sub Category
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="subCategory"
           id="subCategory"
           placeholder="Sub Category"
           value={this.state.subCategory}
           onChange={this.handleFieldChange}
-        />
-        For Sale?
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        /><br/>
+        {/* For Sale?
+        <Input
+          
           type="checkbox"
           name="forSale"
           id="forSale"
           value={this.state.forSale}
           onChange={this.handleFieldChange}
-        />
+        /> */}
         Image URL
-        <input
-          style={{ flex: '5', padding: '5px' }}
+        <Input
+          
           type="text"
           name="url"
           id="url"
           value={this.state.url}
           onChange={this.handleFieldChange}
-        />
-        <button className="button" onClick={this.saveNewGearItem}>
+        /><br/>
+        <Button className="button" onClick={this.saveNewGearItem}>
           Submit
-        </button>
-      </form>
+        </Button>
+      </Form>
+      </Segment>
     );
   }
 }

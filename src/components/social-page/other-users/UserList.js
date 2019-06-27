@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import UserCard from './UserCard';
+import { Input, Button } from 'semantic-ui-react';
+
 export class UserList extends Component {
   makeAllUserCard = users => {
     console.log(users);
@@ -21,12 +23,17 @@ export class UserList extends Component {
     console.log(this.props.allUsers);
     return (
       <div>
-        <input
+        <Input style={{margin:'50px'}}
+          size="large"
+          icon="users"
+          iconPosition="left"
+          placeholder="Search users..."
           type="text"
           id="search"
           onChange={event => this.props.handleFieldChange(event)}
         />
-        <button onClick={this.props.onSearchSubmit}>Filter Users</button>
+        
+        <Button color="green" onClick={this.props.onSearchSubmit}>Search</Button>
         {this.makeAllUserCard(this.props.allUsers)}
       </div>
     );

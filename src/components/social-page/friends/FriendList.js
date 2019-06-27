@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserCard from '../../social-page/other-users/UserCard';
+import { Header, Icon } from 'semantic-ui-react'
 export class FriendList extends Component {
   state = {
     followedUsers: []
@@ -49,9 +50,13 @@ export class FriendList extends Component {
 
   render() {
     return (
-      <h2>
+      <>
+      <Header as='h2' background='white' color="white" icon textAlign='center'><Icon name='users' circular />Following</Header>
+      <div>
         {this.makeAllUserCard(this.props.followedUsers)}
-      </h2>
+      </div>
+      </>
+      
     );
   }
 }

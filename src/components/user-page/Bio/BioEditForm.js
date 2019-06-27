@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import BioManager from '../../../modules/BioManager';
-
+import { Button, Form, Segment, TextArea } from 'semantic-ui-react';
 export class BioEditForm extends Component {
   state = {
     aboutMe: ''
   };
-
-  
 
   componentDidMount() {
     BioManager.getBioById(this.props.match.params.bioId).then(bio => {
@@ -37,25 +35,25 @@ export class BioEditForm extends Component {
     return (
       <React.Fragment>
         {/* Bio Edit Form */}
-        
-        <form 
-        className="bioForm">
-          <div className="form-group">
-            <label htmlFor="bio-aboutMe">About Me</label>
-            <input
-              type="text-area"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              name="aboutMe"
-              id="aboutMe"
-              value={this.state.aboutMe}
-            />
-          </div>
-          <button className="button" onClick={this.updatebio}>
-            Submit
-          </button>
-        </form>
+        <Segment>
+          <Form style={{width:'500px', marginLeft: 'auto', marginRight:'auto'}}className="bioForm">
+            <Form.Field widths="equal"> 
+            <label style={{textAlign:'center', fontSize:'26px', marginBottom: '10px',marginTop: '90px' }}>About Me</label>
+              <TextArea
+                size='large'
+                label="About Me"
+                required
+                name="aboutMe"
+                id="aboutMe"
+                onChange={this.handleFieldChange}
+                value={this.state.aboutMe}
+              />
+            </Form.Field>
+            <Button style={{marginBottom:'820px'}} className="button" onClick={this.updatebio}>
+              Submit
+            </Button>
+          </Form>
+        </Segment>
       </React.Fragment>
     );
   }
