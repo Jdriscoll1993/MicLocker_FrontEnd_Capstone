@@ -26,7 +26,7 @@ class MicLocker extends Component {
         <Router>
           <Header />
 
-          {/* JSX conditional rendering. Logic on left evaluates to true or false and renders the JSX that is to the right of && -- if logic evaluates to false, nothing is rendered and code is skipped over*/}
+          {/* JSX conditional rendering. Logic on left evaluates to true or false and renders the JSX that is to the right of && -- if logic evaluates to false, nothing is rendered and code is skipped over. limited. can only do one thing at a time. */}
           {this.state.isAuthenticated && (
             <NavBar user={this.state.user} onLogout={this.logout} />
           )}
