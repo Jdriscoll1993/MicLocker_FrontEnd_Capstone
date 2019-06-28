@@ -6,7 +6,6 @@ import { Button } from 'semantic-ui-react';
 import * as userManager from '../../../authentication/userManager';
 export class MyGearList extends Component {
   state = {
-    user: {},
     loggedInUser: false
   };
   componentDidMount = () => {
@@ -24,7 +23,7 @@ export class MyGearList extends Component {
     return (
       <div>
         {this.state.loggedInUser && (
-          <Button  color="white">
+          <Button>
             <Link to="/new-gear">Add Gear</Link>
           </Button>
         )}

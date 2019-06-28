@@ -153,7 +153,10 @@ class OthersProfiles extends Component {
                 // user={this.props.user}
               />
             </div>
-
+            <div style={{marginTop: '45px'}}>
+            <h2 style={{ textAlign: 'center', color: 'white' }}>
+                Musical Experiences
+              </h2>
             <div className="experiences2">
               <ExperienceList
                 {...this.props}
@@ -162,7 +165,9 @@ class OthersProfiles extends Component {
                 // user={this.props.user}
               />
             </div>
-
+            </div>
+            <div style={{marginTop: '45px'}}>
+            <h2 style={{ textAlign: 'center', color: 'white' }}>My Gear</h2>
             <div className="mygear3">
               <MyGearList
                 {...this.props}
@@ -171,7 +176,9 @@ class OthersProfiles extends Component {
                 // user={this.props.user}
               />
             </div>
-
+            </div>
+            <div style={{marginTop: '45px'}}>
+            <h2 style={{ textAlign: 'center', color: 'white' }}>Wish List</h2>
             <div className="wishlist4">
               <GearWishListList
                 // user={this.props.user}
@@ -179,6 +186,7 @@ class OthersProfiles extends Component {
                 wishItems={this.state.wishItems}
                 deleteWishList={this.deleteWishList}
               />
+            </div>
             </div>
           </Container>
         </div>

@@ -31,29 +31,29 @@ export class FriendList extends Component {
   //   );
   // };
 
-  makeAllUserCard = users => {
-    if (!!this.props.followedUsers) {
-      const userCard = users.map(user => (
-        <div key={user.id}>
-          <UserCard
-            {...this.props}
-            user={user}
-            key={user.id}
-            followed={false}
-            unfollow={this.props.unfollow}
-          />
-        </div>
-      ));
-      return userCard;
-    }
-  };
+  // makeAllUserCard = users => {
+  //   if (!!this.props.followedUsers) {
+  //     const userCard = users.map(user => (
+  //       <div key={user.id}>
+  //         <UserCard
+  //           {...this.props}
+  //           user={user}
+  //           key={user.id}
+  //           followed={false}
+  //           unfollow={this.props.unfollow}
+  //         />
+  //       </div>
+  //     ));
+  //     return userCard;
+  //   }
+  // };
 
   render() {
     return (
       <>
       <Header as='h2' background='white' color="white" icon textAlign='center'><Icon name='users' circular />Following</Header>
       <div>
-        {this.makeAllUserCard(this.props.followedUsers)}
+        {this.props.makeAllUserCard()}
       </div>
       </>
       
