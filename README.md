@@ -33,7 +33,6 @@ I created a single page application that utilzies the following:
 
 ### Original mockup concepts for Mic Locker
 
-![Mic Locker Landing Page](./src/img/LandingPage.png)
 ![Mic Locker Profile Page](./src/img/ProfilePage.png)
 ![Mic Locker Friends Page](./src/img/FriendsPage.png)
 
