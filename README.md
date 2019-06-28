@@ -36,4 +36,20 @@ I created a single page application that utilzies the following:
 ![Mic Locker Profile Page](./src/img/ProfilePage.png)
 ![Mic Locker Friends Page](./src/img/FriendsPage.png)
 
+#### Login Page
+
+![Mic Locker Login Page](./src/img/Login.png)
+
+#### Register Page
+
+![Mic Locker Register Page](./src/img/Register.png)
+
+#### Profile Page
+
+![Mic Locker Profile Page](./src/img/Profile.png)
+
+#### Followers Page
+
+![Mic Locker Followers Page](./src/img/Friends.png)
+
 ### How to run application:
