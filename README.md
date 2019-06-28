@@ -31,4 +31,10 @@ I created a single page application that utilzies the following:
 
 ![Mic Locker ERD](./src/img/erd.png)
 
+### Original mockup concepts for Mic Locker
+
+![Mic Locker Landing Page](./src/img/landingPage.png)
+![Mic Locker Profile Page](./src/img/ProfilePage.png)
+![Mic Locker Friends Page](./src/img/FriendsPage.png)
+
 ### How to run application:
