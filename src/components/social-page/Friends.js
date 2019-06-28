@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
 import FriendList from './friends/FriendList';
 import UserList from './other-users/UserList';
+import UserCard from './other-users/UserCard'
 import FriendsManager from '../../modules/FriendsManager';
 import './Friends.css';
 import { Grid } from 'semantic-ui-react';
@@ -26,6 +27,7 @@ export default class Friends extends Component {
     FriendsManager.checkForFollow(user).then(response =>
       FriendsManager.unfollowUser(response[0].id).then(_reply => {
         const sessionUser = JSON.parse(localStorage.getItem('user'));
+
         FriendsManager.getAll(sessionUser.id).then(users => {
           const followedArray = [];
           users.forEach(user => {
@@ -33,27 +35,41 @@ export default class Friends extends Component {
           });
           this.setState({ followedUsers: followedArray });
         });
-        FriendsManager.getAllUsers().then(users => {
-          const parsedUsers = users.filter(user => user.id !== sessionUser.id);
-          this.setState({ allUsers: parsedUsers });
-        });
       })
     );
   };
 
+  makeAllUserCard = () => {
+    if (!!this.state.followedUsers) {
+      const userCard = this.state.followedUsers.map(user => (
+        <div key={user.id}>
+          <UserCard
+            {...this.props}
+            user={user}
+            key={user.id}
+            followed={false}
+            unfollow={this.unfollow}
+          />
+        </div>
+      ));
+      return userCard;
+    }
+  };
+
   addUserToFriendsList = user => {
-    FriendsManager.addUserToFriendsList(user);
-    const sessionUser = JSON.parse(localStorage.getItem('user'));
-    FriendsManager.getAll(sessionUser.id).then(users => {
-      const followedArray = [];
-      users.forEach(user => {
-        followedArray.push(user.user);
+    FriendsManager.addUserToFriendsList(user).then(data => {
+      const sessionUser = JSON.parse(localStorage.getItem('user'));
+      FriendsManager.getAll(sessionUser.id).then(users => {
+        const followedArray = [];
+        users.forEach(user => {
+          followedArray.push(user.user);
+        });
+        this.setState({ followedUsers: followedArray });
+        FriendsManager.getAllUsers().then(users => {
+          const parsedUsers = users.filter(user => user.id !== sessionUser.id);
+          this.setState({ allUsers: parsedUsers });
+        });
       });
-      this.setState({ followedUsers: followedArray });
-    });
-    FriendsManager.getAllUsers().then(users => {
-      const parsedUsers = users.filter(user => user.id !== sessionUser.id);
-      this.setState({ allUsers: parsedUsers });
     });
   };
 
@@ -83,6 +99,7 @@ export default class Friends extends Component {
               {...this.props}
               followedUsers={this.state.followedUsers}
               unfollow={this.unfollow}
+              makeAllUserCard={this.makeAllUserCard}
             />
           </Grid.Column>
           <Grid.Column floated="right" width={5}>

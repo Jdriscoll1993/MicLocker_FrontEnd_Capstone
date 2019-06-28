@@ -53,24 +53,28 @@ export class GearWishListCard extends Component {
               </div>
             </Card.Description>
           </Card.Content>
-          <Button
-            color="red"
-            onClick={this.handleClick}
-            disabled={this.state.saveDisabled}
-          >
-            Delete
-          </Button>
-          <Button
-            color="yellow"
-            type="button"
-            onClick={() => {
-              this.props.history.push(
-                `/wishItems/edit/${this.props.wishItem.id}`
-              );
-            }}
-          >
-            Edit
-          </Button>
+          {this.props.loggedInUser && (
+            <Button
+              color="red"
+              onClick={this.handleClick}
+              disabled={this.state.saveDisabled}
+            >
+              Delete
+            </Button>
+          )}
+          {this.props.loggedInUser && (
+            <Button
+              color="yellow"
+              type="button"
+              onClick={() => {
+                this.props.history.push(
+                  `/wishItems/edit/${this.props.wishItem.id}`
+                );
+              }}
+            >
+              Edit
+            </Button>
+          )}
         </Card>
       </Card.Group>
     );

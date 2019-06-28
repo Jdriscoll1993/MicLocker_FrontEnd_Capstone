@@ -31,8 +31,11 @@ export default class Login extends Component {
 
   submit = () => {
     login(this.state.email, this.state.password).then(user => {
+      console.log(user)
       this.props.onLogin(user);
       this.props.history.push('/home');
+    }).catch(() => {
+      alert('problem logging in');
     });
   };
 

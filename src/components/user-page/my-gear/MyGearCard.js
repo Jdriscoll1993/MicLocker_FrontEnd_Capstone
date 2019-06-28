@@ -37,7 +37,13 @@ export class MyGearCard extends Component {
     } = this.props.gearItem;
     return (
       <Card.Group>
-        <Card style={{ display: 'flex', justifyContent: 'space-between', flexWrap:'nowrap'  }}>
+        <Card
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'nowrap'
+          }}
+        >
           <Card.Content>
             <Card.Header style={{ textAlign: 'center' }}>{model}</Card.Header>
             <Card.Description>
@@ -53,24 +59,28 @@ export class MyGearCard extends Component {
               </div>
             </Card.Description>
           </Card.Content>
-          <Button
-            color="red"
-            onClick={this.handleClick}
-            disabled={this.state.saveDisabled}
-          >
-            Delete
-          </Button>
-          <Button
-            color="yellow"
-            type="button"
-            onClick={() => {
-              this.props.history.push(
-                `/gearItems/edit/${this.props.gearItem.id}`
-              );
-            }}
-          >
-            Edit
-          </Button>
+          {this.props.loggedInUser && (
+            <Button
+              color="red"
+              onClick={this.handleClick}
+              disabled={this.state.saveDisabled}
+            >
+              Delete
+            </Button>
+          )}
+          {this.props.loggedInUser && (
+            <Button
+              color="yellow"
+              type="button"
+              onClick={() => {
+                this.props.history.push(
+                  `/gearItems/edit/${this.props.gearItem.id}`
+                );
+              }}
+            >
+              Edit
+            </Button>
+          )}
         </Card>
       </Card.Group>
     );

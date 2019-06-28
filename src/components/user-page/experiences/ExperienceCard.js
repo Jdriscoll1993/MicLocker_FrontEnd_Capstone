@@ -42,24 +42,28 @@ export class ExperienceCard extends Component {
             </Card.Description>
           </Card.Content>
           <div className="ui two buttons">
-            <Button
-              color="red"
-              onClick={this.handleClick}
-              disabled={this.state.saveDisabled}
-            >
-              Delete
-            </Button>
-            <Button
-              color="yellow"
-              type="button"
-              onClick={() => {
-                this.props.history.push(
-                  `/experiences/edit/${this.props.experience.id}`
-                );
-              }}
-            >
-              Edit
-            </Button>
+            {this.props.loggedInUser && (
+              <Button
+                color="red"
+                onClick={this.handleClick}
+                disabled={this.state.saveDisabled}
+              >
+                Delete
+              </Button>
+            )}
+            {this.props.loggedInUser && (
+              <Button
+                color="yellow"
+                type="button"
+                onClick={() => {
+                  this.props.history.push(
+                    `/experiences/edit/${this.props.experience.id}`
+                  );
+                }}
+              >
+                Edit
+              </Button>
+            )}
           </div>
         </Card>
       </Card.Group>

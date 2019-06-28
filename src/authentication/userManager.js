@@ -94,9 +94,7 @@ export const login = (email, password) => {
       setUserInLocalStorage(newUserFromJsonServer);
       return newUserFromJsonServer;
     })
-    .catch(() => {
-      alert('problem logging in');
-    });
+    
 };
 
 export const saveUserToJsonServer = user => {
@@ -147,3 +145,5 @@ export const loginWithFirebase = (email, password) => {
       return data.user.uid;
     });
 };
+
+
