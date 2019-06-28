@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NSS Front End Capstone: "Mic Locker"
 
-## Available Scripts
+### Specs:
 
-In the project directory, you can run:
+I created a single page application that utilzies the following:
 
-### `npm start`
+1. JavaScript
+2. React.js
+3. Firebase Authentication and Storage
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies Used:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. HTML5, CSS, JavaScript
+2. [React 16.8.6](https://reactjs.org/docs/getting-started.html): Core app functionality
+3. [Firebase 6.1.1](https://firebase.google.com/docs): Authentication for login and Storage for file uploads
+4. [Semantic UI React](https://react.semantic-ui.com/): Styling library used throughout the application
 
-### `npm test`
+### Final Result:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social features for user connectivity**
 
-### `npm run build`
+> Users may register an account and upload a personal profile image upon registering which is stored in Firebase
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Users may personalize their profiles with a bio section and write about personal musical experiences which can be edited or deleted directly from the logged in users profile.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+> Users may add gear to their Gear List and keep track of their collections with details and images. Users may also add gear to their Wish List and keep track of it similarly to their gear list.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Users may navigate to the friends page where they will be provided with two columns of list. On the right column is a list of all active users of Mic Locker displaying usernames and user emails. The logged in user may filter through the users via a search bar to find specific profiles. Logged in users can navigate to other users profiles, or follow users. Followed users will populate in the left column. Users can decide to unfollow currently followed users.
 
-### `npm run eject`
+### Entity Relationship Diagram of the database I created:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Mic Locker ERD]('/src/img/Mic Locker ERD.pdf')
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### How to run application:
