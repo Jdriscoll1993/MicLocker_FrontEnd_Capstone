@@ -29,6 +29,6 @@ I created a single page application that utilzies the following:
 
 ### Entity Relationship Diagram of the database I created:
 
-![Mic Locker ERD](./src/img/erd.pdf)
+![Mic Locker ERD](./src/img/erd.png)
 
 ### How to run application:
