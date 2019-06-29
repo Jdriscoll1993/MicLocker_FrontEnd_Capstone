@@ -19,7 +19,7 @@ I created a single page application that utilzies the following:
 
 ### Final Result:
 
-**"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social features for user connectivity**
+**"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social aspects for user connectivity**
 
 > Users may register an account and upload a personal profile image upon registering which is stored in Firebase
 
