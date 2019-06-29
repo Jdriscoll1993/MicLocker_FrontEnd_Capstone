@@ -25,7 +25,7 @@ I created a single page application that utilzies the following:
 
 > Users may add gear to their Gear List and keep track of their collections with details and images. Users may also add gear to their Wish List and keep track of it similarly to their gear list.
 
-> Users may navigate to the friends page where they will be provided with two columns of list. On the right column is a list of all active users of Mic Locker displaying usernames and user emails. The logged in user may filter through the users via a search bar to find specific profiles. Logged in users can navigate to other users profiles, or follow users. Followed users will populate in the left column. Users can decide to unfollow currently followed users.
+> Users may navigate to the friends page where they will be provided with two columns of lists. On the right column is a list of all active users of Mic Locker. It displays usernames and user emails. The logged in user may filter through the users via a search bar to find specific profiles. Logged in users can navigate to other users profiles, or follow users. Followed users will populate in the left column. Users can decide to unfollow currently followed users.
 
 ### Entity Relationship Diagram of the database I created:
 
