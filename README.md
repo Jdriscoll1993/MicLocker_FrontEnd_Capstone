@@ -13,7 +13,7 @@ I created a single page application that utilzies the following:
 1. HTML5, CSS, JavaScript, Git, npm,
 2. [React 16.8.6](https://reactjs.org/docs/getting-started.html): Core app functionality
 3. [Firebase 6.1.1](https://firebase.google.com/docs): Authentication for login and Storage for file uploads
-4. [Semantic UI React](https://react.semantic-ui.com/): Styling library used throughout the application
+4. [Semantic UI React](https://react.semantic-ui.com/): Styling library
 5. [JSON Server](https://github.com/typicode/json-server): Fake REST API to run mock back end server
 
 
