@@ -58,5 +58,5 @@ I created a single page application that utilzies the following:
 1. Ensure you have npm installed on your machine
 2. Ensure you have json-server installed on your machine
 3. Clone the project and run **npm install**
-4. Run the command **json-server api/database.json -p 8088** to run the json-server
+4. Run the command **json-server api/database.json -p 8088** to run the json-server on http://localhost:8088
 5. In a seperate terminal tab run **npm start.** The application will run on http://localhost:3000
