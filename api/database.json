@@ -13,7 +13,7 @@
     },
     {
       "email": "paul@mail.com",
-      "username": "paul",
+      "username": "Paul",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560538428580?alt=media&token=c80eeaca-cb24-4ce2-b431-c32fe5738048",
       "status": "",
@@ -24,7 +24,7 @@
     },
     {
       "email": "tony@mail.com",
-      "username": "tony",
+      "username": "Tony",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560714675505?alt=media&token=c9ccc029-6ef0-4288-9379-c75338ceadbd",
       "status": "",
@@ -35,7 +35,7 @@
     },
     {
       "email": "C@mail.com",
-      "username": "Carroll",
+      "username": "Caroll",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794306162?alt=media&token=e30be8ad-f379-41d2-b647-8426824f162b",
       "status": "",
@@ -46,7 +46,7 @@
     },
     {
       "email": "t@mail.com",
-      "username": "terry",
+      "username": "Terry",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560794343757?alt=media&token=3251d645-490f-486e-a941-9274145cf35f",
       "status": "",
@@ -56,7 +56,7 @@
       "id": "iEpkkf0MLQP172Eryqj5Cu6Q39d2"
     },
     {
-      "email": "Jordy@mail.com",
+      "email": "jordy@mail.com",
       "username": "Jordy",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560816343700?alt=media&token=d1968e8f-aa55-40c8-acaa-b9e81d1e15c6",
@@ -78,8 +78,8 @@
       "id": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1"
     },
     {
-      "email": "b@mail.com",
-      "username": "Beetis",
+      "email": "betty@mail.com",
+      "username": "Betty",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560867902285?alt=media&token=92aebcf2-5577-410f-9044-6ecec81e61dd",
       "status": "",
@@ -89,8 +89,8 @@
       "id": "dnhcaYQvUlck7jt26IBePXdv4Go1"
     },
     {
-      "email": "a@mail.com",
-      "username": "allan",
+      "email": "allan@mail.com",
+      "username": "Allan",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560868943729?alt=media&token=685cad8d-aecb-4960-944e-25333c3a2305",
       "photo": {},
@@ -114,7 +114,7 @@
     },
     {
       "email": "j@mail.com",
-      "username": "jimmy",
+      "username": "Jimmy",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560875709141?alt=media&token=ff191e47-c283-40d4-906c-f04765f4ebe5",
       "photo": {},
@@ -122,7 +122,7 @@
     },
     {
       "email": "ed@mail.com",
-      "username": "eddie",
+      "username": "Eddie",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560875970703?alt=media&token=a9a87cb7-2499-4ae7-9dcb-cd0464bd4c99",
       "photo": {},
@@ -130,7 +130,7 @@
     },
     {
       "email": "felix@mail.com",
-      "username": "felix",
+      "username": "Felix",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876063866?alt=media&token=73dad5bb-44c8-4d4a-9acd-7ebe6b1841eb",
       "photo": {},
@@ -138,51 +138,11 @@
     },
     {
       "email": "frank@mail.com",
-      "username": "frank",
+      "username": "Frank",
       "password": null,
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876193888?alt=media&token=ee116943-325d-4a98-9530-41caefe9315f",
       "photo": {},
       "id": "BQDOHrz57ucT4eLkew8HPiA1A8N2"
-    },
-    {
-      "email": "gil@mail.com",
-      "username": "gil",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876315232?alt=media&token=80f099a2-3b97-4309-9ff6-4bb59efabffe",
-      "photo": {},
-      "id": "z9QhzMptxaYxucoi1e9ycSsH7Hp1"
-    },
-    {
-      "email": "gg@mail.com",
-      "username": "george",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876442715?alt=media&token=ff2abe66-d599-4646-bd0c-00de8168c021",
-      "photo": {},
-      "id": "IqbT8QZj3ycUNFPWJyNTZuzAdDl2"
-    },
-    {
-      "email": "gw@mail.com",
-      "username": "gwen",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876514668?alt=media&token=2ca88ab9-e2ba-41ac-abbf-81cf81191fb0",
-      "photo": {},
-      "id": "EqF1hnjWrqOyBC5lEi1OMvk4UQn1"
-    },
-    {
-      "email": "blah@mail.com",
-      "username": "blah",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876693121?alt=media&token=894d5598-4492-4d37-91cb-12513416e8cc",
-      "photo": {},
-      "id": "3AoIP7rIoKW7VKfjKDnD1snAKFv1"
-    },
-    {
-      "email": "gar@mail.com",
-      "username": "gary",
-      "password": null,
-      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560885719849?alt=media&token=5275fd98-d3d6-492b-bbca-e97bd90dc3e8",
-      "photo": {},
-      "id": "tAD4znkLwuS62Yg3hBpmlh5MHk92"
     }
   ],
   "bios": [
@@ -556,6 +516,26 @@
       "userId": "TNcq8nEwD4TkFbXaqmBsAcb9jAa2",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 31
+    },
+    {
+      "userId": "iEpkkf0MLQP172Eryqj5Cu6Q39d2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 32
+    },
+    {
+      "userId": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 33
+    },
+    {
+      "userId": "dnhcaYQvUlck7jt26IBePXdv4Go1",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 34
+    },
+    {
+      "userId": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
+      "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "id": 35
     }
   ],
   "settings": [

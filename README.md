@@ -16,7 +16,6 @@ I created a single page application that utilzies the following:
 4. [Semantic UI React](https://react.semantic-ui.com/): Styling library
 5. [JSON Server](https://github.com/typicode/json-server): Fake REST API to run mock back end server
 
-
 ### Final Result:
 
 **"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social aspects for user connectivity**
@@ -55,6 +54,7 @@ I created a single page application that utilzies the following:
 ![Mic Locker Followers Page](./src/img/Friends.png)
 
 ### How to run application:
+
 1. Ensure you have npm installed on your machine
 2. Ensure you have json-server installed on your machine
 3. Clone the project and run **npm install**
@@ -62,4 +62,5 @@ I created a single page application that utilzies the following:
 5. In a seperate terminal tab run **npm start.** The application will run on http://localhost:3000
 
 ### Contributor:
+
 [Joey Driscoll](https://github.com/Jdriscoll1993)
