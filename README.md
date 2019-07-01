@@ -10,14 +10,15 @@ I created a single page application that utilzies the following:
 
 ### Technologies Used:
 
-1. HTML5, CSS, JavaScript
+1. HTML5, CSS, JavaScript, Git, npm,
 2. [React 16.8.6](https://reactjs.org/docs/getting-started.html): Core app functionality
 3. [Firebase 6.1.1](https://firebase.google.com/docs): Authentication for login and Storage for file uploads
-4. [Semantic UI React](https://react.semantic-ui.com/): Styling library used throughout the application
+4. [Semantic UI React](https://react.semantic-ui.com/): Styling library
+5. [JSON Server](https://github.com/typicode/json-server): Fake REST API to run mock back end server
 
 ### Final Result:
 
-**"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social features for user connectivity**
+**"Mic Locker" is an organizational application for collectors of musical and professional audio equipment featuring social aspects for user connectivity**
 
 > Users may register an account and upload a personal profile image upon registering which is stored in Firebase
 
@@ -25,7 +26,7 @@ I created a single page application that utilzies the following:
 
 > Users may add gear to their Gear List and keep track of their collections with details and images. Users may also add gear to their Wish List and keep track of it similarly to their gear list.
 
-> Users may navigate to the friends page where they will be provided with two columns of list. On the right column is a list of all active users of Mic Locker displaying usernames and user emails. The logged in user may filter through the users via a search bar to find specific profiles. Logged in users can navigate to other users profiles, or follow users. Followed users will populate in the left column. Users can decide to unfollow currently followed users.
+> Users may navigate to the friends page where they will be provided with two columns of lists. On the right column is a list of all active users of Mic Locker. It displays usernames and user emails. The logged in user may filter through the users via a search bar to find specific profiles. Logged in users can navigate to other users profiles, or follow users. Followed users will populate in the left column. Users can decide to unfollow currently followed users.
 
 ### Entity Relationship Diagram of the database I created:
 
@@ -33,7 +34,6 @@ I created a single page application that utilzies the following:
 
 ### Original mockup concepts for Mic Locker
 
-![Mic Locker Landing Page](./src/img/LandingPage.png)
 ![Mic Locker Profile Page](./src/img/ProfilePage.png)
 ![Mic Locker Friends Page](./src/img/FriendsPage.png)
 
@@ -54,3 +54,13 @@ I created a single page application that utilzies the following:
 ![Mic Locker Followers Page](./src/img/Friends.png)
 
 ### How to run application:
+
+1. Ensure you have npm installed on your machine
+2. Ensure you have json-server installed on your machine
+3. Clone the project and run **npm install**
+4. Run the command **json-server api/database.json -p 8088** to run the json-server on http://localhost:8088
+5. In a seperate terminal tab run **npm start.** The application will run on http://localhost:3000
+
+### Contributor:
+
+[Joey Driscoll](https://github.com/Jdriscoll1993)
