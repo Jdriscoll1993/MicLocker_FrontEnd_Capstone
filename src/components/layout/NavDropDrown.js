@@ -10,26 +10,26 @@ class NavDropDown extends Component {
       : { buying: '', selling: '', status: '' }
   };
  
+// Implementing commented code in Version 2.
+  // onStatusChange(newStatus) {
+  //   let editableInfo = this.state.editableInfo;
+  //   editableInfo.status = newStatus;
+  //   this.setState({
+  //     editableInfo: editableInfo
+  //   });
+  // }
 
-  onStatusChange(newStatus) {
-    let editableInfo = this.state.editableInfo;
-    editableInfo.status = newStatus;
-    this.setState({
-      editableInfo: editableInfo
-    });
-  }
+  // onBuyingChange(newBuy) {
+  //   let editableInfo = this.state.editableInfo;
+  //   editableInfo.buying = newBuy;
+  //   this.setState({ editableInfo: editableInfo });
+  // }
 
-  onBuyingChange(newBuy) {
-    let editableInfo = this.state.editableInfo;
-    editableInfo.buying = newBuy;
-    this.setState({ editableInfo: editableInfo });
-  }
-
-  onSellingChange(newSell) {
-    let editableInfo = this.state.editableInfo;
-    editableInfo.selling = newSell;
-    this.setState({ editableInfo: editableInfo });
-  }
+  // onSellingChange(newSell) {
+  //   let editableInfo = this.state.editableInfo;
+  //   editableInfo.selling = newSell;
+  //   this.setState({ editableInfo: editableInfo });
+  // }
 
   render() {
     // console.log('navdrop', this.props.user)

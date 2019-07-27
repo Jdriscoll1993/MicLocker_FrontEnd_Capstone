@@ -14,7 +14,7 @@ var firebaseConfig = {
   messagingSenderId: "361828284008",
   appId: "1:361828284008:web:b95746566c9fae78"
 };
-//Initialize Firebase
+//Initialize Firebase. Creates an instance of Firebase.
 firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(

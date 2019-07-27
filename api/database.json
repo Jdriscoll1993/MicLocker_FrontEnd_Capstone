@@ -143,12 +143,20 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1560876193888?alt=media&token=ee116943-325d-4a98-9530-41caefe9315f",
       "photo": {},
       "id": "BQDOHrz57ucT4eLkew8HPiA1A8N2"
+    },
+    {
+      "email": "larry@mail.com",
+      "username": "larry",
+      "password": null,
+      "image": "https://firebasestorage.googleapis.com/v0/b/fecapstone-01.appspot.com/o/profiles%2F1562076544153?alt=media&token=caf7d8e1-94d1-41e8-a296-f37d27c3cb15",
+      "photo": {},
+      "id": "6DCbnQIah1gUkZFgaL2pFtoeW1A3"
     }
   ],
   "bios": [
     {
       "id": 1,
-      "aboutMe": "I'm a pretty cool guy who likes to play GameCube in front of people. Strong believer in the 5-meals-a day-system.",
+      "aboutMe": "My name is Joey Driscoll. I am an electronic music producer and DJ. I have a bachelors degree in audio engineering, and audio has always been my passion. This app rocks. I can wholeheartedly and unbiasedly say its the best application I have ever used, ever. I would recommend to a friend, I would recommend to an enemy. I am an avid pro audio gear collector who is always drooling over the latest and greatest in audio technology. I love my rhodes!!",
       "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2"
     },
     {
@@ -235,6 +243,11 @@
       "userId": "tAD4znkLwuS62Yg3hBpmlh5MHk92",
       "aboutMe": "Please write about yourself",
       "id": 20
+    },
+    {
+      "id": 21,
+      "aboutMe": "Larry Stewart is a 56-year-old government politician who enjoys playing guitar, running and walking. He is brave and exciting, but can also be very selfish and a bit stingy.\nHe is a Scottish Sikh who defines himself as straight. He has a degree in philosophy, politics and economics.\nPhysically, Larry is slightly overweight but otherwise in good shape. He is short with light skin, blonde hair and blue eyes.\nHe grew up in a middle class neighborhood. After his father died when he was young, he was raised by his mother\nHe is currently in a relationship with Evan Keir Lewis. Evan is the same age as him and works as an artist.\nLarry has one child with girlfriend Evan: Drew aged 5.\nLarry’s best friend is a government politician called Mindy Phillips. They are inseparable. He also hangs around with Leslie Price and Irving Hutchinson. They enjoy adult coloring books together.",
+      "userId": "6DCbnQIah1gUkZFgaL2pFtoeW1A3"
     }
   ],
   "experiences": [
@@ -536,6 +549,16 @@
       "userId": "SCYEhQtrxwSw0lNeuY2ulwa3MOs1",
       "follower": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
       "id": 35
+    },
+    {
+      "userId": "NKFLWURLnwPBuHCjuzZHgUfz4uT2",
+      "follower": "6DCbnQIah1gUkZFgaL2pFtoeW1A3",
+      "id": 36
+    },
+    {
+      "userId": "RJ5FDbcsMjZWhKyAXjSkakt5ujM2",
+      "follower": "6DCbnQIah1gUkZFgaL2pFtoeW1A3",
+      "id": 37
     }
   ],
   "settings": [
@@ -636,6 +659,13 @@
       "buying": "broke rn",
       "selling": "chimichangas",
       "id": 14
+    },
+    {
+      "userId": "6DCbnQIah1gUkZFgaL2pFtoeW1A3",
+      "status": "im a cool guy who likes to play gamecube",
+      "buying": "broke rn",
+      "selling": "chimichangas",
+      "id": 15
     }
   ]
 }
