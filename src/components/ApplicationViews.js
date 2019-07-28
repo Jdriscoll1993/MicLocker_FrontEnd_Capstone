@@ -55,9 +55,9 @@ class ApplicationViews extends Component {
       console.log(newBio);
       const newSettings = {
         userId: user.id,
-        status: 'im a cool guy who likes to play gamecube',
-        buying: 'broke rn',
-        selling: 'chimichangas'
+        status: '',
+        buying: '',
+        selling: ''
       };
       SettingsManager.postSettings(newSettings).then(newSettings => {
         this.setState(newSettings);
@@ -69,8 +69,8 @@ class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem('user') !== null;
 
   render() {
-    console.log(this.state);
     return (
+      // App Views Route Section
       <>
         <div className="App">
           {/* login route */}
@@ -93,9 +93,9 @@ class ApplicationViews extends Component {
               return this.props.isAuthenticated ? (
                 <Profile
                   {...props}
-                  status={this.state.status}
-                  buying={this.state.buying}
-                  selling={this.state.selling}
+                  // status={this.state.status}
+                  // buying={this.state.buying}
+                  // selling={this.state.selling}
                   onLogout={this.props.onLogout}
                   user={this.props.user}
                 />
@@ -139,7 +139,7 @@ class ApplicationViews extends Component {
               );
             }}
           />
-          {/* experience edit form*/}
+
           <Route
             path="/experiences/edit/:experienceId"
             render={props => {
@@ -237,10 +237,10 @@ class ApplicationViews extends Component {
                     password: null,
                     id: null,
                     image: null,
-                    photo: null,
-                    status: null,
-                    buying: null,
-                    selling: null
+                    photo: null
+                    // status: null,
+                    // buying: null,
+                    // selling: null
                   };
                 }
                 return <OthersProfiles {...props} user={this.props.user} />;
